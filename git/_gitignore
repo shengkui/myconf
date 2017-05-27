@@ -1,0 +1,31 @@
+# Executable
+*.out
+
+# Object file
+*.o
+
+# Prerequisite
+*.d
+
+# Library
+*.so
+*.a
+
+# Backup file
+*~
+
+# Kernel Module Compile Result
+*.ko
+*.mod*
+*.cmd
+modules.order
+Module.symvers
+
+# Tag file
+GPATH
+GRTAGS
+GTAGS
+tags
+
+# vim swap file
+*.swp
