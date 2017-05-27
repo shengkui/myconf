@@ -1,0 +1,3 @@
+#My config file
+
+This repo include some config files for Linux shell, git, vim, ...
