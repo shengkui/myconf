@@ -11,10 +11,10 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-endwise'                "End certain structures automatically(C preprocessor...)
 Plug 'ConradIrwin/vim-bracketed-paste'  "Paste mode(automatic `:set paste`)
 Plug 'justmao945/vim-clang'             "Auto-completion
-Plug 'mbbill/undotree'                  "Undo history visualizer
-Plug 'majutsushi/tagbar'                "Browse the tags
-Plug 'scrooloose/nerdtree'              "File explorer
-Plug 'will133/vim-dirdiff'              "Diff two directories
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }      "Undo history visualizer
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }      "Browse the tags
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }  "File explorer
+Plug 'will133/vim-dirdiff', { 'on': 'DirDiff' }         "Diff two directories
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
