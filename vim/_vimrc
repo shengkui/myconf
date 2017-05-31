@@ -5,34 +5,32 @@ set nocompatible
 "Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !has("compatible")
-filetype off
-"set the runtime path to include Vundle and initialize
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'           "Plug-in manager
-Plugin 'tpope/vim-endwise'              "End certain structures automatically(C preprocessor...)
-Plugin 'ConradIrwin/vim-bracketed-paste'    "Paste mode(automatic `:set paste`)
-Plugin 'justmao945/vim-clang'           "Auto-completion
-Plugin 'mbbill/undotree'                "Undo history visualizer
-Plugin 'majutsushi/tagbar'              "Browse the tags
-Plugin 'scrooloose/nerdtree'            "File explorer
-Plugin 'will133/vim-dirdiff'            "Diff two directories
-Plugin 'dkprice/vim-easygrep'           "Find and replace across multiple files
-Plugin 'jsfaint/gen_tags.vim'           "Generate and load tags
-Plugin 'editorconfig/editorconfig-vim'  "EditorConfig
-Plugin 'w0rp/ale'                       "Lint(Syntax checking)
-"Plugin 'airblade/vim-gitgutter'        "Show git diff in the gutter
-Plugin 'chrisbra/vim-diff-enhanced'     "Better Diff
-Plugin 'EinfachToll/DidYouMean'         "Ask for the right file to open
-Plugin 'rhysd/committia.vim'            "Improve for Git commit messag editor
-Plugin 'tpope/vim-fugitive'             "Git Wrapper
-Plugin 'junegunn/gv.vim'                "Git commit browser
-Plugin 'SirVer/ultisnips'               "Code snippet
-Plugin 'honza/vim-snippets'             "Code snippet
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'embear/vim-foldsearch'          "Fold away lines that don't match a search pattern
-call vundle#end()
-filetype plugin indent on
+"filetype off
+" Specify a directory for plugins
+call plug#begin('~/.vim/bundle')
+Plug 'tpope/vim-endwise'                "End certain structures automatically(C preprocessor...)
+Plug 'ConradIrwin/vim-bracketed-paste'  "Paste mode(automatic `:set paste`)
+Plug 'justmao945/vim-clang'             "Auto-completion
+Plug 'mbbill/undotree'                  "Undo history visualizer
+Plug 'majutsushi/tagbar'                "Browse the tags
+Plug 'scrooloose/nerdtree'              "File explorer
+Plug 'will133/vim-dirdiff'              "Diff two directories
+Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
+Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
+Plug 'editorconfig/editorconfig-vim'    "EditorConfig
+Plug 'w0rp/ale'                         "Lint(Syntax checking)
+"Plug 'airblade/vim-gitgutter'          "Show git diff in the gutter
+Plug 'chrisbra/vim-diff-enhanced'       "Better Diff
+Plug 'EinfachToll/DidYouMean'           "Ask for the right file to open
+Plug 'rhysd/committia.vim'              "Improve for Git commit messag editor
+Plug 'tpope/vim-fugitive'               "Git Wrapper
+Plug 'junegunn/gv.vim'                  "Git commit browser
+Plug 'SirVer/ultisnips'                 "Code snippet
+Plug 'honza/vim-snippets'               "Code snippet
+"Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
+call plug#end()
+"filetype plugin indent on
 endif
 
 
@@ -115,7 +113,7 @@ set tabstop=4           "Number of spaces that a <Tab> counts for.
 set softtabstop=4       "Number of spaces that a <Tab> counts for while editing.
 set shiftwidth=4        "Number of spaces to be used for each step of (auto)indent.
 set smarttab            "When hitting <Tab> or <Backspace> in front of line, 'shiftwidth' used.
-"set expandtab          "No real tabs(insert spaces when <Tab> pressed).
+set expandtab           "No real tabs(insert spaces when <Tab> pressed).
 set autoindent
 
 "Set expandtab for some filetype
