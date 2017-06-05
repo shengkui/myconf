@@ -19,3 +19,7 @@ indent_style = space
 [*.{txt}]
 end_of_line = crlf
 indent_style = space
+
+[*.{js,htm,html,json,css}]
+indent_style = space
+indent_size = 2
