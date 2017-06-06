@@ -35,3 +35,5 @@ git config --global alias.df "diff --ignore-space-at-eol"
 
 #config for tig
 echo "set ignore-space = at-eol" >> "${HOME}"/.tigrc
+
+exit 0

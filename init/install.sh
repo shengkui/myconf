@@ -13,7 +13,7 @@ echo
 echo ----------------------------------------------
 echo "Installing scripts files ..."
 echo ----------------------------------------------
-sudo cp -vf "$BIN_DIR/*" "$INST_DIR"
+sudo cp -vf "$BIN_DIR/*" "$INST_DIR" || { echo "error"; exit 1; }
 
 
 for i in $CFG_DIR; do
@@ -24,7 +24,7 @@ for i in $CFG_DIR; do
     echo ----------------------------------------------
 
     cd "$i" || { echo "error"; exit 1; }
-    $INIT_SCRIPT || { echo "error"; exit 1; }
+    $INIT_SCRIPT || { echo "install $i error"; exit 1; }
     popd > /dev/null
 done
 
