@@ -24,7 +24,7 @@ for i in $CFG_DIR; do
     echo ----------------------------------------------
 
     cd "$i" || { echo "error"; exit 1; }
-    $INIT_SCRIPT || { echo "install $i error"; exit 1; }
+    ./$INIT_SCRIPT || { echo "install $i error"; exit 1; }
     popd > /dev/null
 done
 
