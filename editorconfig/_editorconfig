@@ -11,6 +11,9 @@ indent_size = 4
 [*.{c,h,cpp,hpp,cc,cxx,sh,bash}]
 indent_style = space
 
+[{Makefile,makefile}]
+indent_style = tab
+
 [*.{md,mkd,markdown}]
 end_of_line = crlf
 trim_trailing_whitespace = false
@@ -20,6 +23,13 @@ indent_style = space
 end_of_line = crlf
 indent_style = space
 
+[{README,readme}]
+end_of_line = crlf
+indent_style = space
+
 [*.{js,htm,html,json,css}]
 indent_style = space
 indent_size = 2
+
+[*.{go}]
+indent_style = tab
