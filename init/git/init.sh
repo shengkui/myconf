@@ -2,8 +2,8 @@
 #Set all typical git configuration.
 
 #User information
-git config --global user.name "shengkui leng"
-git config --global user.email lengshengkui@outlook.com
+git config --global user.name "shengkui.leng"
+git config --global user.email shengkui.leng@advantech.com.cn
 
 git config --global push.default simple
 
