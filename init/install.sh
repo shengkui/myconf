@@ -13,7 +13,7 @@ echo
 echo ----------------------------------------------
 echo "Installing scripts files ..."
 echo ----------------------------------------------
-cp -vf "$BIN_DIR/*" "$INST_DIR"
+sudo cp -vf "$BIN_DIR/*" "$INST_DIR"
 
 
 for i in $CFG_DIR; do
