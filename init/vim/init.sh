@@ -2,7 +2,7 @@
 
 VIM_DIR="${HOME}/.vim"
 
-mkdir -p "${VIM_DIR}"/{bundle,tags,undo} || { echo "make vim dir error"; exit 1; }
+mkdir -p "${VIM_DIR}"/{bundle,tags,undo} || { echo "make .vim dir error"; exit 1; }
 cp -avf UltiSnips "${VIM_DIR}" || { echo "copy UltiSnips error"; exit 1; }
 cp -vf _vimrc "${HOME}"/.vimrc || { echo "copy .vimrc error"; exit 1; }
 #git clone https://github.com/VundleVim/Vundle.vim.git "${VIM_DIR}"/bundle/Vundle.vim
