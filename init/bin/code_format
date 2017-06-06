@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# The switches used for indent:
+#   -br   : Put braces on line with if, etc.
+#   -brs  : Put braces on struct declaration line.
+#   -bli0 : Indent braces 0 spaces.
+#   -bad  : Force blank lines after the declarations.
+#   -bap  : Force blank lines after procedure bodies.
+#   -ce   : Cuddle else and preceeding `}´.
+#   -ts4  : Set tab size to 4 spaces.
+#   -nut  : Use spaces instead of tabs.
+#   -nlp  : Do not line up parentheses.
+#   -npsl : Put the type of a procedure on the same line as its name.
+#   -l80  : Set maximum line length for non-comment lines to 80.
+#   -kr   : Use K&R coding style.
+#   -saf  : Put a space after each for.
+#   -sai  : Put a space after each if.
+#   -saw  : Put a space after each while.
+#   -cpn  : Put comments to the right of #else and #endif statements in column n.
+#
+
+if [ $# -eq 0 ] ;then
+    list=$(find . -name "*.[c|h]")
+else
+    list=$*
+fi
+
+for file in $list ;do
+    echo "$file"
+    dos2unix "$file" 2>/dev/null
+
+    indent -cp1 -br -brs -bli0 -bap -ce -ts4 -nut -nlp -npsl -l80 -kr -saf \
+        -sai -saw "$file"
+done
+
