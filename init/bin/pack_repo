@@ -61,11 +61,11 @@ if [ ! -d "$PACK" ];then
 fi
 
 if [ "$TYPE" == "gzip" ] || [ "$TYPE" == "gz" ];then
-    tar zcf "${PACK}_v${REV}.tgz" --exclude='.git*' --exclude='.svn*' --exclude='.drone.*' "${REPO}"
+    tar zcf "${PACK}_v${REV}.tgz" --exclude-vcs --exclude-vcs-ignores --exclude='.drone.*' "${REPO}"
 elif  [ "$TYPE" == "bzip2" ] || [ "$TYPE" == "bz2" ];then
-    tar jcf "${PACK}_v${REV}.tbz" --exclude='.git*' --exclude='.svn*' --exclude='.drone.*' "${REPO}"
+    tar jcf "${PACK}_v${REV}.tbz" --exclude-vcs --exclude-vcs-ignores --exclude='.drone.*' "${REPO}"
 elif  [ "$TYPE" == "xz" ];then
-    tar Jcf "${PACK}_v${REV}.txz" --exclude='.git*' --exclude='.svn*' --exclude='.drone.*' "${REPO}"
+    tar Jcf "${PACK}_v${REV}.txz" --exclude-vcs --exclude-vcs-ignores --exclude='.drone.*' "${REPO}"
 else
     echo "Unsupported package type"
     exit 1
