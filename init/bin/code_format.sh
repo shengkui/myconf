@@ -1,16 +1,20 @@
 #!/bin/bash
 #==============================================================================
-#Format C/C++ source file with indent and change CRLF to Unnix style.
+# FILENAME:
+#     code_format.sh
 #
-#Usage:
-#    code_format [-t] [files]
-#        -t    - Use TAB for indent(default: space char used)
-#        files - The C/C++ files to be formated
-#Example:
-#    code_format
-#    code_format *.c
-#    code_format -t
-#    code_format -t *.c
+# DESCRIPTION:
+#     Format C/C++ source file with indent and change CRLF to Unix style.
+#
+#     Usage:
+#       code_format.sh [-t] [files]
+#         -t    - Use TAB for indent(default: whitespace char used)
+#         files - The C/C++ files to be formated
+#     Example:
+#       code_format.sh
+#       code_format.sh *.c
+#       code_format.sh -t
+#       code_format.sh -t *.c
 #==============================================================================
 # The switches/options used for indent utility:
 #   -br   : Put braces on line with if, etc.
