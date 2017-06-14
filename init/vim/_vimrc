@@ -229,6 +229,7 @@ let g:ale_c_clang_options="-std=gnu11 -Wall"
 let g:ale_c_gcc_options="-std=gnu11 -Wall"
 let g:ale_cpp_clang_options="-std=gnu++14 -Wall"
 let g:ale_cpp_gcc_options="-std=gnu++14 -Wall"
+let g:ale_sh_shellcheck_options="-x"
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
