@@ -11,10 +11,15 @@ pushd . > /dev/null
 
 echo
 echo ----------------------------------------------
+echo "Installing .profile file ..."
+echo ----------------------------------------------
+cp -vf _profile ${HOME}/.profile || { echo "error"; exit 1; }
+
+echo
+echo ----------------------------------------------
 echo "Installing scripts files ..."
 echo ----------------------------------------------
 sudo cp -vf "$BIN_DIR/*" "$INST_DIR" || { echo "error"; exit 1; }
-
 
 for i in $CFG_DIR; do
     pushd . > /dev/null
