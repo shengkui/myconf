@@ -1,10 +1,10 @@
 #!/bin/bash
 #A script to install useful scripts/tools and vim/git/zsh configurations.
 
-BIN_DIR="bin"
-CFG_DIR="git vim zsh"
-INST_DIR="/usr/local/bin"
-INIT_SCRIPT="init.sh"
+BIN_DIR="bin"               #EXEs to be copied into $INST_DIR
+CFG_DIR="git vim zsh"       #Configs for git/vim/shell
+INST_DIR="/usr/local/bin"   #Install directory for EXEs
+INIT_SCRIPT="init.sh"       #Init script for configs
 
 
 pushd . > /dev/null
