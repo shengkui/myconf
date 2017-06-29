@@ -22,8 +22,7 @@ Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit messag editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
-Plug 'junegunn/gv.vim'                  "Git commit browser
-"Plug 'airblade/vim-gitgutter'          "Show git diff in the gutter
+"Plug 'junegunn/gv.vim'                  "Git commit browser
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Quoting/parenthesizing made simple
@@ -240,7 +239,8 @@ let g:ale_c_gcc_options="-std=gnu11 -Wall"
 let g:ale_cpp_clang_options="-std=gnu++14 -Wall"
 let g:ale_cpp_gcc_options="-std=gnu++14 -Wall"
 let g:ale_sh_shellcheck_options="-x"
-let g:ale_sh_shellcheck_exclusions="SC2086,SC2181"
+let g:ale_sh_shellcheck_exclusions="SC2086,SC2181,SC2006"
+let g:ale_linters = {'cpp': ['cppcheck', 'clang']}
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -264,6 +264,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 "let g:airline_symbols_ascii = 1
+"let g:airline#extensions#whitespace#enabled = 0
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
