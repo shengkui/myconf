@@ -240,6 +240,8 @@ let g:ale_cpp_clang_options="-std=gnu++14 -Wall"
 let g:ale_cpp_gcc_options="-std=gnu++14 -Wall"
 let g:ale_sh_shellcheck_options="-x"
 let g:ale_sh_shellcheck_exclusions="SC2086,SC2181,SC2006"
+let g:ale_c_cppcheck_options="--enable=style --suppress=variableScope"
+let g:ale_cpp_cppcheck_options="--enable=style --suppress=variableScope"
 let g:ale_linters = {'cpp': ['cppcheck', 'clang']}
 
 function! LinterStatus() abort
