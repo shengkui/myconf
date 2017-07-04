@@ -17,6 +17,7 @@ Plug 'majutsushi/tagbar'                "Browse the tags
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'w0rp/ale'                         "Lint(Syntax checking)
+"Plug 'vim-syntastic/syntastic'
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
 Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 
@@ -239,7 +240,7 @@ let g:ale_c_gcc_options="-std=gnu11 -Wall"
 let g:ale_cpp_clang_options="-std=gnu++14 -Wall"
 let g:ale_cpp_gcc_options="-std=gnu++14 -Wall"
 let g:ale_sh_shellcheck_options="-x"
-let g:ale_sh_shellcheck_exclusions="SC2086,SC2181,SC2006"
+let g:ale_sh_shellcheck_exclusions="SC2086,SC2181,SC2006,SC2039,SC2162"
 let g:ale_c_cppcheck_options="--enable=style --suppress=variableScope"
 let g:ale_cpp_cppcheck_options="--enable=style --suppress=variableScope"
 let g:ale_linters = {'cpp': ['cppcheck', 'clang']}
@@ -256,6 +257,20 @@ endfunction
 set statusline+=[%{LinterStatus()}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 2
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_sh_shellcheck_args = "-x -e SC2086,SC2181,SC2006,SC2039,SC2162"
+"let g:syntastic_c_cppcheck_args="--enable=style --suppress=variableScope"
+"let g:syntastic_cpp_cppcheck_args="--enable=style --suppress=variableScope"
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "editorconfig
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -267,6 +282,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 "let g:airline_symbols_ascii = 1
 "let g:airline#extensions#whitespace#enabled = 0
+"let g:airline#extensions#syntastic#enabled = 1
+
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
