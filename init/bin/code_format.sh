@@ -66,7 +66,7 @@ for file in $list ;do
     echo "$file"
     dos2unix "$file" 2>/dev/null
 
-    # Don't add idouble quotation marks to $INDET_OPTS, for indent will treat it
+    # Do NOT add double quotation marks to $INDET_OPTS, for indent will treat it
     # as one argument incorrectly!
     indent $INDET_OPTS "$file"
 done
