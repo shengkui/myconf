@@ -6,5 +6,5 @@
 git config --local user.name "Shengkui Leng"
 git config --local user.email lengshengkui@outlook.com
 
-#save password
-git config --local credential.helper store
+#cache password for 15min
+git config --local credential.helper cache
