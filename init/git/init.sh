@@ -8,7 +8,7 @@ git config --global user.email shengkui.leng@advantech.com.cn
 git config --global push.default simple
 
 #Format of date&time
-git config --global log.date iso
+git config --global log.date format-local:"%Y-%m-%d %H:%M:%S"
 
 #Don't convert CR/LF chars
 git config --global core.autocrlf false
