@@ -14,6 +14,7 @@ Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
+Plug 'Raimondi/delimitMate'             "Auto closing of parenthesis, brackets, ...
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'w0rp/ale'                         "Lint(Syntax checking)
@@ -23,7 +24,7 @@ Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit messag editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
-"Plug 'junegunn/gv.vim'                  "Git commit browser
+"Plug 'junegunn/gv.vim'                 "Git commit browser
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Quoting/parenthesizing made simple
@@ -266,9 +267,9 @@ set statusline+=[%{LinterStatus()}]
 "let g:syntastic_auto_loc_list = 2
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
-"let g:syntastic_sh_shellcheck_args = "-x -e SC2086,SC2181,SC2006,SC2039,SC2162"
-"let g:syntastic_c_cppcheck_args="--enable=style --suppress=variableScope"
-"let g:syntastic_cpp_cppcheck_args="--enable=style --suppress=variableScope"
+"let g:syntastic_sh_shellcheck_args='-x -e SC2086,SC2181,SC2006,SC2039,SC2162'
+"let g:syntastic_c_cppcheck_args='--enable=style --suppress=variableScope'
+"let g:syntastic_cpp_cppcheck_args='--enable=style --suppress=variableScope
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "editorconfig
