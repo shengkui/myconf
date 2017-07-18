@@ -22,12 +22,12 @@ Plug 'w0rp/ale'                         "Lint(Syntax checking)
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
 Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 
-Plug 'rhysd/committia.vim'              "Improve for Git commit messag editor
+Plug 'rhysd/committia.vim'              "Improve for Git commit message editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
 "Plug 'junegunn/gv.vim'                 "Git commit browser
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
-Plug 'tpope/vim-surround'               "Quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'               "Easily add, delete and change parentheses/brackets/quotes
 Plug 'tpope/vim-repeat'                 "Repeating supported plugin maps with '.'
 
 Plug 'will133/vim-dirdiff', { 'on': 'DirDiff' }     "Diff two directories
