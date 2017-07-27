@@ -75,7 +75,8 @@ nnoremap <silent> <F6> :call g:ToggleBackground()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
     set mouse=a                 "Use mouse everywhere
-    set guifont=monospace\ 14   "Set font of GVIM
+    "set guifont=monospace\ 14   "Set font of GVIM
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 14
     "set cursorline             "Highlight current line
     "set cursorcolumn           "Highlight current column
 endif
