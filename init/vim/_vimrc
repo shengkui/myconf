@@ -55,6 +55,7 @@ runtime ftplugin/man.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
 colorscheme torte
+set term=xterm-256color
 
 "Toggle color scheme
 function! g:ToggleBackground()
