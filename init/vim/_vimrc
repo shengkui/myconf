@@ -238,14 +238,14 @@ nmap <leader>m :!markdown % \| w3m -T text/html<CR><CR>
 "Map movement through errors with wrapping.
 nmap <silent> <C-h> <Plug>(ale_previous_wrap)
 nmap <silent> <C-l> <Plug>(ale_next_wrap)
-let g:ale_c_clang_options="-std=gnu11 -Wall"
-let g:ale_c_gcc_options="-std=gnu11 -Wall"
-let g:ale_cpp_clang_options="-std=gnu++14 -Wall"
-let g:ale_cpp_gcc_options="-std=gnu++14 -Wall"
-let g:ale_sh_shellcheck_options="-x"
-let g:ale_sh_shellcheck_exclusions="SC2086,SC2181,SC2006,SC2039,SC2162"
-let g:ale_c_cppcheck_options="--enable=style --suppress=variableScope"
-let g:ale_cpp_cppcheck_options="--enable=style --suppress=variableScope"
+let g:ale_c_clang_options='-std=gnu11 -Wall'
+let g:ale_c_gcc_options='-std=gnu11 -Wall'
+let g:ale_cpp_clang_options='-std=gnu++14 -Wall'
+let g:ale_cpp_gcc_options='-std=gnu++14 -Wall'
+let g:ale_sh_shellcheck_options='-x'
+let g:ale_sh_shellcheck_exclusions='SC2086,SC2181,SC2006,SC2039,SC2162'
+let g:ale_c_cppcheck_options='--enable=style --suppress=variableScope'
+let g:ale_cpp_cppcheck_options='--enable=style --suppress=variableScope'
 let g:ale_linters = {'cpp': ['cppcheck', 'clang']}
 
 function! LinterStatus() abort
@@ -271,7 +271,7 @@ set statusline+=[%{LinterStatus()}]
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_sh_shellcheck_args='-x -e SC2086,SC2181,SC2006,SC2039,SC2162'
 "let g:syntastic_c_cppcheck_args='--enable=style --suppress=variableScope'
-"let g:syntastic_cpp_cppcheck_args='--enable=style --suppress=variableScope
+"let g:syntastic_cpp_cppcheck_args='--enable=style --suppress=variableScope'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "editorconfig
