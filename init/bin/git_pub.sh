@@ -6,5 +6,5 @@
 git config --local user.name "Shengkui Leng"
 git config --local user.email lengshengkui@outlook.com
 
-#cache password for 15min
-git config --local credential.helper cache
+#cache password for 1hour
+git config --local credential.helper 'cache --timeout=3600'
