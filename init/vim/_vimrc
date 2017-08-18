@@ -121,6 +121,11 @@ set statusline=[%F][%{&ff}]%r%m%*%=[Line:%l/%L,Column:%c][%p%%]
 set laststatus=2            "Always show the status line
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Leader key
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:mapleader = ","
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "TAB
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set tabstop=4           "Number of spaces that a <Tab> counts for.
@@ -142,14 +147,12 @@ autocmd FileType text setlocal expandtab
 "C/C++: Highlight trailling space
 let c_space_errors = 1
 
+"Key mapping for remove trailling space
+nmap <Leader>l :%s/\s*$//g<CR>:noh<CR>
+
 "Show special chars
 set listchars=tab:¦\ ,trail:-,extends:>,precedes:<,nbsp:~
 set list
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Leader key
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "paste mode
@@ -299,5 +302,5 @@ let g:airline_powerline_fonts = 1
 "let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
-" Switch CWD to the directory of the open buffer
+"Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
