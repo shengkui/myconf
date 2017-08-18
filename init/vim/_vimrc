@@ -135,6 +135,8 @@ autocmd FileType vim setlocal expandtab
 au BufRead,BufNewFile *.log  set filetype=text
 autocmd FileType text setlocal expandtab
 
+"Key mapping for insert a real <Tab>
+:inoremap <S-Tab> <C-V><Tab>
 
 "C/C++: Highlight trailling space
 let c_space_errors = 1
