@@ -21,6 +21,7 @@ Plug 'w0rp/ale'                         "Lint(Syntax checking)
 "Plug 'vim-syntastic/syntastic'
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
 Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
+Plug 'yggdroot/indentline'              "Display indention levels
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit message editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
@@ -140,6 +141,10 @@ autocmd FileType text setlocal expandtab
 
 "C/C++: Highlight trailling space
 let c_space_errors = 1
+
+"Show special chars
+set listchars=tab:¦\ ,trail:-,extends:>,precedes:<,nbsp:~
+set list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Leader key
