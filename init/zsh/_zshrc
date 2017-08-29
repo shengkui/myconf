@@ -92,6 +92,8 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
+unsetopt share_history
+
 export GTAGSLIBPATH=~/.vim/tags/
 
-unsetopt share_history
+export GOPATH=$HOME/go

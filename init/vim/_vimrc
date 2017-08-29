@@ -15,6 +15,7 @@ Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
 Plug 'Raimondi/delimitMate'             "Auto closing of parenthesis, brackets, ...
+Plug 'fatih/vim-go'                     "Golang support
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'w0rp/ale'                         "Lint(Syntax checking)
@@ -151,7 +152,7 @@ let c_space_errors = 1
 nmap <Leader>l :%s/\s*$//g<CR>:noh<CR>
 
 "Show special chars
-set listchars=tab:¦\ ,extends:>,precedes:<,nbsp:~
+set listchars=tab:¦\ ,extends:>,precedes:<  ",nbsp:~
 set list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -304,3 +305,9 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 "Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au FileType go nmap <leader>r <Plug>(go-run)
