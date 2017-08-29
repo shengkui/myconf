@@ -97,3 +97,4 @@ unsetopt share_history
 export GTAGSLIBPATH=~/.vim/tags/
 
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

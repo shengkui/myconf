@@ -261,7 +261,11 @@ let g:ale_sh_shellcheck_options='-x'
 let g:ale_sh_shellcheck_exclusions='SC2086,SC2181,SC2006,SC2039,SC2162'
 let g:ale_c_cppcheck_options='--enable=style --suppress=variableScope'
 let g:ale_cpp_cppcheck_options='--enable=style --suppress=variableScope'
-let g:ale_linters = {'cpp': ['cppcheck', 'clang']}
+let g:ale_linters = {
+            \ 'cpp': ['cppcheck', 'clang'],
+            \ 'go': ['gometalinter', 'gofmt'],
+            \ }
+let b:ale_go_gometalinter_options='--fast --min-confidence=.81'
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -287,6 +291,7 @@ set statusline+=[%{LinterStatus()}]
 "let g:syntastic_sh_shellcheck_args='-x -e SC2086,SC2181,SC2006,SC2039,SC2162'
 "let g:syntastic_c_cppcheck_args='--enable=style --suppress=variableScope'
 "let g:syntastic_cpp_cppcheck_args='--enable=style --suppress=variableScope'
+"let g:syntastic_go_gometalinter_args='--fast --min-confidence=.81'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "editorconfig
