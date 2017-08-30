@@ -152,7 +152,7 @@ let c_space_errors = 1
 nmap <Leader>l :%s/\s*$//g<CR>:noh<CR>
 
 "Show special chars
-set listchars=tab:¦\ ,extends:>,precedes:<  ",nbsp:~
+set listchars=tab:¦\ ,nbsp:~,extends:>,precedes:<,trail:-
 set list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
