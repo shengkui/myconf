@@ -8,7 +8,8 @@ if !has("compatible")
 "filetype off
 "Specify a directory for plugins
 call plug#begin('~/.vim/bundle')
-Plug 'justmao945/vim-clang'             "Auto-completion
+"Plug 'justmao945/vim-clang'            "Auto-completion
+Plug 'lifepillar/vim-mucomplete'        "Auto-completion
 Plug 'tpope/vim-endwise'                "End certain structures automatically(C preprocessor...)
 Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
@@ -143,7 +144,7 @@ au BufRead,BufNewFile *.log  set filetype=text
 autocmd FileType text setlocal expandtab
 
 "Key mapping for insert a real <Tab>
-:inoremap <S-Tab> <C-V><Tab>
+":inoremap <S-Tab> <C-V><Tab>
 
 "C/C++: Highlight trailling space
 let c_space_errors = 1
@@ -195,11 +196,19 @@ let g:tagbar_sort = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim-clang
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:clang_auto = 1
-let g:clang_c_options = '-std=gnu11'
-let g:clang_c_completeopt = 'longest,menuone,preview'
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-let g:clang_cpp_completeopt = 'longest,menuone,preview'
+"let g:clang_auto = 1
+"let g:clang_c_options = '-std=gnu11'
+"let g:clang_c_completeopt = 'longest,menuone,preview'
+"let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+"let g:clang_cpp_completeopt = 'longest,menuone,preview'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"vim-mucomplete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set noshowmode shortmess+=c
+set completeopt-=preview
+set completeopt+=longest,menuone,noinsert,noselect
+let g:mucomplete#enable_auto_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ultisnips
