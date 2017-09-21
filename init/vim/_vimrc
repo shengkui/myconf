@@ -144,7 +144,7 @@ au BufRead,BufNewFile *.log  set filetype=text
 autocmd FileType text setlocal expandtab
 
 "C/C++: Highlight trailling space
-let c_space_errors = 1
+"let c_space_errors = 1
 
 "Key mapping for remove trailling space
 nmap <Leader>l :%s/\s*$//g<CR>:noh<CR>
