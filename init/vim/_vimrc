@@ -205,7 +205,7 @@ let g:clang_cpp_completeopt = 'longest,menuone,preview'
 set noshowmode shortmess+=c
 set completeopt-=preview
 set completeopt+=longest,menuone,noinsert,noselect
-let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#enable_auto_at_startup = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ultisnips
