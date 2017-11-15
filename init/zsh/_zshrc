@@ -92,7 +92,10 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 
-unsetopt share_history
+setopt hist_ignore_all_dups      # Delete old recorded entry if new entry is a duplicate.
+setopt hist_find_no_dups         # Do not display a line previously found.
+setopt hist_save_no_dups         # Do not write duplicate entries in the history file.
+setopt hist_reduce_blanks        # Remove superfluous blanks before recording entry.
 
 export GTAGSLIBPATH=~/.vim/tags/
 
