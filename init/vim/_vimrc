@@ -207,6 +207,7 @@ set noshowmode shortmess+=c
 set completeopt-=preview
 set completeopt+=longest,menuone,noinsert,noselect
 let g:mucomplete#enable_auto_at_startup = 0
+let g:mucomplete#always_use_completeopt = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ultisnips
@@ -245,7 +246,7 @@ endif
 "gen_tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Map <Ctrl>+<F12> to generate tags
-nnoremap <C-F12> :GenGTAGS<CR>
+nnoremap <C-F12> :GenCtags<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "markdown
@@ -322,3 +323,5 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 "vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <Leader>d <Plug>(go-def-split)
