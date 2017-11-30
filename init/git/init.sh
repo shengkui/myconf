@@ -1,37 +1,39 @@
 #!/bin/sh
 #Set all typical git configuration.
 
-#User information
-git config --global user.name "shengkui.leng"
-git config --global user.email shengkui.leng@advantech.com.cn
+GIT_CFG="git config --global"
 
-git config --global push.default simple
+#User information
+$GIT_CFG user.name "shengkui.leng"
+$GIT_CFG user.email shengkui.leng@advantech.com.cn
+
+$GIT_CFG push.default simple
 
 #Format of date&time
-git config --global log.date format-local:"%Y-%m-%d %H:%M:%S"
+$GIT_CFG log.date format-local:"%Y-%m-%d %H:%M:%S"
 
 #Don't convert CR/LF chars
-git config --global core.autocrlf false
-git config --global core.safecrlf true
+$GIT_CFG core.autocrlf false
+$GIT_CFG core.safecrlf true
 
 #Editor for commit
-git config --global core.editor vim
+$GIT_CFG core.editor vim
 
 #Enable color
-git config --global color.ui true
+$GIT_CFG color.ui true
 
 #Alias
-git config --global alias.st "status"
-git config --global alias.ci "commit"
-git config --global alias.co "checkout"
-git config --global alias.br "branch"
+$GIT_CFG alias.st "status"
+$GIT_CFG alias.ci "commit"
+$GIT_CFG alias.co "checkout"
+$GIT_CFG alias.br "branch"
 
-git config --global alias.last "log -1 HEAD"
-git config --global alias.ls "log --oneline --abbrev-commit --graph --decorate"
-git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-git config --global alias.ll 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]" --decorate --numstat'
+$GIT_CFG alias.last "log -1 HEAD"
+$GIT_CFG alias.ls "log --oneline --abbrev-commit --graph --decorate"
+$GIT_CFG alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+$GIT_CFG alias.ll 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]" --decorate --numstat'
 
-git config --global alias.df "diff --ignore-space-at-eol"
+$GIT_CFG alias.df "diff --ignore-space-at-eol"
 
 #config for tig
 echo "set ignore-space = at-eol" >> "${HOME}"/.tigrc
