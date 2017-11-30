@@ -143,7 +143,6 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType vim setlocal expandtab
 au BufRead,BufNewFile *.log  set filetype=text
 autocmd FileType text setlocal expandtab
-autocmd Filetype json let g:indentLine_enabled = 0
 
 "C/C++: Highlight trailling space
 "let c_space_errors = 1
@@ -154,6 +153,9 @@ nmap <Leader>l :%s/\s*$//g<CR>:noh<CR>
 "Show special chars
 set listchars=tab:\|\ ,nbsp:~,extends:>,precedes:<,trail:-
 set list
+
+"Show line margin in color
+set colorcolumn=80
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "paste mode
@@ -326,3 +328,9 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <Leader>d <Plug>(go-def-split)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"indentline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd Filetype json let g:indentLine_enabled = 0
+let g:indentLine_fileTypeExclude = ['json', 'man']
