@@ -24,7 +24,7 @@ Plug 'w0rp/ale'                         "Lint(Syntax checking)
 "Plug 'vim-syntastic/syntastic'
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
 Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
-"Plug 'yggdroot/indentline'              "Display indention levels
+Plug 'yggdroot/indentline'              "Display indention levels
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit message editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
@@ -143,6 +143,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType vim setlocal expandtab
 au BufRead,BufNewFile *.log  set filetype=text
 autocmd FileType text setlocal expandtab
+autocmd Filetype json let g:indentLine_enabled = 0
 
 "C/C++: Highlight trailling space
 "let c_space_errors = 1
