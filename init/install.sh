@@ -7,7 +7,7 @@ INST_DIR="/usr/local/bin"   #Install directory for EXEs
 INIT_SCRIPT="init.sh"       #Init script for configs
 
 
-pushd . > /dev/null
+pushd . > /dev/null || { echo "save PWD error"; exit 1; }
 
 echo
 echo ----------------------------------------------
@@ -22,18 +22,20 @@ echo ----------------------------------------------
 sudo cp -vf "$BIN_DIR/*" "$INST_DIR" || { echo "error"; exit 1; }
 
 for i in $CFG_DIR; do
-    pushd . > /dev/null
+    pushd . > /dev/null || { echo "save PWD error"; exit 1; }
+
     echo
     echo ----------------------------------------------
     echo " Installing $i configuration ..."
     echo ----------------------------------------------
 
-    cd "$i" || { echo "error"; exit 1; }
+    cd "$i" || { echo "change directory error"; exit 1; }
     ./$INIT_SCRIPT || { echo "install $i error"; exit 1; }
-    popd > /dev/null
+
+    popd > /dev/null || { echo "restore PWD error"; exit 1; }
 done
 
-popd > /dev/null
+popd > /dev/null || { echo "restore PWD error"; exit 1; }
 
 echo
 echo "done"
