@@ -264,6 +264,10 @@ nmap <leader>m :!markdown % \| w3m -T text/html<CR><CR>
 "Map movement through errors with wrapping.
 nmap <silent> <C-h> <Plug>(ale_previous_wrap)
 nmap <silent> <C-l> <Plug>(ale_next_wrap)
+let g:ale_echo_msg_format = '[%linter%] %code: %%s'
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+
 let g:ale_c_gcc_options='-std=gnu11 -Wall'
 let g:ale_cpp_gcc_options='-std=gnu++14 -Wall'
 let g:ale_sh_shellcheck_options='-x'
