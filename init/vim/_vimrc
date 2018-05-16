@@ -275,8 +275,8 @@ let g:ale_sh_shellcheck_exclusions='SC2086,SC2181,SC2006,SC2039,SC2162'
 let g:ale_c_cppcheck_options='--enable=warning --suppress=variableScope'
 let g:ale_cpp_cppcheck_options='--enable=warning --suppress=variableScope'
 let g:ale_linters = {
-            \ 'cpp': ['cppcheck'],
-            \ 'c': ['cppcheck'],
+            \ 'cpp': ['g++', 'cppcheck'],
+            \ 'c': ['gcc', 'cppcheck'],
             \ 'go': ['gometalinter', 'gofmt'],
             \ }
 let b:ale_go_gometalinter_options='--fast --min-confidence=.81'
