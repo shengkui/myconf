@@ -19,7 +19,7 @@ echo
 echo ----------------------------------------------
 echo "Installing scripts files ..."
 echo ----------------------------------------------
-sudo cp -vf "$BIN_DIR/*" "$INST_DIR" || { echo "error"; exit 1; }
+sudo cp -vf "$BIN_DIR"/* "$INST_DIR" || { echo "error"; exit 1; }
 
 for i in $CFG_DIR; do
     pushd . > /dev/null || { echo "save PWD error"; exit 1; }
