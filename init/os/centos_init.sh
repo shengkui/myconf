@@ -10,8 +10,4 @@ DEVELOP="gcc gcc-c++ golang automake autoconf libtool cmake gdb valgrind tcl"
 LIBRARY="libxml2-devel pciutils-devel tcl-devel net-snmp-devel"
 OTHER="git subversion tig python-markdown"
 
-$INST $SYSTEM
-$INST $DEVELOP
-$INST $EDITOR
-$INST $LIBRARY
-$INST $OTHER
+$INST $SYSTEM $DEVELOP $EDITOR $LIBRARY $OTHER

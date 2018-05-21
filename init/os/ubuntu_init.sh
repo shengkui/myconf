@@ -10,8 +10,4 @@ DEVELOP="gcc g++-multilib golang automake autoconf libtool cmake gdb valgrind tc
 LIBRARY="libxml2-dev libpci-dev tcl-dev libsnmp-dev"
 OTHER="git subversion tig markdown"
 
-$INST $SYSTEM
-$INST $DEVELOP
-$INST $EDITOR
-$INST $LIBRARY
-$INST $OTHER
+$INST $SYSTEM $DEVELOP $EDITOR $LIBRARY $OTHER
