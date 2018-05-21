@@ -4,7 +4,7 @@ set -u
 
 INST="yum -y install"
 
-SYSTEM="zsh expect tree curl openssl rpcbind net-snmp zip unzip zlib unzip
+SYSTEM="zsh expect tree curl openssl rpcbind net-snmp zip unzip zlib
 openssh-server net-tools"
 EDITOR="vim-enhanced vim-X11 cppcheck ctags global"
 DEVELOP="gcc gcc-c++ golang make automake autoconf libtool cmake gdb valgrind
