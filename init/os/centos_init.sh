@@ -11,7 +11,7 @@ DEVELOP="gcc gcc-c++ golang make automake autoconf libtool cmake gdb valgrind
 tcl kernel-devel kernel-headers glibc glibc-devel glib2 libstdc++"
 LIBRARY="libxml2-devel pciutils-devel tcl-devel net-snmp-devel openssl-devel
 ncurses-devel libtool-ltdl zlib-devel"
-OTHER="git subversion tig python-markdown"
+OTHER="git subversion tig python-markdown w3m p7zip"
 X86LIB="glibc.i686 glibc-devel.i686 glib2.i686 libstdc++.i686"
 
 $INST $SYSTEM $DEVELOP $EDITOR $LIBRARY $OTHER $X86LIB
