@@ -15,9 +15,9 @@ for i in *; do
     fi
 
     echo
-    echo "---------------------------"
+    echo "-----------------------------------------"
     echo " updating $i ..."
-    echo "---------------------------"
+    echo "-----------------------------------------"
     echo
     pushd . > /dev/null
     cd "$i" || { echo "Enter dir $i error"; exit 1; }
