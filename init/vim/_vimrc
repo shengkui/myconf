@@ -34,6 +34,8 @@ Plug 'mhinz/vim-signify'                "Show a diff using Vim its sign column.
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Easily add, delete and change parentheses/brackets/quotes
 Plug 'tpope/vim-repeat'                 "Repeating supported plugin maps with '.'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 Plug 'will133/vim-dirdiff', { 'on': 'DirDiff' }     "Diff two directories
 Plug 'chrisbra/vim-diff-enhanced'       "Better Diff
