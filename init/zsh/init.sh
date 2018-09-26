@@ -7,3 +7,6 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git "${HOME}"/.oh-my-zsh \
 
 # Copy my zsh config file.
 cp _zshrc "${HOME}"/.zshrc || { echo "copy .zshrc error"; exit 1; }
+
+# Install zjump plugin
+git clone https://github.com/qoomon/zjump "${HOME}"/.oh-my-zsh/custom/plugins/zjump
