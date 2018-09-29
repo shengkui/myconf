@@ -33,13 +33,14 @@
 #   -sai  : Put a space after each if.
 #   -saw  : Put a space after each while.
 #   -cpn  : Put comments to the right of #else and #endif statements in column n.
+#   -il0  : Indent the lable to left margin.
 #==============================================================================
 #Treat unset variables as an error
 set -o nounset
 
 #Use TAB or Space for indent: 1-TAB, 0-Space.
 USE_TAB=0
-INDET_OPTS="-cp1 -br -brs -bli0 -bap -ce -ts4 -nlp -npsl -l80 -kr -saf -sai -saw"
+INDET_OPTS="-cp1 -br -brs -bli0 -bap -ce -ts4 -nlp -npsl -l80 -kr -saf -sai -saw -il0"
 if [ $# -eq 0 ] ;then
     list=$(find . -name "*.[c|h]")
 else
