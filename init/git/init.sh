@@ -11,6 +11,7 @@ $GIT_CFG push.default simple
 
 #Format of date&time
 $GIT_CFG log.date format-local:"%Y-%m-%d %H:%M:%S"
+$GIT_CFG blame.date format-local:"%Y-%m-%d %H:%M:%S"
 
 #Don't convert CR/LF chars
 $GIT_CFG core.autocrlf false
@@ -36,6 +37,8 @@ $GIT_CFG alias.ll 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn
 $GIT_CFG alias.df "diff --ignore-space-at-eol"
 
 #config for tig
-echo "set ignore-space = at-eol" >> "${HOME}"/.tigrc
+echo "set ignore-space = at-eol" > "${HOME}"/.tigrc
+echo "set main-view-date-local = true" >> "${HOME}"/.tigrc
+echo "set blame-view-date-local = true" >> "${HOME}"/.tigrc
 
 exit 0
