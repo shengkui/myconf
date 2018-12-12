@@ -20,29 +20,36 @@ if [ $# -eq 1 ];then
 fi
 
 #Select code static analyzer:
-#   0 - cppcheck
-#   1 - clang + scan-build
-#   other: no checker
+#   0 - no checker
+#   1 - cppcheck
+#   2 - clang + scan-build
 CHECKER=0
 if command -v clang &> /dev/null ;then
     if command -v scan-build &> /dev/null ;then
-        CHECKER=1
-    fi
-fi
-if [ $CHECKER -eq 0 ];then
-    command -v cppcheck &> /dev/null
-    if [ $? -ne 0 ];then
         CHECKER=2
     fi
 fi
+if [ $CHECKER -eq 0 ];then
+    if command -v cppcheck &> /dev/null;then
+        CHECKER=1
+    fi
+fi
 
-case "$CHECKER" in
-    "0")
+case $CHECKER in
+    1)
+        echo "======================================"
+        echo "Run cppcheck ..."
+        echo "======================================"
+
         OPTION="--enable=warning --force --error-exitcode=1"
         cppcheck $OPTION $TARGET
         ;;
 
-    "1")
+    2)
+        echo "======================================"
+        echo "Run scan-build ..."
+        echo "======================================"
+
         if [ -d "$TARGET" ];then
             cd "$TARGET" || { echo "invalid $TARGET"; exit 1; }
         fi
@@ -50,7 +57,7 @@ case "$CHECKER" in
         #If it's a cmake project, generate makefile at first
         if [ -s CMakeLists.txt ]; then
             if [ ! -d build ];then
-                mkdir build
+                mkdir build || { echo "mkdir build/ failed!"; exit 1; }
                 cd build || { echo "cd build/ failed!"; exit 1; }
                 scan-build cmake -G "Unix Makefiles" ..
             else
@@ -64,6 +71,7 @@ case "$CHECKER" in
         ;;
 
     *)
+        echo "Error: No cppcheck or scan-build(clang) found!"
         exit 2
     ;;
 esac
