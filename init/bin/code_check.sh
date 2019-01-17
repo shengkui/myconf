@@ -59,11 +59,11 @@ case $CHECKER in
             if [ ! -d build ];then
                 mkdir build || { echo "mkdir build/ failed!"; exit 1; }
                 cd build || { echo "cd build/ failed!"; exit 1; }
-                scan-build cmake -G "Unix Makefiles" ..
             else
                 cd build || { echo "cd build/ failed!"; exit 1; }
                 make clean
             fi
+            scan-build cmake -G "Unix Makefiles" ..
         fi
 
         OPTION="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
