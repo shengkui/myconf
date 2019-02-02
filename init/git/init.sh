@@ -20,6 +20,12 @@ $GIT_CFG core.safecrlf true
 #Editor for commit
 $GIT_CFG core.editor vim
 
+#Global ignore
+$GIT_CFG core.excludesfile '~/.gitignore'
+cp _gitignore ~/.gitignore
+cp _editorconfig ~/.editorconfig
+
+
 #Enable color
 $GIT_CFG color.ui true
 
