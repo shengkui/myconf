@@ -201,7 +201,7 @@ let g:tagbar_sort = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim-clang
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:clang_auto = 0
+let g:clang_auto = 1
 let g:clang_c_options = '-std=gnu11'
 let g:clang_c_completeopt = 'longest,menuone,preview'
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
@@ -269,7 +269,7 @@ nmap <leader>m :!markdown % \| w3m -T text/html<CR><CR>
 nmap <silent> <C-h> <Plug>(ale_previous_wrap)
 nmap <silent> <C-l> <Plug>(ale_next_wrap)
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 1
 
 let g:ale_c_gcc_options='-std=gnu11 -Wall'
