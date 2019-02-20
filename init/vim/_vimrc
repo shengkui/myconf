@@ -8,8 +8,10 @@ if !has("compatible")
 "filetype off
 "Specify a directory for plugins
 call plug#begin('~/.vim/bundle')
-Plug 'justmao945/vim-clang'             "Auto-completion
-Plug 'lifepillar/vim-mucomplete'        "Auto-completion
+Plug 'prabirshrestha/asyncomplete.vim'  "Async autocompletion
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'           "Language Server Protocol
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-endwise'                "End certain structures automatically(C preprocessor...)
 Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
@@ -199,24 +201,6 @@ nnoremap <F8> :TagbarToggle<CR>
 let g:tagbar_sort = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"vim-clang
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:clang_auto = 0
-let g:clang_c_options = '-std=gnu11'
-let g:clang_c_completeopt = 'longest,menuone,preview'
-let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
-let g:clang_cpp_completeopt = 'longest,menuone,preview'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"vim-mucomplete
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set noshowmode shortmess+=c
-set completeopt-=preview
-set completeopt+=longest,menuone,noinsert,noselect
-let g:mucomplete#enable_auto_at_startup = 0
-let g:mucomplete#always_use_completeopt = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ultisnips
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -297,21 +281,6 @@ endfunction
 set statusline+=[%{LinterStatus()}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Syntastic
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 2
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_sh_shellcheck_args='-x -e SC2086,SC2181,SC2006,SC2039,SC2162'
-"let g:syntastic_c_cppcheck_args='--enable=style --suppress=variableScope'
-"let g:syntastic_cpp_cppcheck_args='--enable=style --suppress=variableScope'
-"let g:syntastic_go_gometalinter_args='--fast --min-confidence=.81'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "editorconfig
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -341,3 +310,29 @@ au FileType go nmap <Leader>d <Plug>(go-def-split)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd Filetype json let g:indentLine_enabled = 0
 let g:indentLine_fileTypeExclude = ['json', 'man']
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"vim-lsp
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup vimlsp
+    if executable('clangd')
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'clangd',
+            \ 'cmd': {server_info->['clangd']},
+            \ 'whitelist': ['c', 'cpp'],
+            \ })
+        autocmd FileType c,cpp setlocal omnifunc=lsp#complete
+    endif
+
+    if executable('go-langserver')
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'go-langserver',
+            \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+            \ 'whitelist': ['go'],
+            \ })
+        autocmd FileType go setlocal omnifunc=lsp#complete
+    endif
+    let g:lsp_diagnostics_enabled = 0
+    "let g:lsp_signs_enabled = 1             " enable signs
+    "let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
+augroup end
