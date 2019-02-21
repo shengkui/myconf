@@ -10,3 +10,6 @@ cp -vf _vimrc "${HOME}"/.vimrc || { echo "copy .vimrc error"; exit 1; }
 curl -fLo "${VIM_DIR}"/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim \
     || { echo "intsll vim-plug error"; exit 1; }
+
+#vim lsp server for Go
+go get -u github.com/sourcegraph/go-langserver
