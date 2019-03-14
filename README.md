@@ -1,6 +1,6 @@
 #My config file
 
-This repo include some config files, scripts for Linux os, git, vim and zsh.
+This repo includes some config files and scripts for Linux os, git, vim and zsh.
 
     init/
      ├── install.sh     #An install script
@@ -13,18 +13,18 @@ This repo include some config files, scripts for Linux os, git, vim and zsh.
 
 ##Usage
 
-There is a install script under init/ folder. Just run it!
+There is an install script under init/ folder. Just run it!
 
 ##NOTES
 
 1. Before running install.sh, please make sure all necessary packages have been
-   installed already. The scripts under os/ folder could be a good start.
+   installed already. The scripts under init/os/ folder could be a good start.
 
 2. The install.sh will ask for sudo password during installation. It's needed to
-   copy scripts to /usr/local/bin/
+   copy scripts to /usr/local/bin/.
 
 3. After running the install.sh script, please open vim and run command
-   :PlugInstall
+   :PlugInstall to install all vim plugins.
 
-4. If you want to re-do the install progress, please remove all installed files
+4. If you want to re-run the install script, please remove all installed files
    at first.
