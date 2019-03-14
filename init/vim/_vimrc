@@ -24,7 +24,6 @@ Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/bundle/gocode/vim/symlink.
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'w0rp/ale'                         "Lint(Syntax checking)
-"Plug 'vim-syntastic/syntastic'
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
 Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 Plug 'yggdroot/indentline'              "Display indention levels
