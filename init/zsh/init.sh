@@ -14,4 +14,4 @@ git clone https://github.com/qoomon/zjump "${HOME}"/.oh-my-zsh/custom/plugins/zj
 # Install fzf(needed by ZSH zjump plugin)
 git clone --depth 1 https://github.com/junegunn/fzf.git "${HOME}"/.fzf
 "${HOME}"/.fzf/install --bin
-sudo ln -s "${HOME}"/.fzf/bin/fzf /usr/local/bin/fzf
+sudo ln -sf "${HOME}"/.fzf/bin/fzf /usr/local/bin/fzf
