@@ -102,3 +102,4 @@ export GTAGSLIBPATH=~/.vim/tags/
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GOPROXY=https://goproxy.io
