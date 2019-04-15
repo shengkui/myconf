@@ -308,7 +308,7 @@ au FileType go nmap <Leader>d <Plug>(go-def-split)
 "indentline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autocmd Filetype json let g:indentLine_enabled = 0
-let g:indentLine_fileTypeExclude = ['json', 'man']
+let g:indentLine_fileTypeExclude = ['json', 'man', 'markdown']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim-lsp
