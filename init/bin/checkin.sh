@@ -1,9 +1,32 @@
 #!/bin/sh
 #Check-in all modification push to remote server
+set -o nounset                              # Treat unset variables as an error
 
-if [[ $# -ne 1 ]];then
-    echo "Usage: $0 <commit message>"
+print_usage ()
+{
+    cat <<EOF
+=======================================================================
+    A script to check-in all modification and push to remote server
+                                v1.0
+=======================================================================
+
+Usage:
+    $(basename "$0") <commit message> [file]
+
+Example:
+    $(basename "$0") "checkin modification for one file" t1.c
+    $(basename "$0") "checkin all modification"
+
+EOF
+
     exit 1
+}
+
+if [ $# -lt 1 ] ;then
+    print_usage
+fi
+if [[ $1 == "-h" ]] ;then
+    print_usage
 fi
 MSG="$1"
 
@@ -14,7 +37,11 @@ if [ $? -ne 0 ];then
 fi
 
 echo "=========== Check-in change"
-git add .
+if [ $# -ge 2 ] ;then
+    git add $2
+else
+    git add .   #all modification
+fi
 git commit -m "$MSG"
 
 REMOTE_SERVER=$(git remote)
