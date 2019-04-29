@@ -19,14 +19,14 @@ for i in *; do
     echo " updating $i ..."
     echo "-----------------------------------------"
     echo
-    pushd . > /dev/null
+    pushd . > /dev/null || continue
     cd "$i" || { echo "Enter dir $i error"; exit 1; }
     git pull 2>&1 || { echo "Update Git repo error"; exit 1; }
     if [ -f ".gitmodules" ];then
         git submodule update --init --recursive 2>&1 || \
             { echo "submodule update error"; exit 1; }
     fi
-    popd > /dev/null
+    popd > /dev/null || continue
 done
 
 echo
