@@ -1,6 +1,17 @@
-#!/bin/sh
-#Check-in all modification push to remote server
-set -o nounset                              # Treat unset variables as an error
+#!/bin/bash
+#===============================================================================
+# FILENAME:
+#     checkin.sh
+#
+# DESCRIPTION:
+#     Check-in all modification push to remote server
+#
+# REVISION(MM/DD/YYYY):
+#     04/20/2019  Shengkui Leng (shengkui.leng@advantech.com.cn)
+#     - Initial version
+#===============================================================================
+set -o nounset                  # Treat unset variables as an error
+set -o pipefail                 # Prevent errors in a pipeline from being masked
 
 print_usage ()
 {
