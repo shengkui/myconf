@@ -113,6 +113,8 @@ set linebreak           "Wrap long lines at a blank
 set noerrorbells        "No beep on errors
 set wildignore=*.o,*~
 
+set title
+
 "Set command-line completion operates in enhanced mode
 set wildmode=list:full
 set wildmenu
