@@ -3,7 +3,7 @@
 
 BIN_DIR="bin"               #EXEs to be copied into $INST_DIR
 CFG_DIR="git vim zsh"       #Configs for git/vim/shell
-INST_DIR="${HOME}/bin"        #Install directory for EXEs
+INST_DIR="${HOME}/bin"      #Install directory for EXEs
 INIT_SCRIPT="init.sh"       #Init script for configs
 
 
