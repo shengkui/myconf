@@ -268,7 +268,7 @@ let g:ale_linters = {
             \ 'c': ['gcc', 'cppcheck'],
             \ 'go': ['gometalinter', 'gofmt'],
             \ }
-let b:ale_go_gometalinter_options='--fast --min-confidence=.81'
+let b:ale_go_gometalinter_options='--fast --min-confidence=.81 --disable=gosec'
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
