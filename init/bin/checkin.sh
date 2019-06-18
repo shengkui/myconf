@@ -7,7 +7,7 @@
 #     Check-in all modification push to remote server
 #
 # REVISION(MM/DD/YYYY):
-#     04/20/2019  Shengkui Leng (shengkui.leng@advantech.com.cn)
+#     04/20/2019  Shengkui Leng (lengshengkui@outlook.com)
 #     - Initial version
 #===============================================================================
 set -o nounset                  # Treat unset variables as an error

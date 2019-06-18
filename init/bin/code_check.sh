@@ -7,7 +7,7 @@
 #     Run cppcheck or scan-build(clang) for C project.
 #
 # REVISION(MM/DD/YYYY):
-#     12/12/2018  Shengkui Leng (shengkui.leng@advantech.com.cn)
+#     12/12/2018  Shengkui Leng (lengshengkui@outlook.com)
 #     - Initial version
 #===============================================================================
 set -o nounset                  # Treat unset variables as an error
