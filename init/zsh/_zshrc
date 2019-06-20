@@ -100,6 +100,10 @@ setopt hist_reduce_blanks        # Remove superfluous blanks before recording en
 
 export GTAGSLIBPATH=~/.vim/tags/
 
+#Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$HOME/bin
 export GOPROXY=https://goproxy.io
+
+#git-subrepo
+source $HOME/.subrepo/.rc

@@ -47,4 +47,6 @@ echo "set ignore-space = at-eol" > "${HOME}"/.tigrc
 echo "set main-view-date-local = true" >> "${HOME}"/.tigrc
 echo "set blame-view-date-local = true" >> "${HOME}"/.tigrc
 
+git clone https://github.com/ingydotnet/git-subrepo  "${HOME}"/.subrepo
+
 exit 0
