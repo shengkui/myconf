@@ -62,8 +62,13 @@ update_go_package() {
 
 
 for i in *; do
+    #Skip non-directory
+    if [[ ! -d "$i" ]];then
+        continue
+    fi
+
     #If it's a git repo directory, process it.
-    if [[ -d "$i" && -d "$i/.git" ]];then
+    if [[ -d "$i/.git" ]];then
         update_go_package "$i"
         continue
     fi

@@ -34,14 +34,20 @@ pull_repo() {
 }
 
 for i in *; do
+    #Skip non-directory
+    if [[ ! -d "$i" ]];then
+        continue
+    fi
+
     #If it's a git repo directory, process it.
-    if [[ -d "$i" && -d "$i/.git" ]];then
+    if [[ -d "$i/.git" ]];then
         pushd . > /dev/null || continue
         pull_repo $i
         popd > /dev/null || continue
         continue
     fi
 
+    #Enter sub-directory
     pushd . > /dev/null || continue
     cd "$i" || { echo "enter dir $i error"; continue; }
     for j in *; do
