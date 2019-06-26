@@ -92,6 +92,7 @@ alias rm='trash -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias sudo='sudo '
+alias lt='ls -lt --time-style=long-iso'
 
 setopt hist_ignore_all_dups      # Delete old recorded entry if new entry is a duplicate.
 setopt hist_find_no_dups         # Do not display a line previously found.
