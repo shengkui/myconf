@@ -15,7 +15,8 @@
 #===============================================================================
 
 #add "--" to support filename started with a char "-".
-TOOL="html2text --"
+TOOL="html2text"
+TOOL_OPT="--"
 
 #-------------------------------------------------------------------------------
 # NAME:
@@ -43,7 +44,7 @@ html_to_md()
     #Convert file
     local markdown_file="${html_file%.*}".md
     echo -n "\"${html_file}\"  ------->  \"${markdown_file}\" ...... "
-    if ${TOOL} "${html_file}" > "${markdown_file}" ;then
+    if ${TOOL} ${TOOL_OPT} "${html_file}" > "${markdown_file}" ;then
         echo "[OK]"
         rc=0
     else
@@ -52,6 +53,11 @@ html_to_md()
 
     return $rc
 }
+
+if ! command -v $TOOL ;then
+    echo "\"$TOOL\" not found, please install it before running this script"
+    exit 1
+fi
 
 
 #If a directory specified, enter it and process files/directories in it.
