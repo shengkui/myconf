@@ -7,5 +7,5 @@ GIT_CFG="git config --local"
 $GIT_CFG user.name "Shengkui Leng"
 $GIT_CFG user.email lengshengkui@outlook.com
 
-#cache password for 1hour
-$GIT_CFG credential.helper 'cache --timeout=3600'
+#cache password for 10hour
+$GIT_CFG credential.helper 'cache --timeout=36000'
