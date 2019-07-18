@@ -104,7 +104,8 @@ export GTAGSLIBPATH=~/.vim/tags/
 #Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$HOME/bin
-export GOPROXY=https://goproxy.io
+#export GOPROXY=https://goproxy.io
+export GOPROXY=https://mirrors.aliyun.com/goproxy/
 
 #git-subrepo
 source $HOME/.subrepo/.rc
