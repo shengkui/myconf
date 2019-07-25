@@ -1,6 +1,7 @@
 "Turn off vi-compatible mode
 set nocompatible
 
+if v:version >= 800
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,6 +53,8 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 "filetype plugin indent on
 endif
+
+endif "v:version >= 800
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -247,6 +250,9 @@ nnoremap <C-F12> :GenCtags<CR>
 "nmap <leader>m :!markdown % \| lynx -stdin <CR><CR>
 nmap <leader>m :!markdown % \| w3m -T text/html<CR><CR>
 
+
+if v:version >= 800
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "ALE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -337,3 +343,5 @@ augroup vimlsp
     "let g:lsp_signs_enabled = 1             " enable signs
     "let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
 augroup end
+
+endif "v:version >= 800
