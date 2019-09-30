@@ -247,8 +247,8 @@ nnoremap <C-F12> :GenCtags<CR>
 "markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "preview
-"nmap <leader>m :!markdown % \| lynx -stdin <CR><CR>
-nmap <leader>m :!markdown % \| w3m -T text/html<CR><CR>
+nmap <leader>m :!markdown % \| lynx -stdin <CR><CR>
+"nmap <leader>m :!markdown % \| w3m -T text/html<CR><CR>
 
 
 if v:version >= 800
