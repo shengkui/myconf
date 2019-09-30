@@ -2,7 +2,7 @@
 #Install some software package for Arch Linux system
 set -u
 
-INST="pacman -S"
+INST="pacman -S --needed"
 
 SYSTEM="zsh expect tree curl openssl net-snmp zip unzip zlib openssh net-tools"
 EDITOR="gvim vim-runtime cppcheck shellcheck ctags"
