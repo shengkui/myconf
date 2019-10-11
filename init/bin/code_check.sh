@@ -14,44 +14,46 @@ set -o nounset                  # Treat unset variables as an error
 set -o pipefail                 # Prevent errors in a pipeline from being masked
 
 #The directory to check
-TARGET=.
+target=.
 if [ $# -eq 1 ];then
-    TARGET=$1
+    target=$1
 fi
+
 
 #Select code static analyzer:
-#   0 - no checker
-#   1 - cppcheck
-#   2 - clang + scan-build
-CHECKER=0
+CHECKER_NONE=0      # 0 - no checker
+CHECKER_CPPCHECK=1  # 1 - cppcheck
+CHECKER_CLANG=2     # 2 - clang + scan-build
+
+checker=$CHECKER_NONE
 if command -v clang &> /dev/null ;then
     if command -v scan-build &> /dev/null ;then
-        CHECKER=2
+        checker=$CHECKER_CLANG
     fi
 fi
-if [ $CHECKER -eq 0 ];then
+if [ $checker -eq $CHECKER_NONE ];then
     if command -v cppcheck &> /dev/null;then
-        CHECKER=1
+        checker=$CHECKER_CLANG
     fi
 fi
 
-case $CHECKER in
-    1)
+case $checker in
+    $CHECKER_CPPCHECK)
         echo "======================================"
         echo "Run cppcheck ..."
         echo "======================================"
 
-        OPTION="--enable=warning --force --error-exitcode=1"
-        cppcheck $OPTION $TARGET
+        option="--enable=warning --force --error-exitcode=1"
+        cppcheck $option $target
         ;;
 
-    2)
+    $CHECKER_CLANG)
         echo "======================================"
         echo "Run scan-build ..."
         echo "======================================"
 
-        if [ -d "$TARGET" ];then
-            cd "$TARGET" || { echo "invalid $TARGET"; exit 1; }
+        if [ -d "$target" ];then
+            cd "$target" || { echo "invalid $target"; exit 1; }
         fi
 
         #If it's a cmake project, generate makefile at first
@@ -66,8 +68,8 @@ case $CHECKER in
             scan-build cmake -G "Unix Makefiles" ..
         fi
 
-        OPTION="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
-        scan-build $OPTION make -j
+        option="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
+        scan-build $option make -j
         ;;
 
     *)

@@ -25,14 +25,14 @@ EOF
     exit 1
 }
 
-TARGET=.
-ARG="--enable=warning --force --error-exitcode=1"
+target=.
+arg="--enable=warning --force --error-exitcode=1"
 if [ $# -ge 1 ];then
     while getopts :as opt ;do
         case $opt in
-            a)  ARG="--enable=all --force --error-exitcode=1"
+            a)  arg="--enable=all --force --error-exitcode=1"
                 ;;
-            s)  ARG="--enable=style --force --error-exitcode=1"
+            s)  arg="--enable=style --force --error-exitcode=1"
                 ;;
             *)  print_usage
                 exit 1
@@ -42,9 +42,9 @@ if [ $# -ge 1 ];then
 
     shift $((OPTIND-1))
     if [ $# -ge 1 ];then
-        TARGET=$1
+        target=$1
     fi
 fi
 
-echo "cppcheck $ARG $TARGET"
-cppcheck $ARG $TARGET
+echo "cppcheck $arg $target"
+cppcheck $arg $target
