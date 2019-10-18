@@ -16,7 +16,7 @@ endif
 if !has("compatible")
 "filetype off
 "Specify a directory for plugins
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 Plug 'prabirshrestha/asyncomplete.vim'  "Async autocompletion
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'           "Language Server Protocol

@@ -6,7 +6,7 @@ VIM_CFG="${HOME}/.vimrc"
 if [ -d "${VIM_DIR}" ];then
     rm -rf "${VIM_DIR}"
 fi
-mkdir -p "${VIM_DIR}"/{bundle,tags,undo} ||
+mkdir -p "${VIM_DIR}"/{plugged,undo} ||
     { echo "create .vim dir error"; exit 1; }
 
 cp -avf UltiSnips "${VIM_DIR}" || { echo "copy UltiSnips error"; exit 1; }
