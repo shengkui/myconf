@@ -1,4 +1,4 @@
-#My config file
+# My config file
 
 This repo includes some config files and scripts for Linux OS, git, vim and zsh.
 
@@ -11,11 +11,11 @@ This repo includes some config files and scripts for Linux OS, git, vim and zsh.
      ├── vim/           #Config for vim
      └── zsh/           #Config for zsh
 
-##Usage
+## Usage
 
 There is an install script under init/ folder. Just run it!
 
-##NOTES
+## NOTES
 
 1. Before running install.sh, please make sure all necessary packages have been
    installed already. The scripts under init/os/ folder could be a good start.
