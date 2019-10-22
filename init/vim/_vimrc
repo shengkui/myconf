@@ -29,7 +29,7 @@ Plug 'majutsushi/tagbar'                "Browse the tags
 "Plug 'Raimondi/delimitMate'            "Auto closing of parenthesis, brackets, ...
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  "Golang support
 Plug 'buoto/gotests-vim'                "Generate table driven tests easily
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/bundle/gocode/vim/symlink.sh' }
+Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'w0rp/ale'                         "Lint(Syntax checking)
