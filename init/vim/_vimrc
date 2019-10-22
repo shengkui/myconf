@@ -26,10 +26,8 @@ Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
-"Plug 'Raimondi/delimitMate'            "Auto closing of parenthesis, brackets, ...
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  "Golang support
 Plug 'buoto/gotests-vim'                "Generate table driven tests easily
-Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'w0rp/ale'                         "Lint(Syntax checking)
@@ -44,7 +42,6 @@ Plug 'mhinz/vim-signify'                "Show a diff using Vim its sign column.
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Easily add, delete and change parentheses/brackets/quotes
-"Plug 'tpope/vim-repeat'                "Repeating supported plugin maps with '.'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
