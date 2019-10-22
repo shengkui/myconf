@@ -6,6 +6,10 @@
 # DESCRIPTION:
 #     A script to search string in files with specified file-ext-name under a
 #     directory
+#     If it's bash v4+, then a simpler command line can be used:
+#         $ grep -rnI "$STR" **/*.sh
+#     **/*.sh means all the files matching *.sh in the current directory, or in
+#     its subdirectories, recursively.
 #===============================================================================
 set -o nounset                  # Treat unset variables as an error
 set -o pipefail                 # Prevent errors in a pipeline from being masked
