@@ -4,6 +4,7 @@ OH_MY_ZSH_DIR="${HOME}/.oh-my-zsh"
 ZSH_CFG="${HOME}/.zshrc"
 ZJUMP_DIR="${OH_MY_ZSH_DIR}"/custom/plugins/zjump
 FZF_DIR="${HOME}"/.fzf
+INIT_DIR="$(pwd)"            #directory of myconf/zsh
 
 if [ -d "${OH_MY_ZSH_DIR}" ];then
     rm -rf "${OH_MY_ZSH_DIR}"
@@ -14,8 +15,12 @@ fi
 git clone git://github.com/robbyrussell/oh-my-zsh.git "${OH_MY_ZSH_DIR}" \
     || { echo "download oh-my-zsh error"; exit 1; }
 
-# Copy my zsh config file.
-cp _zshrc "${ZSH_CFG}" || { echo "copy .zshrc error"; exit 1; }
+#Install my zsh config file
+if [ -f "${ZSH_CFG}" ];then
+    echo ".zshrc is already exist, skip it"
+else
+    ln -sf "${INIT_DIR}/_zshrc" "${ZSH_CFG}" || { echo "install .zshrc error"; exit 1; }
+fi
 
 # Install zjump plugin
 git clone https://github.com/qoomon/zjump "${ZJUMP_DIR}"
