@@ -1,0 +1,35 @@
+linters-settings:
+  govet:
+    check-shadowing: true
+  misspell:
+    locale: US
+  lll:
+    line-length: 120
+  funlen:
+    lines: 100
+    statements: 50
+  wsl:
+    allow-cuddle-declarations: true
+
+linters:
+  disable-all: true
+  enable:
+    - gocritic
+    - goimports
+    - golint
+    - misspell
+    - deadcode
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
+    - unused
+    - varcheck
+    - lll
+    - funlen
+    - wsl
+    - errcheck
+
+service:
+  golangci-lint-version: 1.21.0
