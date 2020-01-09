@@ -10,6 +10,8 @@ linters-settings:
     statements: 50
   wsl:
     allow-cuddle-declarations: true
+  unused:
+    check-exported: false
 
 linters:
   disable-all: true
@@ -33,3 +35,6 @@ linters:
 
 service:
   golangci-lint-version: 1.21.0
+
+run:
+  issues-exit-code: 1
