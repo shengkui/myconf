@@ -11,4 +11,6 @@ else
         { echo "install .golangci.yml error"; exit 1; }
 fi
 
+./gitea_token.sh
+
 exit 0
