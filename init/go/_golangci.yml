@@ -18,7 +18,6 @@ linters:
   enable:
     - gocritic
     - goimports
-    - golint
     - misspell
     - deadcode
     - gosimple
