@@ -42,7 +42,7 @@ Plug 'mhinz/vim-signify'                "Show a diff using Vim its sign column.
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Easily add, delete and change parentheses/brackets/quotes
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
 Plug 'will133/vim-dirdiff', { 'on': 'DirDiff' }     "Diff two directories
@@ -315,6 +315,8 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <Leader>d <Plug>(go-def-split)
+
+let g:go_fmt_command = "goimports"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentline
