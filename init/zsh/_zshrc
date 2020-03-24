@@ -108,5 +108,10 @@ export GOPROXY=https://goproxy.io
 export GOPRIVATE=*.my.to
 export GOINSECURE=*.my.to
 
+gocover() {
+    t=$(mktemp)
+    go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
+}
+
 #git-subrepo
 source $HOME/.subrepo/.rc
