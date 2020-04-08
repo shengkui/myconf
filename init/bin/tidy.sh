@@ -1,24 +1,15 @@
 #!/bin/bash
 #A simple bash script to run clant-tidy with all c/cpp files under current
 #directory.
-#We use find to build the list of include directories.
 
-list=`find . -type d -exec bash -O dotglob -c '
-    for dir do
-        include=false
-        found_files=false
-        set -- "$dir"/*
-        for f do
-            [ -d "$f" ] && continue
-            found_files=true
-            case "${f##*/}" in
-                *.h) include=true ;break ;;
-                *) ;;
-            esac
-        done
+#Get directory list
+tmp=`find . -type f -name '*.h' | sed -r 's#/[^/]+$##' | sort | uniq`
 
-        "$found_files" && "$include" && printf "%s\n" "-I $dir"
-    done' bash {} +`
-#echo $list
+#Add -I to each directory
+list=
+for i in $tmp ;do
+    list="$list -I $i"
+done
 
+#Run clang-tidy
 clang-tidy ./* -- -Wall -Wextra -O2 $list
