@@ -4,4 +4,4 @@
 if [ $# -eq 0 ];then
     exit 0
 fi
-sudo chown -R shengkui.leng:shengkui.leng $*
+sudo chown -R shengkui.leng:shengkui.leng "$@"

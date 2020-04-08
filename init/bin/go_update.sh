@@ -42,13 +42,13 @@ update_go_package() {
     #directory of Git repo.
     if ls ./*.go >/dev/null 2>&1;then
         echo "get $REMOTE_URL"
-        go get -u $REMOTE_URL 2>&1 || { echo "update package error"; return 1; }
+        go get -u "$REMOTE_URL" 2>&1 || { echo "update package error"; return 1; }
     else
         for subdir in *; do
             if [[ -d "$subdir" ]];then
-                if ls $subdir/*.go >/dev/null 2>&1 >/dev/null ;then
+                if ls "$subdir"/*.go >/dev/null 2>&1 >/dev/null ;then
                     echo "get $REMOTE_URL/$subdir"
-                    go get -u $REMOTE_URL/$subdir 2>&1 || { echo "update package error"; return 1; }
+                    go get -u "$REMOTE_URL/$subdir" 2>&1 || { echo "update package error"; return 1; }
                     break
                 fi
             fi
