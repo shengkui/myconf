@@ -2,7 +2,7 @@
 
 if [ $# -lt 2 ] || [ $# -gt 3 ];then
     echo "A script to replace a string in all files under the directory"
-    echo "$0 <directory> <original string> <new string>"
+    echo "$(basename $0) <directory> <original string> <new string>"
     exit 1
 fi
 

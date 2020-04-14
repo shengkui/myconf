@@ -16,7 +16,9 @@ set -o pipefail                 # Prevent errors in a pipeline from being masked
 
 if [ $# -lt 2 ] || [ $# -gt 3 ];then
     echo "A script to search string in files with specified file-ext-name under a directory"
-    echo "$0 <string> <file ext> [directory]"
+    echo "$(basename $0) <string> <file ext> [directory]"
+    echo "$(basename $0) bash \*.sh"
+    echo "$(basename $0) main \*.c src/"
     exit 1
 fi
 
