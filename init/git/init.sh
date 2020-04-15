@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #Set all typical git configuration.
 
 GIT_CFG="git config --global"

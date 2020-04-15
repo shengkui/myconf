@@ -13,6 +13,8 @@
 #     - Initial version
 #
 #===============================================================================
+set -o nounset                  # Treat unset variables as an error
+set -o pipefail                 # Prevent errors in a pipeline from being masked
 
 #add "--" to support filename started with a char "-".
 TOOL="html2text"

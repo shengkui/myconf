@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 GOLANGCI_CFG="${HOME}/.golangci.yml"
 INIT_DIR="$(pwd)"            #directory of myconf/other

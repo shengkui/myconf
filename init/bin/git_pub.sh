@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Set user account for public git service: github.com, git.oschina.net,
 # code.csdn.net, ...
 GIT_CFG="git config --local"
