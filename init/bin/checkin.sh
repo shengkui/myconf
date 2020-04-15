@@ -13,6 +13,7 @@
 set -o nounset                  # Treat unset variables as an error
 set -o pipefail                 # Prevent errors in a pipeline from being masked
 
+PNAME=$(basename "$0")
 print_usage ()
 {
     cat <<EOF
@@ -22,11 +23,11 @@ print_usage ()
 =======================================================================
 
 Usage:
-    $(basename "$0") <commit message> [file]
+    $PNAME <commit message> [file]
 
 Example:
-    $(basename "$0") "checkin modification for one file" t1.c
-    $(basename "$0") "checkin all modification"
+    $PNAME "checkin modification for one file" t1.c
+    $PNAME "checkin all modification"
 
 EOF
 
@@ -49,7 +50,7 @@ fi
 
 echo "=========== Check-in change"
 if [ $# -ge 2 ] ;then
-    git add $2
+    git add "$2"
 else
     git add .   #all modification
 fi
@@ -60,7 +61,7 @@ REMOTE_SERVER=$(git remote)
 for url in $REMOTE_SERVER; do
     echo
     echo "=========== push to ${url}"
-    if git push -v ${url} ;then
+    if git push -v "${url}" ;then
         echo; echo "[OK]"
     else
         echo; echo "[Error]"

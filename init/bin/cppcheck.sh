@@ -2,6 +2,7 @@
 #Run cppcheck with different checks.
 set -o nounset                              # Treat unset variables as an error
 
+PNAME=$(basename "$0")
 print_usage ()
 {
     cat <<EOF
@@ -11,14 +12,14 @@ print_usage ()
 =======================================================
 
 Usage:
-    $(basename "$0") [option] [target]
+    $PNAME [option] [target]
 
 Example:
-    $(basename "$0")          ; --enable=warning
-    $(basename "$0") -s       ; --enable=style
-    $(basename "$0") -a       ; --enable=all
-    $(basename "$0") proj     ; check proj/ directory
-    $(basename "$0") test.c   ; check specified file
+    $PNAME          ; --enable=warning
+    $PNAME -s       ; --enable=style
+    $PNAME -a       ; --enable=all
+    $PNAME proj     ; check proj/ directory
+    $PNAME test.c   ; check specified file
 
 EOF
 

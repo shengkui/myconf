@@ -14,11 +14,12 @@
 set -o nounset                  # Treat unset variables as an error
 set -o pipefail                 # Prevent errors in a pipeline from being masked
 
+PNAME=$(basename "$0")
 if [ $# -lt 2 ] || [ $# -gt 3 ];then
     echo "A script to search string in files with specified file-ext-name under a directory"
-    echo "$(basename $0) <string> <file ext> [directory]"
-    echo "$(basename $0) bash \*.sh"
-    echo "$(basename $0) main \*.c src/"
+    echo "$PNAME <string> <file ext> [directory]"
+    echo "$PNAME bash \*.sh"
+    echo "$PNAME main \*.c src/"
     exit 1
 fi
 

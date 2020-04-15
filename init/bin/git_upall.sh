@@ -42,7 +42,7 @@ for i in *; do
     #If it's a git repo directory, process it.
     if [[ -d "$i/.git" ]];then
         pushd . > /dev/null || continue
-        pull_repo $i
+        pull_repo "$i"
         popd > /dev/null || continue
         continue
     fi
@@ -54,7 +54,7 @@ for i in *; do
         #If it's a git repo directory, process it.
         if [[ -d "$j" && -d "$j/.git" ]];then
             pushd . > /dev/null || continue
-            pull_repo $j
+            pull_repo "$j"
             popd > /dev/null || continue
         fi
     done

@@ -1,8 +1,12 @@
 #!/bin/bash
+set -o nounset                  # Treat unset variables as an error
+set -o pipefail                 # Prevent errors in a pipeline from being masked
+
+PNAME=$(basename "$0")
 
 if [ $# -lt 2 ] || [ $# -gt 3 ];then
     echo "A script to replace a string in all files under the directory"
-    echo "$(basename $0) <directory> <original string> <new string>"
+    echo "$PNAME <directory> <original string> <new string>"
     exit 1
 fi
 

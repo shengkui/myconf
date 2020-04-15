@@ -13,6 +13,8 @@
 #===============================================================================
 set -o nounset                              # Treat unset variables as an error
 
+PNAME=$(basename "$0")
+
 print_usage ()
 {
     cat <<EOF
@@ -22,7 +24,7 @@ print_usage ()
 ======================================================
 
 Usage:
-    $(basename "$0") <repo> <ver> [type]
+    $PNAME <repo> <ver> [type]
 
 Arguments:
     repo   - The name of repo(directory)
@@ -30,7 +32,7 @@ Arguments:
     type   - The package type: gzip(gz), bzip2(bz2), xz
 
 Example:
-    $(basename "$0") test1 1.0
+    $PNAME test1 1.0
 
 EOF
 

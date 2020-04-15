@@ -11,7 +11,7 @@ for url in $REMOTE_SERVER; do
     echo "  Push to ${url} ..."
     echo "---------------------------"
     echo
-    if git push -v ${url} ;then
+    if git push -v "${url}" ;then
         echo; echo "[OK]"
     else
         echo; echo "[Error]"
