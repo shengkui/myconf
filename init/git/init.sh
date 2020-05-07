@@ -20,10 +20,20 @@ $GIT_CFG core.safecrlf true
 #Editor for commit
 $GIT_CFG core.editor vim
 
+
+INIT_DIR="$(pwd)"            #directory of myconf/git
+GIT_IGNORE=${HOME}/.gitignore
+EDITORCONFIG=${HOME}/.editorconfig
+
 #Global ignore
 $GIT_CFG core.excludesfile '~/.gitignore'
-cp _gitignore ~/.gitignore
-cp _editorconfig ~/.editorconfig
+if [ ! -f "${GIT_IGNORE}" ];then
+    ln -sf "${INIT_DIR}/_gitignore" "${GIT_IGNORE}" || { echo "install .gitignore error"; exit 1; }
+fi
+#editorconfig
+if [ ! -f "${EDITORCONFIG}" ];then
+    ln -sf "${INIT_DIR}/_editorconfig" "${EDITORCONFIG}" || { echo "install .editorconfig error"; exit 1; }
+fi
 
 
 #Enable color
@@ -43,9 +53,10 @@ $GIT_CFG alias.ll 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn
 $GIT_CFG alias.df "diff --ignore-space-at-eol"
 
 #config for tig
-echo "set ignore-space = at-eol" > "${HOME}"/.tigrc
-echo "set main-view-date-local = true" >> "${HOME}"/.tigrc
-echo "set blame-view-date-local = true" >> "${HOME}"/.tigrc
+TIGRC=${HOME}/.tigrc
+echo "set ignore-space = at-eol" > "${TIGRC}"
+echo "set main-view-date-local = true" >> "${TIGRC}"
+echo "set blame-view-date-local = true" >> "${TIGRC}"
 
 git clone https://github.com/ingydotnet/git-subrepo  "${HOME}"/.subrepo
 
