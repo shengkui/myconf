@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 NETRC_FILE="${HOME}/.netrc"
 if [ -f "$NETRC_FILE" ]; then

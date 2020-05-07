@@ -26,7 +26,7 @@ GIT_IGNORE=${HOME}/.gitignore
 EDITORCONFIG=${HOME}/.editorconfig
 
 #Global ignore
-$GIT_CFG core.excludesfile '~/.gitignore'
+$GIT_CFG core.excludesfile "${GIT_IGNORE}"
 if [ ! -f "${GIT_IGNORE}" ];then
     ln -sf "${INIT_DIR}/_gitignore" "${GIT_IGNORE}" || { echo "install .gitignore error"; exit 1; }
 fi
