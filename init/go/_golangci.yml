@@ -26,6 +26,7 @@ linters:
     - ineffassign
     - staticcheck
     - structcheck
+    - stylecheck
     - unused
     - varcheck
     - lll
