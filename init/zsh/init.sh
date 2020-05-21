@@ -16,9 +16,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git "${OH_MY_ZSH_DIR}" \
     || { echo "download oh-my-zsh error"; exit 1; }
 
 #Install my zsh config file
-if [ -f "${ZSH_CFG}" ];then
-    echo ".zshrc is already exist, skip it"
-else
+if [ ! -f "${ZSH_CFG}" ];then
     ln -sf "${INIT_DIR}/_zshrc" "${ZSH_CFG}" || { echo "install .zshrc error"; exit 1; }
 fi
 
@@ -26,6 +24,8 @@ fi
 git clone https://github.com/qoomon/zjump "${ZJUMP_DIR}"
 
 # Install fzf(needed by ZSH zjump plugin)
-git clone --depth 1 https://github.com/junegunn/fzf.git "${FZF_DIR}"
-"${FZF_DIR}"/install --bin
-sudo ln -sf "${FZF_DIR}"/bin/fzf /usr/local/bin/fzf
+if ! command -v fzf &> /dev/null ;then
+    git clone --depth 1 https://github.com/junegunn/fzf.git "${FZF_DIR}"
+    "${FZF_DIR}"/install --bin
+    sudo ln -sf "${FZF_DIR}"/bin/fzf /usr/local/bin/fzf
+fi
