@@ -28,10 +28,12 @@ EDITORCONFIG=${HOME}/.editorconfig
 #Global ignore
 $GIT_CFG core.excludesfile "${GIT_IGNORE}"
 if [ ! -f "${GIT_IGNORE}" ];then
+    echo "Installing .gitignore ..."
     ln -sf "${INIT_DIR}/_gitignore" "${GIT_IGNORE}" || { echo "install .gitignore error"; exit 1; }
 fi
 #editorconfig
 if [ ! -f "${EDITORCONFIG}" ];then
+    echo "Installing .editorconfig ..."
     ln -sf "${INIT_DIR}/_editorconfig" "${EDITORCONFIG}" || { echo "install .editorconfig error"; exit 1; }
 fi
 
@@ -59,8 +61,9 @@ echo "set main-view-date-local = true" >> "${TIGRC}"
 echo "set blame-view-date-local = true" >> "${TIGRC}"
 
 if [ ! -f "${HOME}"/.subrepo ];then
+    echo "Installing git-subrepo ..."
     git clone https://github.com/ingydotnet/git-subrepo "${HOME}"/.subrepo || {
-        echo "install git-surepo error"; exit 1; }
+        echo "Install git-surepo error"; exit 1; }
 fi
 
 exit 0

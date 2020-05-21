@@ -4,6 +4,7 @@ NETRC_FILE="${HOME}/.netrc"
 if [ -f "$NETRC_FILE" ]; then
     exit 0
 fi
+echo "Creating .netrc ... "
 
 #Ask for username and password
 echo -n "Please input username: "
