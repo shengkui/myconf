@@ -4,7 +4,7 @@ set -u
 
 INST="pacman -S --needed"
 
-SYSTEM="zsh expect tree curl openssl net-snmp zip unzip zlib openssh net-tools"
+SYSTEM="zsh expect tree curl openssl net-snmp zip unzip zlib openssh net-tools trash-cli"
 EDITOR="gvim vim-runtime cppcheck shellcheck ctags"
 DEVELOP="gcc gcc-libs clang go make automake autoconf libtool cmake gdb valgrind tcl glibc glib2"
 LIBRARY="libxml2 pciutils ncurses freetype2"
