@@ -14,10 +14,9 @@ echo
 echo ----------------------------------------------
 echo "Installing .profile file into HOME ..."
 echo ----------------------------------------------
-if [ -f "${HOME}/.profile" ];then
-    echo ".profile is already exist, skip it"
-else
-    ln -sf "${TOP_DIR}/_profile" "${HOME}/.profile" || { echo "install profile error"; exit 1; }
+if [ ! -f "${HOME}/.profile" ];then
+    ln -sf "${TOP_DIR}/_profile" "${HOME}/.profile" || {
+        echo "install profile error"; exit 1; }
 fi
 
 echo
@@ -30,10 +29,9 @@ fi
 #Create symbolic link from every script
 for file in "${BIN_DIR}"/* ;do
     name=$(basename "$file")    #Get the file name without path
-    if [ -f "${INST_DIR}/${name}" ];then
-        echo "${INST_DIR}/${name} is already exist, skip it"
-    else
-        ln -sf "${file}" "${INST_DIR}" || { echo "install script ${name} error"; exit 1; }
+    if [ ! -f "${INST_DIR}/${name}" ];then
+        ln -sf "${file}" "${INST_DIR}" || {
+            echo "install script ${name} error"; exit 1; }
     fi
 done
 

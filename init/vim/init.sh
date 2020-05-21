@@ -12,16 +12,12 @@ mkdir -p "${VIM_DIR}"/{plugged,undo} ||
     { echo "create .vim dir error"; exit 1; }
 
 #Install UltiSnips
-if [ -d "${VIM_DIR}/UltiSnips" ];then
-    echo "UltiSnips is already exist, skip it"
-else
+if [ ! -d "${VIM_DIR}/UltiSnips" ];then
     ln -sf "${INIT_DIR}/UltiSnips" "${VIM_DIR}/" || { echo "install UltiSnips error"; exit 1; }
 fi
 
 #Install .vimrc
-if [ -f "${VIM_CFG}" ];then
-    echo ".vimrc is already exist, skip it"
-else
+if [ ! -f "${VIM_CFG}" ];then
     ln -sf "${INIT_DIR}/_vimrc" "${VIM_CFG}" || { echo "install .vimrc error"; exit 1; }
 fi
 
