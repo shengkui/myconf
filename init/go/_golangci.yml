@@ -16,23 +16,27 @@ linters-settings:
 linters:
   disable-all: true
   enable:
+    - deadcode
+    - depguard
+    - errcheck
+    - funlen
+    - goconst
     - gocritic
     - goimports
     - golint
-    - misspell
-    - deadcode
     - gosimple
     - govet
     - ineffassign
+    - lll
+    - misspell
     - staticcheck
     - structcheck
     - stylecheck
+    - typecheck
+    - unconvert
     - unused
     - varcheck
-    - lll
-    - funlen
     - wsl
-    - errcheck
 
 service:
   golangci-lint-version: 1.21.0
