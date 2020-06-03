@@ -8,6 +8,7 @@ $GIT_CFG user.name "shengkui.leng"
 $GIT_CFG user.email shengkui.leng@advantech.com.cn
 
 $GIT_CFG push.default simple
+$GIT_CFG pull.rebase false      # merge (the default strategy)
 
 #Format of date&time
 $GIT_CFG log.date format-local:"%Y-%m-%d %H:%M:%S"
