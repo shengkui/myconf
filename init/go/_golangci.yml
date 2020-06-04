@@ -34,6 +34,7 @@ linters:
     - stylecheck
     - typecheck
     - unconvert
+    - unparam
     - unused
     - varcheck
     - wsl

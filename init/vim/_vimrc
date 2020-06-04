@@ -278,6 +278,7 @@ let g:ale_cpp_cppcheck_options='--enable=style --suppress=nullPointerRedundantCh
 let g:ale_linters = {
             \ 'cpp': ['g++', 'cppcheck'],
             \ 'c': ['gcc', 'cppcheck'],
+            \ 'go': ['revive'],
             \ }
 
 function! LinterStatus() abort
