@@ -69,7 +69,7 @@ case $checker in
         fi
 
         option="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
-        scan-build $option make -j
+         scan-build $option make -j 4
         ;;
 
     *)
