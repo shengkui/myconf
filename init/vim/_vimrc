@@ -26,7 +26,7 @@ Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }  "Golang support
+Plug 'fatih/vim-go'                     "Golang support
 Plug 'buoto/gotests-vim'                "Generate table driven tests easily
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
@@ -278,7 +278,7 @@ let g:ale_cpp_cppcheck_options='--enable=style --suppress=nullPointerRedundantCh
 let g:ale_linters = {
             \ 'cpp': ['g++', 'cppcheck'],
             \ 'c': ['gcc', 'cppcheck'],
-            \ 'go': ['revive'],
+            \ 'go': ['gofmt', 'go vet', 'revive'],
             \ }
 
 function! LinterStatus() abort
@@ -316,8 +316,6 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <Leader>d <Plug>(go-def-split)
-
-let g:go_fmt_command = "goimports"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim-lsp
