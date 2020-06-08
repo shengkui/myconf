@@ -26,7 +26,7 @@ Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
-Plug 'fatih/vim-go'                     "Golang support
+Plug 'govim/govim'                      "Golang support
 Plug 'buoto/gotests-vim'                "Generate table driven tests easily
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
@@ -309,13 +309,6 @@ let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
 "Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"vim-go
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <Leader>d <Plug>(go-def-split)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim-lsp
