@@ -29,9 +29,4 @@ if [ ! -f "${VIM_PLUG}" ];then
         || { echo "install vim-plug error"; exit 1; }
 fi
 
-#Install vim lsp server for Go
-echo "Installing go-langserver ..."
-go get -u github.com/sourcegraph/go-langserver ||
-    { echo "install lsp server for go error"; exit 1; }
-
 exit 0
