@@ -26,8 +26,8 @@ Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
-Plug 'govim/govim'                      "Golang support
-Plug 'buoto/gotests-vim'                "Generate table driven tests easily
+Plug 'govim/govim', { 'for': 'go' }     "Golang support
+Plug 'buoto/gotests-vim', { 'for': 'go' } "Generate table driven tests easily
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'dense-analysis/ale'               "Lint(Syntax checking)
