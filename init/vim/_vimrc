@@ -84,7 +84,7 @@ function! g:ToggleBackground()
         colorscheme delek
     endif
 endfunction
-nnoremap <silent> <F6> :call g:ToggleBackground()<CR>
+nmap <silent> <F6> :call g:ToggleBackground()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -162,9 +162,6 @@ autocmd FileType text setlocal expandtab
 "C/C++: Highlight trailling space
 "let c_space_errors = 1
 
-"Key mapping for remove trailling space
-nmap <Leader>l :%s/\s*$//g<CR>:noh<CR>
-
 "Show special chars
 set listchars=tab:\|\ ,nbsp:~,extends:>,precedes:<,trail:-
 set list
@@ -200,13 +197,13 @@ if v:version >= 703
     "set undoreload=10000           "Number of lines to save for undo
 
     "undotree
-    nnoremap <F7> :UndotreeToggle<CR>
+    nmap <F7> :UndotreeToggle<CR>
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Tagbar
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <F8> :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 let g:tagbar_sort = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -246,7 +243,7 @@ endif
 "gen_tags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Map <Ctrl>+<F12> to generate tags
-nnoremap <C-F12> :GenCtags<CR>
+nmap <C-F12> :GenCtags<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "markdown
@@ -306,9 +303,6 @@ let g:airline_powerline_fonts = 1
 "let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 
-"Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "vim-lsp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -328,3 +322,12 @@ augroup vimlsp
 augroup end
 
 endif "v:version >= 800
+
+"Key mapping for remove trailling space
+nmap <leader>l :%s/\s*$//g<CR>:noh<CR>
+
+"Switch CWD to the directory of the open buffer
+nmap <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+"Reload vimrc
+nmap <leader>cr :source $MYVIMRC<CR>:nohlsearch<CR>
