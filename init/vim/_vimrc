@@ -36,8 +36,8 @@ Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit message editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
-"Plug 'junegunn/gv.vim'                 "Git commit browser
 Plug 'mhinz/vim-signify'                "Show a diff using Vim its sign column.
+Plug 'hotwatermorning/auto-git-diff'    "Show git diff for 'git rebase -i'
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Easily add, delete and change parentheses/brackets/quotes
