@@ -108,6 +108,13 @@ export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=*.my.to
 export GOINSECURE=*.my.to
 
+go_tools() {
+    export CGO_DISABLE=1
+    export GO111MODULE=on
+    go get golang.org/x/tools/gopls@latest
+    go get golang.org/x/tools/cmd/goimports@latest
+}
+
 gocover() {
     t=$(mktemp)
     go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t

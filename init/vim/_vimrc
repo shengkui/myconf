@@ -26,7 +26,6 @@ Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
-Plug 'govim/govim', { 'for': 'go' }     "Golang support
 Plug 'buoto/gotests-vim', { 'for': 'go' } "Generate table driven tests easily
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
@@ -314,6 +313,18 @@ augroup vimlsp
             \ 'whitelist': ['c', 'cpp'],
             \ })
         autocmd FileType c,cpp setlocal omnifunc=lsp#complete
+    endif
+
+    if executable('gopls')
+        autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'gopls',
+          \ 'cmd': {server_info->['gopls']},
+          \ 'whitelist': ['go'],
+          \ })
+        autocmd FileType go setlocal omnifunc=lsp#complete
+
+        let g:go_def_mode='gopls'
+        let g:go_info_mode='gopls'
     endif
 
     let g:lsp_diagnostics_enabled = 0
