@@ -31,7 +31,6 @@ Plug 'buoto/gotests-vim', { 'for': 'go' } "Generate table driven tests easily
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
 Plug 'dense-analysis/ale'               "Lint(Syntax checking)
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
-Plug 'gko/vim-coloresque'               "CSS/LESS/SASS/HTML color preview
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit message editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
@@ -263,6 +262,8 @@ nmap <silent> <C-l> <Plug>(ale_next_wrap)
 let g:ale_echo_msg_format = '[%linter%] %code: %%s'
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+let g:ale_lsp_show_message_severity = 'warning'
+let g:ale_lint_on_save = 1
 
 let g:ale_c_gcc_options='-std=gnu11 -Wall'
 let g:ale_cpp_gcc_options='-std=gnu++14 -Wall'
@@ -322,14 +323,12 @@ augroup vimlsp
           \ 'whitelist': ['go'],
           \ })
         autocmd FileType go setlocal omnifunc=lsp#complete
-
-        let g:go_def_mode='gopls'
-        let g:go_info_mode='gopls'
     endif
 
-    let g:lsp_diagnostics_enabled = 0
-    "let g:lsp_signs_enabled = 1             " enable signs
-    "let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
+    let g:lsp_diagnostics_enabled = 1
+    let g:lsp_diagnostics_float_cursor = 1
+    let g:lsp_signs_enabled = 1             " enable signs
+    let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
 augroup end
 
 endif "v:version >= 800
