@@ -10,6 +10,15 @@ if [ ! -f "${GOLANGCI_CFG}" ];then
         { echo "install .golangci.yml error"; exit 1; }
 fi
 
+#Install tools for Go
+export CGO_DISABLE=1
+export GO111MODULE=on
+
+GO_GET="go get"
+$GO_GET golang.org/x/tools/gopls@latest
+$GO_GET golang.org/x/tools/cmd/goimports@latest
+$GO_GET github.com/golangci/golangci-lint
+
 ./gitea_token.sh
 
 exit 0
