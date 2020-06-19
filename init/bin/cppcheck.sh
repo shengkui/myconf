@@ -8,7 +8,7 @@ print_usage ()
     cat <<EOF
 =======================================================
     A script to run cppcheck with different checks
-                        v1.0
+                        v1.1
 =======================================================
 
 Usage:
@@ -27,13 +27,13 @@ EOF
 }
 
 target=.
-arg="--enable=warning --force --error-exitcode=1"
+arg=(--enable=warning --force --error-exitcode=1)
 if [ $# -ge 1 ];then
     while getopts :as opt ;do
         case $opt in
-            a)  arg="--enable=all --force --error-exitcode=1"
+            a)  arg=(--enable=all --force --error-exitcode=1)
                 ;;
-            s)  arg="--enable=style --force --error-exitcode=1"
+            s)  arg=(--enable=style --force --error-exitcode=1)
                 ;;
             *)  print_usage
                 exit 1
@@ -42,10 +42,12 @@ if [ $# -ge 1 ];then
     done
 
     shift $((OPTIND-1))
-    if [ $# -ge 1 ];then
-        target=$1
-    fi
 fi
 
-echo "cppcheck $arg $target"
-cppcheck $arg $target
+#If anyother arguments left, get the target directory/file
+if [ $# -ge 1 ];then
+    target="$1"
+fi
+
+echo cppcheck "${arg[@]}" "$target"
+cppcheck "${arg[@]}" "$target"
