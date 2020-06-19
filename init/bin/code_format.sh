@@ -40,7 +40,8 @@ set -o nounset
 
 #Use TAB or Space for indent: 1-TAB, 0-Space.
 use_tab=0
-ident_opts="-cp1 -br -brs -bli0 -bap -ce -ts4 -nlp -npsl -l80 -kr -saf -sai -saw -il0"
+ident_opts=(-cp1 -br -brs -bli0 -bap -ce -ts4 -nlp -npsl -l80 -kr -saf -sai -saw
+    -il0)
 if [ $# -eq 0 ] ;then
     list=$(find . -name "*.[c|h]")
 else
@@ -60,7 +61,7 @@ else
     fi
 fi
 if [ $use_tab -eq 0 ] ;then
-    ident_opts+=" -nut"
+    ident_opts+=("-nut")
 fi
 
 for file in $list ;do
@@ -69,7 +70,7 @@ for file in $list ;do
 
     # Do NOT add double quotation marks to $ident_opts, for indent will treat it
     # as one argument incorrectly!
-    indent $ident_opts "$file"
+    indent "${ident_opts[@]}" "$file"
 done
 
 exit 0

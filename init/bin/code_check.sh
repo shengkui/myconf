@@ -25,8 +25,8 @@ run_cppcheck()
     echo "Run cppcheck ..."
     echo "======================================"
 
-    local option="--enable=warning --force --error-exitcode=1"
-    cppcheck $option $target
+    local option=(--enable=warning --force --error-exitcode=1)
+    cppcheck "${option[@]}" $target
 }
 
 run_scanbuild()
@@ -51,8 +51,8 @@ run_scanbuild()
         scan-build cmake -G "Unix Makefiles" ..
     fi
 
-    local option="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
-    scan-build $option make -j 4
+    local option=(-enable-checker alpha.core.SizeofPtr --status-bugs -v)
+    scan-build "${option[@]}" make -j 4
 }
 
 #Select code static analyzer:
@@ -73,11 +73,11 @@ if [ $checker -eq $CHECKER_NONE ];then
 fi
 
 case $checker in
-    $CHECKER_CPPCHECK)
+    "$CHECKER_CPPCHECK")
         run_cppcheck
         ;;
 
-    $CHECKER_CLANG)
+    "$CHECKER_CLANG")
         run_scanbuild
         ;;
 
