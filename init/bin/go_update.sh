@@ -30,6 +30,8 @@ update_go_package() {
 
     cd "$dir" || { echo "enter dir $dir error"; return 1; }
 
+    local REMOTE_URL
+
     #Get URL of git repo and extract the URL of Go package
     REMOTE_URL=$(git remote get-url origin | sed 's#https://##g')
     if [ $? -ne 0 ];then
@@ -44,6 +46,7 @@ update_go_package() {
         echo "get $REMOTE_URL"
         go get -u "$REMOTE_URL" 2>&1 || { echo "update package error"; return 1; }
     else
+        local subdir
         for subdir in *; do
             if [[ -d "$subdir" ]];then
                 if ls "$subdir"/*.go >/dev/null 2>&1 >/dev/null ;then

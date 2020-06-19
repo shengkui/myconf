@@ -19,6 +19,41 @@ if [ $# -eq 1 ];then
     target=$1
 fi
 
+run_cppcheck()
+{
+    echo "======================================"
+    echo "Run cppcheck ..."
+    echo "======================================"
+
+    local option="--enable=warning --force --error-exitcode=1"
+    cppcheck $option $target
+}
+
+run_scanbuild()
+{
+    echo "======================================"
+    echo "Run scan-build ..."
+    echo "======================================"
+
+    if [ -d "$target" ];then
+        cd "$target" || { echo "invalid $target"; exit 1; }
+    fi
+
+    #If it's a cmake project, generate makefile at first
+    if [ -s CMakeLists.txt ]; then
+        if [ ! -d build ];then
+            mkdir build || { echo "mkdir build/ failed!"; exit 1; }
+            cd build || { echo "cd build/ failed!"; exit 1; }
+        else
+            cd build || { echo "cd build/ failed!"; exit 1; }
+            make clean
+        fi
+        scan-build cmake -G "Unix Makefiles" ..
+    fi
+
+    local option="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
+    scan-build $option make -j 4
+}
 
 #Select code static analyzer:
 CHECKER_NONE=0      # 0 - no checker
@@ -33,43 +68,17 @@ if command -v clang &> /dev/null ;then
 fi
 if [ $checker -eq $CHECKER_NONE ];then
     if command -v cppcheck &> /dev/null;then
-        checker=$CHECKER_CLANG
+        checker=$CHECKER_CPPCHECK
     fi
 fi
 
 case $checker in
     $CHECKER_CPPCHECK)
-        echo "======================================"
-        echo "Run cppcheck ..."
-        echo "======================================"
-
-        option="--enable=warning --force --error-exitcode=1"
-        cppcheck $option $target
+        run_cppcheck
         ;;
 
     $CHECKER_CLANG)
-        echo "======================================"
-        echo "Run scan-build ..."
-        echo "======================================"
-
-        if [ -d "$target" ];then
-            cd "$target" || { echo "invalid $target"; exit 1; }
-        fi
-
-        #If it's a cmake project, generate makefile at first
-        if [ -s CMakeLists.txt ]; then
-            if [ ! -d build ];then
-                mkdir build || { echo "mkdir build/ failed!"; exit 1; }
-                cd build || { echo "cd build/ failed!"; exit 1; }
-            else
-                cd build || { echo "cd build/ failed!"; exit 1; }
-                make clean
-            fi
-            scan-build cmake -G "Unix Makefiles" ..
-        fi
-
-        option="-enable-checker alpha.core.SizeofPtr --status-bugs -v"
-         scan-build $option make -j 4
+        run_scanbuild
         ;;
 
     *)
