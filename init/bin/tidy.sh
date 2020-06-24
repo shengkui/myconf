@@ -20,5 +20,6 @@ for f in $source_file ;do
     fi
 
     #Run clang-tidy
-    clang-tidy "$f" -- "${FLAGS[@]}" "${list[@]}"
+    clang-tidy -checks=readability-braces-around-statements,misc-macro-parentheses \
+        "$f" -- "${FLAGS[@]}" "${list[@]}"
 done

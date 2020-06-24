@@ -155,7 +155,7 @@ set autoindent
 "Set expandtab for some filetype
 autocmd FileType make setlocal noexpandtab
 autocmd FileType vim setlocal expandtab
-au BufRead,BufNewFile *.log  set filetype=text
+autocmd BufRead,BufNewFile *.log  set filetype=text
 autocmd FileType text setlocal expandtab
 
 "C/C++: Highlight trailling space
@@ -327,7 +327,7 @@ augroup vimlsp
     endif
 
     let g:lsp_diagnostics_enabled = 1
-    let g:lsp_diagnostics_float_cursor = 1
+    "let g:lsp_diagnostics_float_cursor = 1
     let g:lsp_signs_enabled = 1             " enable signs
     let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
 augroup end
