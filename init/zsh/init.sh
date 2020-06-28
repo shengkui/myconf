@@ -21,7 +21,9 @@ if [ ! -f "${ZSH_CFG}" ];then
 fi
 
 # Install zjump plugin
-git clone https://github.com/qoomon/zjump "${ZJUMP_DIR}"
+if [ ! -d "${ZJUMP_DIR}" ];then
+    git clone https://github.com/qoomon/zjump "${ZJUMP_DIR}"
+fi
 
 # Install fzf(needed by ZSH zjump plugin)
 if ! command -v fzf &> /dev/null ;then

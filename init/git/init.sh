@@ -61,7 +61,7 @@ echo "set ignore-space = at-eol" > "${TIGRC}"
 echo "set main-view-date-local = true" >> "${TIGRC}"
 echo "set blame-view-date-local = true" >> "${TIGRC}"
 
-if [ ! -f "${HOME}"/.subrepo ];then
+if [ ! -d "${HOME}"/.subrepo ];then
     echo "Installing git-subrepo ..."
     git clone https://github.com/ingydotnet/git-subrepo "${HOME}"/.subrepo || {
         echo "Install git-surepo error"; exit 1; }
