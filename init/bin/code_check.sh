@@ -41,18 +41,15 @@ run_scanbuild()
 
     #If it's a cmake project, generate makefile at first
     if [ -s CMakeLists.txt ]; then
-        if [ ! -d build ];then
-            mkdir build || { echo "mkdir build/ failed!"; exit 1; }
-            cd build || { echo "cd build/ failed!"; exit 1; }
-        else
-            cd build || { echo "cd build/ failed!"; exit 1; }
-            make clean
-        fi
-        scan-build cmake -G "Unix Makefiles" ..
+        scan-build cmake -G "Unix Makefiles" .
     fi
 
     local option=(-enable-checker alpha.core.SizeofPtr --status-bugs -v)
     scan-build "${option[@]}" make -j 4
+
+    if [ -f Makefile ];then
+        make clean
+    fi
 }
 
 #Select code static analyzer:
