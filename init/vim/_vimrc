@@ -330,7 +330,13 @@ augroup vimlsp
     "let g:lsp_diagnostics_float_cursor = 1
     let g:lsp_signs_enabled = 1             " enable signs
     let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
+
+    autocmd FileType c,cpp,go nmap gd <plug>(lsp-definition)
 augroup end
+
+"gotests
+autocmd FileType go nmap <leader>t :GoTests<cr>
+autocmd FileType go nmap <leader>ta :GoTestsAll<cr>
 
 endif "v:version >= 800
 
