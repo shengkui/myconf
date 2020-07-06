@@ -27,16 +27,15 @@ Plug 'honza/vim-snippets'               "Code snippet
 Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
 Plug 'buoto/gotests-vim', { 'for': 'go' } "Generate table driven tests easily
+Plug 'mattn/vim-goimports'              "Run goimports
 
 Plug 'editorconfig/editorconfig-vim'    "EditorConfig
-Plug 'dense-analysis/ale'               "Lint(Syntax checking)
 Plug 'embear/vim-foldsearch'            "Fold away lines that don't match a search pattern
 
 Plug 'rhysd/committia.vim'              "Improve for Git commit message editor
 Plug 'tpope/vim-fugitive'               "Git Wrapper
 Plug 'mhinz/vim-signify'                "Show a diff using Vim its sign column.
 Plug 'hotwatermorning/auto-git-diff'    "Show git diff for 'git rebase -i'
-Plug 'mattn/vim-goimports'              "Run goimports
 
 Plug 'dkprice/vim-easygrep'             "Find and replace across multiple files
 Plug 'tpope/vim-surround'               "Easily add, delete and change parentheses/brackets/quotes
@@ -255,41 +254,6 @@ nmap <leader>m :!markdown % \| lynx -stdin <CR><CR>
 if v:version >= 800
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"ALE
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Map movement through errors with wrapping.
-nmap <silent> <C-h> <Plug>(ale_previous_wrap)
-nmap <silent> <C-l> <Plug>(ale_next_wrap)
-let g:ale_echo_msg_format = '[%linter%] %code: %%s'
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lsp_show_message_severity = 'warning'
-let g:ale_lint_on_save = 1
-
-let g:ale_c_gcc_options='-std=gnu11 -Wall -O2'
-let g:ale_cpp_gcc_options='-std=gnu++14 -Wall -O2'
-let g:ale_sh_shellcheck_options='-x'
-let g:ale_sh_shellcheck_exclusions='SC2086,SC2181,SC2006,SC2039,SC2162'
-let g:ale_c_cppcheck_options='--enable=style --suppress=nullPointerRedundantCheck --suppress=variableScope --suppress=redundantAssignment'
-let g:ale_cpp_cppcheck_options='--enable=style --suppress=nullPointerRedundantCheck --suppress=variableScope --suppress=redundantAssignment'
-let g:ale_linters = {
-            \ 'cpp': ['g++', 'cppcheck'],
-            \ 'c': ['gcc', 'cppcheck'],
-            \ 'go': ['go vet', 'revive'],
-            \ }
-
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? 'OK' : printf(
-    \   'W%d E%d', all_non_errors, all_errors
-    \)
-endfunction
-set statusline+=[%{LinterStatus()}]
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "editorconfig
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -319,11 +283,20 @@ augroup vimlsp
 
     if executable('gopls')
         autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'gopls',
-          \ 'cmd': {server_info->['gopls']},
-          \ 'whitelist': ['go'],
-          \ })
+            \ 'name': 'gopls',
+            \ 'cmd': {server_info->['gopls']},
+            \ 'whitelist': ['go'],
+            \ })
         autocmd FileType go setlocal omnifunc=lsp#complete
+    endif
+
+    if executable('bash-language-server')
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'bash-language-server',
+            \ 'cmd': {server_info->[&shell, &shellcmdflag, 'bash-language-server start']},
+            \ 'whitelist': ['sh'],
+            \ })
+        autocmd FileType sh setlocal omnifunc=lsp#complete
     endif
 
     let g:lsp_diagnostics_enabled = 1
@@ -331,10 +304,15 @@ augroup vimlsp
     let g:lsp_signs_enabled = 1             " enable signs
     let g:lsp_diagnostics_echo_cursor = 1   " enable echo under cursor when in normal mode
 
-    autocmd FileType c,cpp,go nmap gd <plug>(lsp-definition)
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> <leader>p <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> <leader>n <Plug>(lsp-next-diagnostic)
 augroup end
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "gotests
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType go nmap <leader>t :GoTests<cr>
 autocmd FileType go nmap <leader>ta :GoTestsAll<cr>
 
