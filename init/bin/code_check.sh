@@ -26,7 +26,7 @@ run_cppcheck()
     echo "======================================"
 
     local option=(--enable=warning --force --error-exitcode=1)
-    cppcheck "${option[@]}" $target
+    cppcheck "${option[@]}" "$target"
 }
 
 run_scanbuild()

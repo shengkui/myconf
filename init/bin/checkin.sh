@@ -42,8 +42,7 @@ if [[ $1 == "-h" ]] ;then
 fi
 MSG="$1"
 
-git status > /dev/null 2>&1
-if [ $? -ne 0 ];then
+if ! git status > /dev/null 2>&1 ;then
     echo "This is not a git repo"
     exit 1
 fi
