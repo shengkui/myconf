@@ -3,6 +3,7 @@
 OH_MY_ZSH_DIR="${HOME}/.oh-my-zsh"
 ZSH_CFG="${HOME}/.zshrc"
 ZJUMP_DIR="${OH_MY_ZSH_DIR}"/custom/plugins/zjump
+FORGIT_DIR="${OH_MY_ZSH_DIR}"/custom/plugins/forgit
 FZF_DIR="${HOME}"/.fzf
 INIT_DIR="$(pwd)"            #directory of myconf/zsh
 
@@ -23,6 +24,11 @@ fi
 # Install zjump plugin
 if [ ! -d "${ZJUMP_DIR}" ];then
     git clone https://github.com/qoomon/zjump "${ZJUMP_DIR}"
+fi
+
+# Install forgit plugin
+if [ ! -d "${FORGIT_DIR}" ];then
+    git clone https://github.com/wfxr/forgit.git "${FORGIT_DIR}"
 fi
 
 # Install fzf(needed by ZSH zjump plugin)
