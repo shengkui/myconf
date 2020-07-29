@@ -45,7 +45,7 @@ run_scanbuild()
     fi
 
     local option=(-enable-checker alpha.core.SizeofPtr --status-bugs -v)
-    scan-build "${option[@]}" make -j 4
+    scan-build "${option[@]}" make
 
     if [ -f Makefile ];then
         make clean

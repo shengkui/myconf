@@ -1,8 +1,10 @@
 #!/bin/bash
 #A simple bash script to run clant-tidy with all c/cpp files under current
 #directory.
+set -o nounset                  # Treat unset variables as an error
+set -o pipefail                 # Prevent errors in a pipeline from being masked
 
-#Get directory list
+#Get directory list of header files
 tmp=$(find . -type f -name '*.h' | sed -r 's#/[^/]+$##' | sort | uniq)
 
 #Add -I to each directory
