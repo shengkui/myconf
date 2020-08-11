@@ -1,5 +1,8 @@
-# Executables
+# Executables or libraries
 *.out
+.so
+.a
+.la
 
 # Object files
 *.o
@@ -12,11 +15,12 @@
 
 # Kernel Module Compile Results
 *.ko
-*.mod.*
+*.mod*
 .*.cmd
 modules.order
 Module.symvers
 .tmp_versions/
+.cache.mk
 
 # Tag file
 GPATH
@@ -26,3 +30,12 @@ tags
 
 # Editor
 .vscode/
+
+# clangd
+compile_commands.json
+.clangd/
+
+# cmake
+CMakeCache.txt
+CMakeFiles/
+*.cmake
