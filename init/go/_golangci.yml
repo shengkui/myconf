@@ -14,30 +14,16 @@ linters-settings:
     check-exported: false
 
 linters:
-  disable-all: true
-  enable:
-    - deadcode
-    - depguard
-    - errcheck
-    - funlen
-    - goconst
-    - gocritic
-    - goimports
-    - golint
-    - gosimple
-    - govet
-    - ineffassign
-    - lll
-    - misspell
-    - staticcheck
-    - structcheck
-    - stylecheck
-    - typecheck
-    - unconvert
-    - unparam
-    - unused
-    - varcheck
-    - wsl
+  enable-all: true
+  disable:
+      - testpackage
+      - goprintffuncname
+      - gochecknoglobals
+      - dupl
+      - gocognit
+      - gosec
+      - gomodguard
+      - scopelint
 
 service:
   golangci-lint-version: 1.21.0
