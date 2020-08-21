@@ -122,3 +122,5 @@ gocover() {
 
 #git-subrepo
 source $HOME/.subrepo/.rc
+
+systemctl --user import-environment SSH_AUTH_SOCK

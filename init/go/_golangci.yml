@@ -10,6 +10,8 @@ linters-settings:
     statements: 50
   wsl:
     allow-cuddle-declarations: true
+    allow-case-trailing-whitespace: true
+    allow-assign-and-anything: true
   unused:
     check-exported: false
 
@@ -24,9 +26,6 @@ linters:
       - gosec
       - gomodguard
       - scopelint
-
-service:
-  golangci-lint-version: 1.21.0
 
 run:
   issues-exit-code: 1
