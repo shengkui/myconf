@@ -165,7 +165,7 @@ set listchars=tab:\|\ ,nbsp:~,extends:>,precedes:<,trail:-
 set list
 
 "Show line margin in color
-set colorcolumn=80
+set colorcolumn=100
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "paste mode
