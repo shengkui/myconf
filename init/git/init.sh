@@ -55,6 +55,8 @@ $GIT_CFG alias.ll 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn
 
 $GIT_CFG alias.df "diff --ignore-space-at-eol"
 
+$GIT_CFG alias.trash '!git ls-files --others --exclude-standard --directory | xargs trash'
+
 #config for tig
 TIGRC=${HOME}/.tigrc
 echo "set ignore-space = at-eol" > "${TIGRC}"
