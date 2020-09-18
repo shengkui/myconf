@@ -15,7 +15,7 @@
 
 # Kernel Module Compile Results
 *.ko
-*.mod*
+#*.mod*
 .*.cmd
 modules.order
 Module.symvers

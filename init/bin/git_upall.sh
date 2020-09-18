@@ -24,6 +24,7 @@ pull_repo() {
     echo
     cd "$dir" || { echo "Enter dir $dir error"; return 1; }
 
+    sleep 0.5
     git pull 2>&1 || { echo "Update Git repo error"; return 1; }
     if [ -f ".gitmodules" ];then
         git submodule update --init --recursive 2>&1 || \
