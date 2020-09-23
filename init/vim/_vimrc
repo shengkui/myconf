@@ -52,6 +52,8 @@ Plug 'ConradIrwin/vim-bracketed-paste'  "Paste mode(automatic `:set paste`)
 
 Plug 'vim-airline/vim-airline'          "Status/tabline
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'rakr/vim-one'
 call plug#end()
 "filetype plugin indent on
 endif
@@ -69,8 +71,10 @@ runtime ftplugin/man.vim
 "Color
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-colorscheme torte
 set term=xterm-256color
+
+colorscheme one
+set background=light
 
 "Toggle color scheme
 function! g:ToggleBackground()
@@ -79,7 +83,7 @@ function! g:ToggleBackground()
         colorscheme torte
     else
         set background=light
-        colorscheme delek
+        colorscheme default
     endif
 endfunction
 nmap <silent> <F6> :call g:ToggleBackground()<CR>
