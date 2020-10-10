@@ -1,6 +1,9 @@
 "Turn off vi-compatible mode
 set nocompatible
 
+set fileencoding=utf-8
+set encoding=utf-8
+
 if v:version >= 800
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plugins
