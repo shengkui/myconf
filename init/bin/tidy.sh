@@ -1,6 +1,5 @@
 #!/bin/bash
-#A simple bash script to run clant-tidy with all c/cpp files under current
-#directory.
+#A simple bash script to run clang-tidy with all c/cpp files under current directory.
 set -o nounset                  # Treat unset variables as an error
 set -o pipefail                 # Prevent errors in a pipeline from being masked
 
@@ -14,13 +13,14 @@ done
 
 source_file=$(find . -type f \( -name \*.c -o -name \*.cpp \))
 
+FLAGS=(-Wall -Wextra -Wno-unused-parameter -Wshadow -O2)
 for f in $source_file ;do
     if [[ $f =~ \.cpp$ ]] ;then
-        FLAGS=(-Wall -Wextra -Wno-unused-parameter -Wshadow -O2 -std=gnu++03)
+        STD="-std=gnu++03"
     else
-        FLAGS=(-Wall -Wextra -Wno-unused-parameter -Wshadow -O2 -std=gnu99)
+        STD="-std=gnu99"
     fi
 
     #Run clang-tidy
-    clang-tidy -checks=misc-macro-parentheses "$f" -- "${FLAGS[@]}" "${list[@]}"
+    clang-tidy -checks=misc-macro-parentheses "$f" -- "${FLAGS[@]}" ${STD} "${list[@]}"
 done
