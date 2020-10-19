@@ -26,6 +26,7 @@ linters:
       - gosec
       - gomodguard
       - scopelint
+      - gomnd
 
 run:
   issues-exit-code: 1
