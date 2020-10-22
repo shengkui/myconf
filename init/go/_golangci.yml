@@ -14,6 +14,9 @@ linters-settings:
     allow-assign-and-anything: true
   unused:
     check-exported: false
+  gocritic:
+    disabled-tags:
+      - style
 
 linters:
   enable-all: true
@@ -27,6 +30,11 @@ linters:
       - gomodguard
       - scopelint
       - gomnd
+      - godot
+      - gci
+      - gofumpt
+      - nlreturn
+      - noctx
 
 run:
   issues-exit-code: 1
