@@ -75,8 +75,15 @@ runtime ftplugin/man.vim
 "Color
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
-set termguicolors
-colorscheme one
+
+if $TERM == "linux"
+    set t_Co=256
+    set term=xterm-256color
+    colorscheme default
+else
+    set termguicolors
+    colorscheme one
+endif
 set background=light
 hi SpellBad cterm=underline
 
