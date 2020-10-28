@@ -7,6 +7,7 @@ This repo includes some config files and scripts for Linux OS, git, vim and zsh.
      ├── _profile       #Profile for shell
      ├── bin/           #Scripts install to $HOME/bin
      ├── git/           #Config for git
+     ├── go/            #Config for go
      ├── os/            #Scripts to install required software packages
      ├── vim/           #Config for vim
      └── zsh/           #Config for zsh
