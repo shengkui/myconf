@@ -127,7 +127,7 @@ set hlsearch            "Highlight search strings
 set showmatch           "Show matching brackets
 
 set showcmd             "Show the command being typed
-set showmode            "Show mode of Insert/Replace/Visual mode
+set noshowmode          "Don't show mode of Insert/Replace/Visual mode
 set linebreak           "Wrap long lines at a blank
 set noerrorbells        "No beep on errors
 set wildignore=*.o,*~
