@@ -29,4 +29,9 @@ if [ ! -f "${VIM_PLUG}" ];then
         || { echo "install vim-plug error"; exit 1; }
 fi
 
+#Install lsp for javascript/typescript
+if command -v npm &> /dev/null ;then
+    npm install -g typescript typescript-language-server
+fi
+
 exit 0

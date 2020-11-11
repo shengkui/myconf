@@ -24,6 +24,7 @@ Plug 'prabirshrestha/asyncomplete.vim'  "Async autocompletion
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'           "Language Server Protocol
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'ryanolsonx/vim-lsp-javascript'
 Plug 'tpope/vim-endwise'                "End certain structures automatically(C preprocessor...)
 Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
