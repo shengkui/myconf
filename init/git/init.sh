@@ -1,61 +1,47 @@
 #!/bin/bash
 #Set all typical git configuration.
 
+INIT_DIR="$(pwd)"            #directory of myconf/git
 GIT_CFG="git config --global"
 
-#User information
-$GIT_CFG user.name "shengkui.leng"
-$GIT_CFG user.email shengkui.leng@advantech.com.cn
+#gitconfig
+echo "Installing .gitconfig ..."
+cp -f "${INIT_DIR}/_gitconfig" "${HOME}/.gitconfig" || { echo "install .gitconfig error"; exit 1; }
 
-$GIT_CFG push.default simple
-$GIT_CFG pull.rebase false      # merge (the default strategy)
+#user files
+GITUSER_DEFAULT=${HOME}/.gituser-default
+if [ ! -f "${GITUSER_DEFAULT}" ];then
+    echo "Installing .gituser-default ..."
+    ln -sf "${INIT_DIR}/_gituser-default" "${GITUSER_DEFAULT}" || { echo "install .gituser-default error"; exit 1; }
+fi
+GITUSER_PUBLIC=${HOME}/.gituser-public
+if [ ! -f "${GITUSER_PUBLIC}" ];then
+    echo "Installing .gituser-public ..."
+    ln -sf "${INIT_DIR}/_gituser-public" "${GITUSER_PUBLIC}" || { echo "install .gituser-public error"; exit 1; }
+fi
 
-#Format of date&time
-$GIT_CFG log.date format-local:"%Y-%m-%d %H:%M:%S"
-$GIT_CFG blame.date format-local:"%Y-%m-%d %H:%M:%S"
-
-#Don't convert CR/LF chars
-$GIT_CFG core.autocrlf false
-$GIT_CFG core.safecrlf true
-
-#Editor for commit
-$GIT_CFG core.editor vim
-
-
-INIT_DIR="$(pwd)"            #directory of myconf/git
-GIT_IGNORE=${HOME}/.gitignore
-EDITORCONFIG=${HOME}/.editorconfig
+#gitmessage
+GIT_MESSAGE=${HOME}/.gitmessage
+$GIT_CFG commit.template "${GIT_MESSAGE}"
+if [ ! -f "${GIT_MESSAGE}" ];then
+    echo "Installing .gitmessage ..."
+    ln -sf "${INIT_DIR}/_gitmessage" "${GIT_MESSAGE}" || { echo "install .gitmessage error"; exit 1; }
+fi
 
 #Global ignore
+GIT_IGNORE=${HOME}/.gitignore
 $GIT_CFG core.excludesfile "${GIT_IGNORE}"
 if [ ! -f "${GIT_IGNORE}" ];then
     echo "Installing .gitignore ..."
     ln -sf "${INIT_DIR}/_gitignore" "${GIT_IGNORE}" || { echo "install .gitignore error"; exit 1; }
 fi
+
 #editorconfig
+EDITORCONFIG=${HOME}/.editorconfig
 if [ ! -f "${EDITORCONFIG}" ];then
     echo "Installing .editorconfig ..."
     ln -sf "${INIT_DIR}/_editorconfig" "${EDITORCONFIG}" || { echo "install .editorconfig error"; exit 1; }
 fi
-
-
-#Enable color
-$GIT_CFG color.ui true
-
-#Alias
-$GIT_CFG alias.st "status"
-$GIT_CFG alias.ci "commit"
-$GIT_CFG alias.co "checkout"
-$GIT_CFG alias.br "branch"
-
-$GIT_CFG alias.last "log -1 HEAD"
-$GIT_CFG alias.ls "log --oneline --abbrev-commit --graph --decorate"
-$GIT_CFG alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-$GIT_CFG alias.ll 'log --pretty=format:"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]" --decorate --numstat'
-
-$GIT_CFG alias.df "diff --ignore-space-at-eol"
-
-$GIT_CFG alias.trash '!git ls-files --others --exclude-standard --directory | xargs trash'
 
 #config for tig
 TIGRC=${HOME}/.tigrc
@@ -63,6 +49,7 @@ echo "set ignore-space = at-eol" > "${TIGRC}"
 echo "set main-view-date-local = true" >> "${TIGRC}"
 echo "set blame-view-date-local = true" >> "${TIGRC}"
 
+#git-subrepo
 if [ ! -d "${HOME}"/.subrepo ];then
     echo "Installing git-subrepo ..."
     git clone https://github.com/ingydotnet/git-subrepo "${HOME}"/.subrepo || {

@@ -1,0 +1,33 @@
+[include]
+	path = .gituser-default
+[includeIf "gitdir:~/work/repo/"]
+	path = .gituser-public
+
+[core]
+	autocrlf = false
+	safecrlf = true
+	editor = vim
+	excludesfile = /home/shengkui.leng/.gitignore
+[push]
+	default = simple
+[pull]
+	rebase = false
+[commit]
+	template = /home/shengkui.leng/.gitmessage
+[log]
+	date = format-local:%Y-%m-%d %H:%M:%S
+[blame]
+	date = format-local:%Y-%m-%d %H:%M:%S
+[color]
+	ui = true
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	last = log -1 HEAD
+	ls = log --oneline --abbrev-commit --graph --decorate
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate --numstat
+	df = diff --ignore-space-at-eol
+	trash = !git ls-files --others --exclude-standard --directory | xargs trash

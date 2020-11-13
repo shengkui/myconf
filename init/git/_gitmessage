@@ -1,0 +1,16 @@
+# <type>[<scope>]: <subject>
+# - type: feat/fix/refactor/docs/style/test/chore/revert
+# - scope: component changed(can be empty, if the change is global)
+# - subject: start with verb (such as 'change'), 50-character line
+#
+# <body>
+# - This should answer:
+#   Why was this change necessary?
+#   How does it address the problem?
+#   Are there any side effects?
+# - 72-character wrapped.
+#
+# <footer>
+# - Bug ID: Close #123, Resolve #456
+# - BREAKING CHANGE
+#
