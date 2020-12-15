@@ -55,7 +55,7 @@ Plug 'EinfachToll/DidYouMean'           "Ask for the right file to open
 Plug 'ConradIrwin/vim-bracketed-paste'  "Paste mode(automatic `:set paste`)
 
 Plug 'itchyny/lightline.vim'            "Statusline/tabline
-Plug 'rakr/vim-one'                     "Color scheme
+"Plug 'rakr/vim-one'                     "Color scheme
 
 call plug#end()
 "filetype plugin indent on
@@ -78,11 +78,11 @@ syntax enable
 if $TERM == "linux"
     set t_Co=256
     set term=xterm-256color
-    colorscheme default
 else
     set termguicolors
-    colorscheme one
+    "colorscheme one
 endif
+colorscheme default
 set background=light
 hi SpellBad cterm=underline
 
