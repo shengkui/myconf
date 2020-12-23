@@ -107,8 +107,7 @@ setopt hist_reduce_blanks        # Remove superfluous blanks before recording en
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$HOME/bin
 export GOPROXY=https://goproxy.cn,direct
-export GOPRIVATE=*.my.to
-export GOINSECURE=*.my.to
+export GOPRIVATE=gitlab.wise-paas.com
 
 #Update some Go tools
 go_tools() {
