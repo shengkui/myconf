@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias rm='trash -i'
+alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias sudo='sudo '
