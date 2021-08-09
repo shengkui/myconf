@@ -35,6 +35,9 @@ linters:
       - gofumpt
       - nlreturn
       - noctx
+      - interfacer
+      - maligned
+      - golint
 
 run:
   issues-exit-code: 1
