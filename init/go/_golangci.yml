@@ -38,6 +38,9 @@ linters:
       - interfacer
       - maligned
       - golint
+      - forbidigo
+      - gomoddirectives
+      - wsl
 
 run:
   issues-exit-code: 1
