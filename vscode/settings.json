@@ -1,0 +1,43 @@
+{
+    "workbench.colorTheme": "Atom One Light",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "window.restoreWindows": "none",
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "manual",
+    "editor.fontFamily": "'DejaVu Sans Mono', 'Fira Code', 'Courier New', Consolas",
+    "editor.inlineSuggest.enabled": true,
+    "editor.minimap.enabled": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [
+        100
+    ],
+    "files.eol": "\n",
+    "files.hotExit": "off",
+    "telemetry.telemetryLevel": "off",
+    "telemetry.enableCrashReporter": false,
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "file",
+    "go.testExplorer.enable": false,
+    "go.autocompleteUnimportedPackages": true,
+    "go.disableConcurrentTests": true,
+    "go.coverOnTestPackage": false,
+    "go.formatTool": "goimports",
+    "gitlens.blame.avatars": false,
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "search.exclude": {
+        "**/.idea": true
+    },
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.profiles.windows": {
+        "Git-Bash": {
+            "path": "D:\\Program\\Git\\bin\\bash.exe",
+            "args": [],
+            "icon": "terminal-bash"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git-Bash",
+    "workbench.editor.untitled.hint": "hidden",
+    "github.gitAuthentication": false
+}
