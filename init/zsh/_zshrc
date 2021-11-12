@@ -114,9 +114,9 @@ export GOPRIVATE=gitlab.wise-paas.com
 go_tools() {
     export CGO_DISABLE=1
     export GO111MODULE=on
-    go get golang.org/x/tools/gopls@latest
-    go get golang.org/x/tools/cmd/goimports@latest
-    go get github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+    go install golang.org/x/tools/gopls@latest
+    go install golang.org/x/tools/cmd/goimports@latest
+    go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 }
 
 #Run go test -cover and display in browser
