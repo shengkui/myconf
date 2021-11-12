@@ -15,7 +15,7 @@ export CGO_DISABLE=1
 export GO111MODULE=on
 export GOPROXY=https://goproxy.cn,direct
 
-GO_GET="go get"
+GO_GET="go install"
 $GO_GET golang.org/x/tools/gopls@latest
 $GO_GET golang.org/x/tools/cmd/goimports@latest
 $GO_GET github.com/golangci/golangci-lint/cmd/golangci-lint@latest
