@@ -134,8 +134,8 @@ LS_COLORS='rs=0:di=01;34:ln=01;36;40:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;0
 export LS_COLORS
 
 #JAVA
-export JAVA_HOME=/usr/lib/jvm/default/
+#export JAVA_HOME=/usr/lib/jvm/default/
 
-##hadoop
-export HADOOP_HOME=$HOME/hadoop
-export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
+#hadoop
+#export HADOOP_HOME=$HOME/hadoop
+#export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
