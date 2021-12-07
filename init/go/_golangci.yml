@@ -8,10 +8,6 @@ linters-settings:
   funlen:
     lines: 100
     statements: 50
-  wsl:
-    allow-cuddle-declarations: true
-    allow-case-trailing-whitespace: true
-    allow-assign-and-anything: true
   unused:
     check-exported: false
   gocritic:
@@ -19,28 +15,32 @@ linters-settings:
       - style
 
 linters:
-  enable-all: true
-  disable:
-      - testpackage
-      - goprintffuncname
-      - gochecknoglobals
-      - dupl
-      - gocognit
-      - gosec
-      - gomodguard
-      - scopelint
-      - gomnd
-      - godot
-      - gci
-      - gofumpt
-      - nlreturn
-      - noctx
-      - interfacer
-      - maligned
-      - golint
-      - forbidigo
-      - gomoddirectives
-      - wsl
+  disable-all: true
+  enable:
+    - deadcode
+    - depguard
+    - errcheck
+    - funlen
+    - goconst
+    - gocritic
+    - goimports
+    - revive
+    - gosimple
+    - govet
+    - ineffassign
+    - lll
+    - misspell
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+
+service:
+  golangci-lint-version: 1.43.0
 
 run:
   issues-exit-code: 1
