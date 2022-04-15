@@ -11,7 +11,7 @@ if [ ! -d "${OH_MY_ZSH_DIR}" ];then
     # Download install script and run it.
     echo "Installing oh-my-zsh ..."
     #sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-    git clone git://github.com/robbyrussell/oh-my-zsh.git "${OH_MY_ZSH_DIR}" \
+    git clone https://github.com/ohmyzsh/ohmyzsh.git "${OH_MY_ZSH_DIR}" \
         || { echo "download oh-my-zsh error"; exit 1; }
 fi
 
