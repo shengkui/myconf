@@ -19,21 +19,8 @@ if [ ! -f "${HOME}/.profile" ];then
         echo "install profile error"; exit 1; }
 fi
 
-echo
-echo ----------------------------------------------
-echo "Installing tools/scripts files into HOME/bin ..."
-echo ----------------------------------------------
-if [ ! -d "${INST_DIR}" ];then
-    mkdir -p "${INST_DIR}"
-fi
-#Create symbolic link from every script
-for file in "${BIN_DIR}"/* ;do
-    name=$(basename "$file")    #Get the file name without path
-    if [ ! -f "${INST_DIR}/${name}" ];then
-        ln -sf "${file}" "${INST_DIR}" || {
-            echo "install script ${name} error"; exit 1; }
-    fi
-done
+#Install tools/scripts files into $HOME/bin
+./bin.sh || exit 1
 
 #Enter each sub-directory to run the init script of it
 for i in ${CFG_DIR}; do

@@ -141,5 +141,5 @@ export LS_COLORS
 export JAVA_HOME=/usr/lib/jvm/default/
 
 #hadoop
-export HADOOP_HOME=$HOME/hadoop
-export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
+#export HADOOP_HOME=$HOME/hadoop
+#export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
