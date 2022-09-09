@@ -107,7 +107,6 @@ setopt hist_reduce_blanks        # Remove superfluous blanks before recording en
 
 #Go
 export GOPATH=$HOME/go
-export PATH=/usr/local/bin/:$PATH:$GOPATH/bin:$HOME/bin:$HOME/flink/bin
 export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=gitlab.wise-paas.com
 
@@ -141,5 +140,15 @@ export LS_COLORS
 export JAVA_HOME=/usr/lib/jvm/default/
 
 #hadoop
-#export HADOOP_HOME=$HOME/hadoop
-#export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
+export HADOOP_HOME=$HOME/hadoop
+export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
+
+#Flink
+export FLINK_HOME=/home/shengkui.leng/flink
+
+#Spark
+#export SPARK_HOME=/home/shengkui.leng/repo/dis/spark
+
+#export PATH=/usr/local/bin/:$PATH:$GOPATH/bin:$HOME/bin:$SPARK_HOME/bin
+export PATH=/usr/local/bin/:$PATH:$GOPATH/bin:$HOME/bin:$FLINK_HOME/bin
+
