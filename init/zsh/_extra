@@ -6,10 +6,9 @@ export HADOOP_HOME=$HOME/hadoop
 export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
 
 #Flink
-export FLINK_HOME=/home/shengkui.leng/flink
+#export FLINK_HOME=/home/shengkui.leng/flink
+#export PATH=$PATH:$FLINK_HOME/bin
 
 #Spark
 export SPARK_HOME=/home/shengkui.leng/repo/dis/spark
-
-#export PATH=/usr/local/bin/:$PATH:$GOPATH/bin:$HOME/bin:$SPARK_HOME/bin
-export PATH=/usr/local/bin/:$PATH:$GOPATH/bin:$HOME/bin:$FLINK_HOME/bin
+export PATH=$PATH:$SPARK_HOME/bin
