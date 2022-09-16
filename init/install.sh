@@ -2,11 +2,11 @@
 #A script to install useful scripts/tools and vim/git/zsh configurations.
 #This script shall be run from the init/ directory of myconf
 
-TOP_DIR="$(pwd)"            #init/ directory of myconf
-CFG_DIR="git vim zsh go"    #Configs for git/vim/shell/go/...
-INST_DIR="${HOME}/bin"      #Install directory for tools/scripts
-INIT_SCRIPT="init.sh"       #Init script for configs
-BIN_DIR="${TOP_DIR}/bin"    #Directory of tools/scripts
+TOP_DIR="$(pwd)"                #init/ directory of myconf
+CFG_DIR="git vim zsh go term"   #Configs for git/vim/shell/go/...
+INST_DIR="${HOME}/bin"          #Install directory for tools/scripts
+INIT_SCRIPT="init.sh"           #Init script for configs
+BIN_DIR="${TOP_DIR}/bin"        #Directory of tools/scripts
 
 pushd . > /dev/null || { echo "save PWD error"; exit 1; }
 
