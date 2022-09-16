@@ -20,9 +20,9 @@ if [ ! -f "${ZSH_CFG}" ];then
     echo "Installing .zshrc ..."
     ln -sf "${INIT_DIR}/_zshrc" "${ZSH_CFG}" || { echo "install .zshrc error"; exit 1; }
 fi
-if [ ! -f "_extra" ];then
+if [ ! -f "${HOME}/.extra" ];then
     echo "Installing .extra ..."
-    ln -sf "${INIT_DIR}/_extra" "${HOME}/.extra" || { echo "install .extra error"; exit 1; }
+    cp -f "${INIT_DIR}/_extra" "${HOME}/.extra" || { echo "install .extra error"; exit 1; }
 fi
 
 # Install zjump plugin
