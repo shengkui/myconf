@@ -12,3 +12,7 @@ export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
 #Spark
 export SPARK_HOME=/home/shengkui.leng/repo/dis/spark
 export PATH=$PATH:$SPARK_HOME/bin
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
