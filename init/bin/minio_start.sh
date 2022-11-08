@@ -1,5 +1,6 @@
 #!/bin/bash
 
-docker run -d -p 9000:9000 -e "MINIO_ACCESS_KEY=minio" -e "MINIO_SECRET_KEY=minio123" \
+docker run -d -p 9000:9000 -p 9090:9090 --name minio --restart=always \
+    -e "MINIO_ROOT_USER=minio" -e "MINIO_ROOT_PASSWORD=minio123" \
     -v /tmp/leng/data:/data -v /tmp/leng/config:/root/.minio \
-    minio/minio:RELEASE.2021-06-07T21-40-51Z server /data
+    minio/minio server /data --console-address ":9090" -address ":9000"
