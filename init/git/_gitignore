@@ -1,13 +1,12 @@
 # Executables or libraries
 *.out
-.so
-.a
-.la
+*.so
+*.a
+*.la
+*.exe
 
-# Object files
+# c
 *.o
-
-# Prerequisites
 *.d
 
 # Backup file
@@ -15,7 +14,7 @@
 
 # Kernel Module Compile Results
 *.ko
-#*.mod*
+*.mod*
 .*.cmd
 modules.order
 Module.symvers
@@ -39,3 +38,25 @@ compile_commands.json
 CMakeCache.txt
 CMakeFiles/
 *.cmake
+
+# java, scala
+target/
+out/
+*.class
+#*.jar
+.idea/
+*.iml
+*.bsp
+build.properties
+*.log
+
+# go
+__debug_bin
+!go.mod
+
+# vim
+*.swp
+
+#spark
+spark-warehouse
+

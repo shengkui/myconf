@@ -7,13 +7,13 @@
 	autocrlf = false
 	safecrlf = true
 	editor = vim
-	excludesfile = /home/shengkui.leng/.gitignore
+	excludesfile = ~/.gitignore
 [push]
 	default = simple
 [pull]
 	rebase = false
 [commit]
-	template = /home/shengkui.leng/.gitmessage
+	template = ~/.gitmessage
 [log]
 	date = format-local:%Y-%m-%d %H:%M:%S
 [blame]
