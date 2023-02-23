@@ -1,43 +1,78 @@
+// 将设置放入此文件中以覆盖默认设置
 {
-    "workbench.colorTheme": "Atom One Light",
-    "workbench.editor.highlightModifiedTabs": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "window.restoreWindows": "none",
-    "extensions.autoCheckUpdates": false,
-    "update.mode": "manual",
-    "editor.fontFamily": "'DejaVu Sans Mono', 'Fira Code', 'Courier New', Consolas",
-    "editor.inlineSuggest.enabled": true,
-    "editor.minimap.enabled": false,
+    "files.autoSave": "off",
     "editor.multiCursorModifier": "ctrlCmd",
+    "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.profiles.windows": {
+        "GitBash": {
+            "path": "D:\\Program\\Git\\bin\\bash.exe"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "GitBash",
+    "terminal.integrated.copyOnSelection": true,
+    "files.hotExit": "off",
+    "window.restoreWindows": "none",
+    "workbench.enableExperiments": false,
+    "git.autofetch": true,
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "none",
+    "update.showReleaseNotes": false,
+    "remote.SSH.remotePlatform": {
+        "Avalon": "linux",
+        "Nox": "linux"
+    },
+    "workbench.editor.highlightModifiedTabs": true,
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "workbench.colorTheme": "Atom One Light",
+    "files.autoGuessEncoding": true,
+    "editor.wordWrap": "on",
+    "editor.fontSize": 15,
+    "editor.wordWrapColumn": 120,
+    "editor.useTabStops": false,
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "terminal.integrated.cursorStyle": "underline",
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false,
+    "update.mode": "manual",
+    "editor.formatOnPaste": true,
+    "diffEditor.codeLens": true,
+    "editor.minimap.enabled": false,
+    "explorer.excludeGitIgnore": true,
+    "audioCues.lineHasBreakpoint": "off",
+    "audioCues.lineHasError": "off",
+    "audioCues.lineHasFoldedArea": "off",
+    "audioCues.lineHasInlineSuggestion": "off",
+    "audioCues.noInlayHints": "off",
+    "audioCues.onDebugBreak": "off",
+    "telemetry.telemetryLevel": "off",
+    "security.workspace.trust.enabled": false,
+    "redhat.telemetry.enabled": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.detectIndentation": false,
+    "python.defaultInterpreterPath": "D:\\Program\\Python\\python.exe",
+    "go.buildOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.lintOnSave": "off",
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": false,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": false
+        },
+    },
     "editor.rulers": [
         100
     ],
-    "files.eol": "\n",
-    "files.hotExit": "off",
-    "telemetry.telemetryLevel": "off",
-    "telemetry.enableCrashReporter": false,
-    "go.buildOnSave": "off",
-    "go.lintOnSave": "file",
-    "go.testExplorer.enable": false,
-    "go.autocompleteUnimportedPackages": true,
-    "go.disableConcurrentTests": true,
-    "go.coverOnTestPackage": false,
-    "go.formatTool": "goimports",
-    "gitlens.blame.avatars": false,
-    "search.showLineNumbers": true,
-    "search.smartCase": true,
     "search.exclude": {
         "**/.idea": true
-    },
-    "terminal.integrated.copyOnSelection": true,
-    "terminal.integrated.profiles.windows": {
-        "Git-Bash": {
-            "path": "D:\\Program\\Git\\bin\\bash.exe",
-            "args": [],
-            "icon": "terminal-bash"
-        }
-    },
-    "terminal.integrated.defaultProfile.windows": "Git-Bash",
-    "workbench.editor.untitled.hint": "hidden",
-    "github.gitAuthentication": false
+    }
 }
