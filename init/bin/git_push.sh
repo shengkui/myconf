@@ -4,6 +4,10 @@
 #
 
 REMOTE_SERVER=$(git remote)
+if [ $? -ne 0 ];then
+    #Git command return error
+    exit 1
+fi
 
 for url in $REMOTE_SERVER; do
     echo
