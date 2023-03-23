@@ -64,7 +64,7 @@ fi
 
 TAR_OPT=zcf
 TAR_PACK=tmp.tgz
-TAR_EXCLUDE=(--exclude-vcs --exclude-vcs-ignores --exclude='.drone.*')
+TAR_EXCLUDE=(--exclude-vcs --exclude-vcs-ignores --exclude='.drone.*' --exclude-backups)
 if [ "$TYPE" == "gzip" ] || [ "$TYPE" == "gz" ];then
     TAR_OPT=zcf
     TAR_PACK="${PACK}_v${REV}.tgz"
