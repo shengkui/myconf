@@ -67,13 +67,13 @@ TAR_PACK=tmp.tgz
 TAR_EXCLUDE=(--exclude-vcs --exclude-vcs-ignores --exclude='.drone.*' --exclude-backups)
 if [ "$TYPE" == "gzip" ] || [ "$TYPE" == "gz" ];then
     TAR_OPT=zcf
-    TAR_PACK="${PACK}_v${REV}.tgz"
+    TAR_PACK="${PACK}_${REV}.tgz"
 elif  [ "$TYPE" == "bzip2" ] || [ "$TYPE" == "bz2" ];then
     TAR_OPT=jcf
-    TAR_PACK="${PACK}_v${REV}.tbz"
+    TAR_PACK="${PACK}_${REV}.tbz"
 elif  [ "$TYPE" == "xz" ];then
     TAR_OPT=Jcf
-    TAR_PACK="${PACK}_v${REV}.txz"
+    TAR_PACK="${PACK}_${REV}.txz"
 else
     echo "Unsupported package type"
     exit 1
