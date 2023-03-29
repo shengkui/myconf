@@ -64,7 +64,30 @@ fi
 
 TAR_OPT=zcf
 TAR_PACK=tmp.tgz
-TAR_EXCLUDE=(--exclude-vcs --exclude-vcs-ignores --exclude='.drone.*' --exclude-backups)
+
+# Compare two version string
+#
+# Parameters:
+#   $1 - 1st version string
+#   $2 - 2nd version string
+#
+# Returns:
+#   0 - $1 is less or equal to $2
+#   1 - $1 is greater than $2
+vercomp() {
+    printf '%s\n%s' "$1" "$2" | sort -C -V
+}
+
+#Check the version of tar, if it's less than 1.30, don't use "--exclude-cvs-ignores" option.
+TAR_VER=`tar --version | head -n 1 | awk '{print $NF}'`
+if vercomp 1.30 $TAR_VER ;then
+    #VERSION >= 1.30
+    TAR_EXCLUDE=(--exclude-vcs --exclude='.drone.*' --exclude-backups --exclude-vcs-ignores)
+else
+    #VERSION < 1.30
+    TAR_EXCLUDE=(--exclude-vcs --exclude='.drone.*' --exclude-backups --exclude='target' --exclude='.idea')
+fi
+
 if [ "$TYPE" == "gzip" ] || [ "$TYPE" == "gz" ];then
     TAR_OPT=zcf
     TAR_PACK="${PACK}_${REV}.tgz"
