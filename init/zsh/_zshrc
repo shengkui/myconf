@@ -101,10 +101,12 @@ alias lt='ls -lt --time-style=long-iso'
 alias mem='ps -eo pid,rss,cmd --sort %mem'
 alias bat='bat --theme ansi'
 
-setopt hist_ignore_all_dups      # Delete old recorded entry if new entry is a duplicate.
-setopt hist_find_no_dups         # Do not display a line previously found.
-setopt hist_save_no_dups         # Do not write duplicate entries in the history file.
-setopt hist_reduce_blanks        # Remove superfluous blanks before recording entry.
+setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_SAVE_NO_DUPS         # Do not write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
 
 #Go
 export GOPATH=$HOME/go
