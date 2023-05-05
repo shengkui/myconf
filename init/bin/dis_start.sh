@@ -4,7 +4,7 @@
 #Spark and Livy too.
 
 DIS_DIR=${HOME}/repo/dis
-LIVY_HOME=${DIS_DIR}/livy
+LIVY_HOME=${DIS_DIR}/dis-livy
 DISAPI_HOME=${DIS_DIR}/dis-api
 
 
