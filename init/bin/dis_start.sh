@@ -20,6 +20,13 @@ term_exit()
     ${SPARK_HOME}/sbin/stop-all.sh
 
     #${SPARK_HOME}/sbin/stop-history-server.sh
+
+    echo "=============Kill sql-rest.py============="
+    sql_rest=$(ps aux | grep -v grep | grep "python3 sql-rest.py" | awk '{print $2}')
+    if [[ ! -z "$sql_rest" ]]; then
+        kill $sql_rest
+    fi
+
     exit 0
 }
 trap term_exit TERM INT
