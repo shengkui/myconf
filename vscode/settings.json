@@ -26,7 +26,6 @@
     "workbench.editor.highlightModifiedTabs": true,
     "extensions.closeExtensionDetailsOnViewChange": true,
     "merge-conflict.autoNavigateNextConflict.enabled": true,
-    "workbench.colorTheme": "Atom One Light",
     "files.autoGuessEncoding": true,
     "editor.wordWrap": "on",
     "editor.fontSize": 15,
@@ -41,7 +40,7 @@
     },
     "terminal.integrated.cursorStyle": "underline",
     "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
     "update.mode": "manual",
     "editor.formatOnPaste": true,
     "diffEditor.codeLens": true,
@@ -74,5 +73,11 @@
     ],
     "search.exclude": {
         "**/.idea": true
-    }
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "[sql]": {
+        "editor.defaultFormatter": "mtxr.sqltools"
+    },
+    "csv-edit.readOption_hasHeader": "true",
+    "workbench.colorTheme": "Visual Studio Dark"
 }

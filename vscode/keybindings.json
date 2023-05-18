@@ -3,5 +3,9 @@
     {
         "key": "ctrl+alt+u",
         "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "editor.action.transformToLowercase"
     }
 ]
