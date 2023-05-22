@@ -1,0 +1,1 @@
+select sum(cast(value as bigint)) from it_data group by "部门" limit 10;

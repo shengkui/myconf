@@ -1,0 +1,1 @@
+SELECT * FROM db1.shuihu ORDER BY CONVERT (name using gbk)
