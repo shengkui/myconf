@@ -7,7 +7,6 @@ DIS_DIR=${HOME}/repo/dis
 LIVY_HOME=${DIS_DIR}/dis-livy
 DISAPI_HOME=${DIS_DIR}/dis-api
 
-
 term_exit()
 {
     echo "=============Stop Livy============="
@@ -43,11 +42,17 @@ ${SPARK_HOME}/sbin/start-all.sh
 echo
 echo "=============Start Livy============="
 pushd . > /dev/null
-cd $LIVY_HOME && ./bin/livy-server start
+cd $LIVY_HOME || { echo "Enter $LIVY_HOME fail" ; exit 1; }
+if [ -f conf/livy.conf ] ;then
+    ./bin/livy-server start
+else
+    echo "NO livy.conf found!"
+    exit 1
+fi
 popd > /dev/null
 
 echo
 echo "=============Start DIS-API============="
 pushd . > /dev/null
-cd $DISAPI_HOME && go run main.go
+cd $DISAPI_HOME && make && ./bin/dis-api
 popd > /dev/null
