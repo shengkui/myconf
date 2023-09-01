@@ -1,16 +1,17 @@
 #JAVA
 export JAVA_HOME=/usr/lib/jvm/default/
+export MAVEN_OPTS="-XX:ReservedCodeCacheSize=512m"
 
 #hadoop
-export HADOOP_HOME=$HOME/hadoop
-export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
+#export HADOOP_HOME=$HOME/hadoop
+#export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
 
 #Flink
 #export FLINK_HOME=/home/shengkui.leng/flink
 #export PATH=$PATH:$FLINK_HOME/bin
 
 #Spark
-export SPARK_HOME=/home/shengkui.leng/repo/dis/spark
+export SPARK_HOME=/home/shengkui.leng/spark
 export PATH=$PATH:$SPARK_HOME/bin
 
 if [ -d "$HOME/.local/bin" ] ; then
