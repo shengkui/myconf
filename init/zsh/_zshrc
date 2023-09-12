@@ -100,6 +100,7 @@ alias sudo='sudo '
 alias lt='ls -lt --time-style=long-iso'
 alias mem='ps -eo pid,rss,cmd --sort %mem'
 alias bat='bat --theme ansi'
+alias docker-compose="docker compose"
 
 setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
