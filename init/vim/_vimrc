@@ -27,7 +27,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-endwise'                "End certain structures automatically(C preprocessor...)
 Plug 'SirVer/ultisnips'                 "Code snippet
 Plug 'honza/vim-snippets'               "Code snippet
-Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
+"Plug 'jsfaint/gen_tags.vim'             "Generate and load tags
 Plug 'majutsushi/tagbar'                "Browse the tags
 Plug 'buoto/gotests-vim', { 'for': 'go' } "Generate table driven tests easily
 Plug 'mattn/vim-goimports'              "Run goimports
@@ -103,8 +103,8 @@ nmap <silent> <F6> :call g:ToggleBackground()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
     set mouse=a                 "Use mouse everywhere
-    "set guifont=monospace\ 14   "Set font of GVIM
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 14
+    set guifont=monospace\ 13   "Set font of GVIM
+    "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 13
     "set cursorline             "Highlight current line
     "set cursorcolumn           "Highlight current column
 endif
