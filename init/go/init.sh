@@ -16,7 +16,7 @@ export GO111MODULE=on
 export GOPROXY=https://goproxy.cn,direct
 
 GO_GET="go install"
-$GO_GET golang.org/x/tools/...@latest.
+$GO_GET golang.org/x/tools/...@latest
 $GO_GET github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 $GO_GET github.com/mgechev/revive@latest
 $GO_GET github.com/kisielk/errcheck@latest
