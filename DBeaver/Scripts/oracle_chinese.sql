@@ -1,0 +1,1 @@
+SELECT * FROM emp_info WHERE "LOCAL_NAME" = '林文斌'
