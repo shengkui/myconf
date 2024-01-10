@@ -35,5 +35,5 @@ There is an install script under `init/` folder. Just run it!
 4. If you want to re-run the install script, please remove all installed files
    at first.
 
-5. There will be an ".extra" file under $HOME and be sourced by .zshrc. You can add some extra into
-   it.
+5. There will be an ".extra" file under $HOME and be sourced by .zshrc. You can add some extra
+   setting into it.
