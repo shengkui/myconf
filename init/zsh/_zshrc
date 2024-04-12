@@ -147,3 +147,6 @@ export PATH=$PATH:$HOME/bin:$GOPATH/bin
 if [ -f $HOME/.extra ];then
     source $HOME/.extra
 fi
+
+#To avoid long pause for JAVA class completion
+compdef -d java
