@@ -5,12 +5,15 @@ SELECT SHA2('abc', 224);
 SELECT CRC32('MySQL');
 SELECT MD5('testing');
 
-SELECT BIT_LENGTH('text');
-SELECT CHAR_LENGTH('text');
+SELECT BIT_LENGTH('TEST1');
+SELECT CHAR_LENGTH('TEST1');
+SELECT CHAR_LENGTH('TEST1  ');
+SELECT CHAR_LENGTH('测试字符');
+SELECT BIT_LENGTH('测试字符');
 
 SELECT CONCAT('My', 'S', 'QL');
 SELECT CONCAT('My', NULL, 'QL');
-
+SELECT CONCAT('name', 'a', NULL, 'b');
 
 SELECT TRIM('  1234  ');
 SELECT LTRIM('  1234  ');
@@ -32,3 +35,8 @@ SELECT `Date`,`value`,`department`,`Scenario ID` FROM `it_spend_detail`
   WHERE (`Scenario ID` IS NOT NULL) AND (LOG10(CAST(`Scenario ID` AS decimal(53,9))) = 0.6020599913279624) ORDER BY `Date` ASC LIMIT 10;
 
 SELECT `Date`,`value`,`department`,CAST(`Scenario ID` AS decimal(53,9)) FROM `it_spend_detail` LIMIT 10;
+
+SELECT * FROM `productionorder` WHERE ((CONCAT(`Name`, 'a', 'b')) = 'Y20-5752217002-001ab');
+SELECT CONCAT(name, 'a', 'b') FROM productionorder;
+SELECT CONCAT(name, 'a', NULL, 'b') FROM productionorder;
+SELECT CONCAT('name', 'a', NULL, 'b');

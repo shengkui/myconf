@@ -7,6 +7,7 @@ SELECT COALESCE(batchnumber, 0, batchnumber) from productionorder;
 
 SELECT CONCAT(name, 'a', 'b') FROM productionorder;
 SELECT CONCAT(name, 'a', NULL, 'b') FROM productionorder;
+SELECT CONCAT('name', 'a', NULL, 'b');
 
 SELECT * FROM it_spend_detail WHERE SQRT("Scenario ID") = SQRT(5) ORDER BY "Date"; 
 SELECT * FROM it_spend_detail WHERE ROUND("Scenario ID"/1.2, 0) = 2 ORDER BY "Date";
@@ -32,6 +33,16 @@ SELECT TRIM('  1234  ');
 SELECT LTRIM('  1234  ');
 SELECT RTRIM('  1234  ');
 SELECT TRIM(' 12' FROM '  1234  ');
+-- SELECT TRIM(BOTH ' 12' FROM '  1234  ');
 
 SELECT dateadd(day, 10, '2016-07-30');
 SELECT datediff(day, '2016-07-30', '2016-09-01');
+
+SELECT DATALENGTH(N'TEST1');
+SELECT LEN(N'TEST1');
+SELECT DATALENGTH(N'TEST1  ');
+SELECT LEN(N'TEST1  ');   -- Ignore ending whitespaces
+SELECT DATALENGTH(N'测试字符');
+SELECT LEN(N'测试字符');
+SELECT DATALENGTH(N'测试chinese字符');
+SELECT LEN(N'测试chinese字符');
