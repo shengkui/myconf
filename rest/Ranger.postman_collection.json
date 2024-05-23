@@ -1,0 +1,1162 @@
+{
+	"info": {
+		"_postman_id": "f87aedc8-1d30-46a7-b54c-c85693c426db",
+		"name": "Ranger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20156919"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/xusers/users?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"xusers",
+								"users"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/xusers/users/userName/shengkui.leng?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"xusers",
+								"users",
+								"userName",
+								"shengkui.leng"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/xusers/users/8?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"xusers",
+								"users",
+								"8"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "Get service by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service/name/leng1?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service",
+								"name",
+								"leng1"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"hive\",\r\n    \"name\": \"leng1\",\r\n    \"description\": \"hive\",\r\n    \"isEnabled\": true,\r\n    \"configs\": {\r\n        \"password\": \"admin\",\r\n        \"jdbc.driverClassName\": \"org.apache.hive.jdbc.HiveDriver\",\r\n        \"jdbc.url\": \"jdbc:hive2://172.21.73.37:10090\",\r\n        \"username\": \"postgres\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update service by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"hive\",\r\n    \"name\": \"leng1\",\r\n    \"description\": \"hive test 2\",\r\n    \"isEnabled\": true,\r\n    \"configs\": {\r\n        \"password\": \"admin\",\r\n        \"jdbc.driverClassName\": \"org.apache.hive.jdbc.HiveDriver\",\r\n        \"jdbc.url\": \"jdbc:hive2://172.21.73.37:10090\",\r\n        \"username\": \"postgres\"\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service/name/leng1?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service",
+								"name",
+								"leng1"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "policy",
+			"item": [
+				{
+					"name": "Download policy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/plugins/policies/download/leng1?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"plugins",
+								"policies",
+								"download",
+								"leng1"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get policy by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service/leng1/policy/developer?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service",
+								"leng1",
+								"policy",
+								"developer"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get policy by id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy/2?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy",
+								"2"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search policies",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search policies in a service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service/leng1/policy?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service",
+								"leng1",
+								"policy"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create policy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"allowExceptions\": [],\r\n    \"denyExceptions\": [],\r\n    \"dataMaskPolicyItems\": [],\r\n    \"rowFilterPolicyItems\": [],\r\n    \"denyPolicyItems\": [],\r\n    \"description\": \"Policy for Service: leng1\",\r\n    \"isAuditEnabled\": true,\r\n    \"isEnabled\": true,\r\n    \"name\": \"xyz\",\r\n    \"policyType\": 0,\r\n    \"policyItems\": [\r\n        {\r\n            \"accesses\": [\r\n                {\r\n                    \"type\": \"select\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"create\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"read\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"write\",\r\n                    \"isAllowed\": true\r\n                }\r\n            ],\r\n            \"users\": [\r\n                \"shengkui.leng\"\r\n            ],\r\n            \"groups\": [ ],\r\n            \"roles\": [ ],\r\n            \"conditions\": [],\r\n            \"delegateAdmin\": true\r\n        }\r\n    ],\r\n    \"resources\": {\r\n        \"database\": {\r\n            \"values\": [\r\n                \"datasets\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"table\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"column\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        }\r\n    },\r\n    \"service\": \"leng1\",\r\n    \"version\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply policy",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"allowExceptions\": [],\r\n    \"denyExceptions\": [],\r\n    \"dataMaskPolicyItems\": [],\r\n    \"rowFilterPolicyItems\": [],\r\n    \"denyPolicyItems\": [],\r\n    \"description\": \"Policy for Service: leng1\",\r\n    \"isAuditEnabled\": true,\r\n    \"isEnabled\": true,\r\n    \"name\": \"xyz\",\r\n    \"policyType\": 0,\r\n    \"policyItems\": [\r\n        {\r\n            \"accesses\": [\r\n                {\r\n                    \"type\": \"select\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"create\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"read\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"write\",\r\n                    \"isAllowed\": true\r\n                }\r\n            ],\r\n            \"users\": [\r\n                \"shengkui.leng\"\r\n            ],\r\n            \"groups\": [ ],\r\n            \"roles\": [ ],\r\n            \"conditions\": [],\r\n            \"delegateAdmin\": true\r\n        }\r\n    ],\r\n    \"resources\": {\r\n        \"database\": {\r\n            \"values\": [\r\n                \"datasets\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"table\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"column\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        }\r\n    },\r\n    \"service\": \"leng1\",\r\n    \"version\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy/apply?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy",
+								"apply"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update policy by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"allowExceptions\": [],\r\n    \"denyExceptions\": [],\r\n    \"dataMaskPolicyItems\": [],\r\n    \"rowFilterPolicyItems\": [],\r\n    \"denyPolicyItems\": [],\r\n    \"description\": \"Policy for Service: leng1\",\r\n    \"isAuditEnabled\": true,\r\n    \"isEnabled\": true,\r\n    \"name\": \"xyz\",\r\n    \"policyType\": 0,\r\n    \"policyItems\": [\r\n        {\r\n            \"accesses\": [\r\n                {\r\n                    \"type\": \"select\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"update\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"read\",\r\n                    \"isAllowed\": true\r\n                }\r\n            ],\r\n            \"users\": [\r\n                \"shengkui.leng\"\r\n            ],\r\n            \"groups\": [ ],\r\n            \"roles\": [ ],\r\n            \"conditions\": [],\r\n            \"delegateAdmin\": true\r\n        }\r\n    ],\r\n    \"resources\": {\r\n        \"database\": {\r\n            \"values\": [\r\n                \"datasets\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"table\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"column\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        }\r\n    },\r\n    \"service\": \"leng1\",\r\n    \"version\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/service/leng1/policy/xyz?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"service",
+								"leng1",
+								"policy",
+								"xyz"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update policy by id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"allowExceptions\": [],\r\n    \"denyExceptions\": [],\r\n    \"dataMaskPolicyItems\": [],\r\n    \"rowFilterPolicyItems\": [],\r\n    \"denyPolicyItems\": [],\r\n    \"description\": \"Policy for Service: leng1\",\r\n    \"isAuditEnabled\": true,\r\n    \"isEnabled\": true,\r\n    \"name\": \"xyz\",\r\n    \"policyType\": 0,\r\n    \"policyItems\": [\r\n        {\r\n            \"accesses\": [\r\n                {\r\n                    \"type\": \"select\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"drop\",\r\n                    \"isAllowed\": true\r\n                },\r\n                {\r\n                    \"type\": \"read\",\r\n                    \"isAllowed\": true\r\n                }\r\n            ],\r\n            \"users\": [\r\n                \"shengkui.leng\"\r\n            ],\r\n            \"groups\": [ ],\r\n            \"roles\": [ ],\r\n            \"conditions\": [],\r\n            \"delegateAdmin\": true\r\n        }\r\n    ],\r\n    \"resources\": {\r\n        \"database\": {\r\n            \"values\": [\r\n                \"datasets\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"table\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        },\r\n        \"column\": {\r\n            \"values\": [\r\n                \"*\"\r\n            ],\r\n            \"isExcludes\": false,\r\n            \"isRecursive\": false\r\n        }\r\n    },\r\n    \"service\": \"leng1\",\r\n    \"version\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy/19?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy",
+								"19"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete policy by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy?Accept=application/json&Content-Type=*/*&servicename=leng1&policyname=xyz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								},
+								{
+									"key": "servicename",
+									"value": "leng1"
+								},
+								{
+									"key": "policyname",
+									"value": "xyz"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete policy by id",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:6080/service/public/v2/api/policy/20?Accept=application/json&Content-Type=*/*",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "6080",
+							"path": [
+								"service",
+								"public",
+								"v2",
+								"api",
+								"policy",
+								"20"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "25ae3c5a-4a01-4285-a327-4ca1c53df9f9",
+		"name": "Spark",
+		"description": "REST API of Spark",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20156919"
+	},
+	"item": [
+		{
+			"name": "Get Workers and Active Apps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{masterUrl}}/json",
+					"host": [
+						"{{masterUrl}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get executors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{driverUrl}}/json",
+					"host": [
+						"{{driverUrl}}"
+					],
+					"path": [
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applications List (SHS)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/applications",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"applications"
+					],
+					"query": [
+						{
+							"key": "minDate",
+							"value": "2023-05-24",
+							"description": "earliest start date/time to list.\n?minDate=2015-02-10\n?minDate=2015-02-03T16:42:40.000GMT\n",
+							"disabled": true
+						},
+						{
+							"key": "maxDate",
+							"value": "2023-05-25",
+							"description": "latest start date/time to list.",
+							"disabled": true
+						},
+						{
+							"key": "minEndDate",
+							"value": "",
+							"description": "earliest end date/time to list.",
+							"disabled": true
+						},
+						{
+							"key": "maxEndDate",
+							"value": "",
+							"description": "latest end date/time to list",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "limits the number of applications listed.",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Applications List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workerUrl}}/api/v1/applications",
+					"host": [
+						"{{workerUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"applications"
+					],
+					"query": [
+						{
+							"key": "minDate",
+							"value": "2023-05-24",
+							"description": "earliest start date/time to list.\n?minDate=2015-02-10\n?minDate=2015-02-03T16:42:40.000GMT\n",
+							"disabled": true
+						},
+						{
+							"key": "maxDate",
+							"value": "2023-05-25",
+							"description": "latest start date/time to list.",
+							"disabled": true
+						},
+						{
+							"key": "minEndDate",
+							"value": "",
+							"description": "earliest end date/time to list.",
+							"disabled": true
+						},
+						{
+							"key": "maxEndDate",
+							"value": "",
+							"description": "latest end date/time to list",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "10",
+							"description": "limits the number of applications listed.",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Job List (SHS)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/applications/{{appID}}/jobs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"applications",
+						"{{appID}}",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "succeeded",
+							"description": "list only jobs in the specific state.\nstatus=[running|succeeded|failed|unknown]",
+							"disabled": true
+						}
+					]
+				},
+				"description": "StartFragment\n\nA list of all jobs for a given application."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Job List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workerUrl}}/api/v1/applications/{{appID}}/jobs",
+					"host": [
+						"{{workerUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"applications",
+						"{{appID}}",
+						"jobs"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "succeeded",
+							"description": "list only jobs in the specific state.\nstatus=[running|succeeded|failed|unknown]",
+							"disabled": true
+						}
+					]
+				},
+				"description": "StartFragment\n\nA list of all jobs for a given application."
+			},
+			"response": []
+		},
+		{
+			"name": "Get SQL List (SHS)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/applications/{{appID}}/sql?details=false&planDescription=false&offset=0&length=100",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"applications",
+						"{{appID}}",
+						"sql"
+					],
+					"query": [
+						{
+							"key": "details",
+							"value": "false"
+						},
+						{
+							"key": "planDescription",
+							"value": "false"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "length",
+							"value": "100"
+						}
+					]
+				},
+				"description": "StartFragment\n\nA list of all queries for a given application."
+			},
+			"response": []
+		},
+		{
+			"name": "Get SQL List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workerUrl}}/api/v1/applications/{{appID}}/sql?details=false&planDescription=false&offset=0&length=100",
+					"host": [
+						"{{workerUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"applications",
+						"{{appID}}",
+						"sql"
+					],
+					"query": [
+						{
+							"key": "details",
+							"value": "false"
+						},
+						{
+							"key": "planDescription",
+							"value": "false"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "length",
+							"value": "100"
+						}
+					]
+				},
+				"description": "StartFragment\n\nA list of all queries for a given application."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stages List (SHS)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/applications/{{appID}}/stages?details=false&taskStatus=SUCCESS",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"applications",
+						"{{appID}}",
+						"stages"
+					],
+					"query": [
+						{
+							"key": "details",
+							"value": "false",
+							"description": "lists all stages with the task data."
+						},
+						{
+							"key": "taskStatus",
+							"value": "SUCCESS",
+							"description": "taskStatus=[RUNNING|SUCCESS|FAILED|KILLED|PENDING] lists only those tasks with the specified task status. "
+						}
+					]
+				},
+				"description": "StartFragment\n\nA list of all queries for a given application."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stages List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{workerUrl}}/api/v1/applications/{{appID}}/stages?details=false&taskStatus=SUCCESS",
+					"host": [
+						"{{workerUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"applications",
+						"{{appID}}",
+						"stages"
+					],
+					"query": [
+						{
+							"key": "details",
+							"value": "false",
+							"description": "lists all stages with the task data."
+						},
+						{
+							"key": "taskStatus",
+							"value": "SUCCESS",
+							"description": "taskStatus=[RUNNING|SUCCESS|FAILED|KILLED|PENDING] lists only those tasks with the specified task status. "
+						}
+					]
+				},
+				"description": "StartFragment\n\nA list of all queries for a given application."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://172.21.73.37:18080/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "appID",
+			"value": "app-20230608140009-0000"
+		},
+		{
+			"key": "masterUrl",
+			"value": "http://172.21.73.37:8080",
+			"type": "string"
+		},
+		{
+			"key": "driverUrl",
+			"value": "http://172.21.73.37:8081",
+			"type": "string"
+		},
+		{
+			"key": "workerUrl",
+			"value": "http://172.21.73.37:4040",
+			"type": "string"
+		}
+	]
+}

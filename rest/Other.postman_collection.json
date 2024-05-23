@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "cb69e7e2-85c8-454c-9613-c74834f4af03",
+		"name": "Other",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20156919"
+	},
+	"item": [
+		{
+			"name": "Province",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.nmc.cn/rest/province",
+					"protocol": "http",
+					"host": [
+						"www",
+						"nmc",
+						"cn"
+					],
+					"path": [
+						"rest",
+						"province"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "City",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.nmc.cn/rest/province/ASN",
+					"protocol": "http",
+					"host": [
+						"www",
+						"nmc",
+						"cn"
+					],
+					"path": [
+						"rest",
+						"province",
+						"ASN"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://www.nmc.cn/rest/weather?stationid=57036",
+					"protocol": "http",
+					"host": [
+						"www",
+						"nmc",
+						"cn"
+					],
+					"path": [
+						"rest",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "stationid",
+							"value": "57036"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

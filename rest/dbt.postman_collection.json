@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "85990abe-4f69-450e-93c5-eea33ea50d50",
+		"name": "dbt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20156919"
+	},
+	"item": [
+		{
+			"name": "generate_source",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"func\": \"generate_source\", \"args\": \"{\\\"schema_name\\\": \\\"main\\\", \\\"table_names\\\":[\\\"shuihu\\\"]}\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5001/operation",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"operation"
+					],
+					"query": [
+						{
+							"key": "func",
+							"value": "generate_source",
+							"disabled": true
+						},
+						{
+							"key": "args",
+							"value": "{\"schema_name\": \"main\", \"table_names\":[\"shuihu\"]}",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
