@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KYUUBI_HOME=${HOME}/kyuubi_mod
+KYUUBI_HOME=${HOME}/dis-develop/dis-kyuubi
 ZOOKEEPER_HOME=${HOME}/zookeeper
 
 echo; echo "=============Stop Kyuubi============="
