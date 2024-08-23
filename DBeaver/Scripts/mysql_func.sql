@@ -40,3 +40,10 @@ SELECT * FROM `productionorder` WHERE ((CONCAT(`Name`, 'a', 'b')) = 'Y20-5752217
 SELECT CONCAT(name, 'a', 'b') FROM productionorder;
 SELECT CONCAT(name, 'a', NULL, 'b') FROM productionorder;
 SELECT CONCAT('name', 'a', NULL, 'b');
+
+
+SELECT LOG(10,4);
+SELECT LOG(4);
+SELECT LN(10);
+select ATAN2(1,1);
+SELECT ROUND(4.6, 1);

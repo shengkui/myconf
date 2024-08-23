@@ -32,3 +32,10 @@ SELECT BIT_LENGTH('测试字符');
 
 SELECT overlay('Spark SQL' PLACING 'CORE' FROM 7);
 SELECT overlay('Spark SQL' PLACING 'ANSI ' FROM 7 FOR 0);
+
+SELECT LOG(10,4);
+--SELECT LOG(4); --= LOG(10,4)
+SELECT LN(10);
+
+select ATANH(0);
+select ATAN2(1,1);
