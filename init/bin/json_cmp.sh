@@ -1,7 +1,7 @@
 #!/bin/bash
 #===============================================================================
 # FILENAME:
-#     git_upall.sh
+#     json_cmp.sh
 #
 # DESCRIPTION:
 #     A script to compare 2 JSON files.

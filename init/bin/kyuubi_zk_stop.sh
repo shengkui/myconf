@@ -10,3 +10,6 @@ sleep 1
 echo; echo "=============Stop Spark============="
 ${SPARK_HOME}/sbin/stop-all.sh
 sleep 1
+
+echo; echo "=============Stop Zookeeper============="
+cd ${ZOOKEEPER_HOME} && bin/zkServer.sh stop
