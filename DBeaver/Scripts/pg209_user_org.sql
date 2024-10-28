@@ -55,7 +55,7 @@ SELECT udf.udf_name, udf.code, udf.kind, udf.type FROM dis.udf udf
 
 
 -----------------------------------------------------------------------
---使用用户名，查询某个用户所属 ORG 的 UDF
+--使用用户名，查询该用户所属 ORG 的 UDF
 SELECT udf.udf_name, udf.code, udf.kind, udf.type, udf.org_id FROM dis.udf udf
   INNER JOIN dis.user_info ui ON udf.org_id = ui.current_org_id
   WHERE ui.user_name = 'shengkui.leng@advantech.com.cn';
