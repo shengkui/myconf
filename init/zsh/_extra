@@ -2,17 +2,33 @@
 export JAVA_HOME=/usr/lib/jvm/default/
 export MAVEN_OPTS="-XX:ReservedCodeCacheSize=512m"
 
+#maven
+export MAVEN_HOME=/usr/share/maven
+
+#Go
+export GOPATH=$HOME/go
+export GOPROXY=https://goproxy.cn,direct
+export GOPRIVATE=gitlab.wise-paas.com
+export PATH=$PATH:$HOME/go/bin
+
 #hadoop
 #export HADOOP_HOME=$HOME/hadoop
 #export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
 
+#Hive
+#export HIVE_HOME=$HOME/hive
+
 #Flink
-#export FLINK_HOME=/home/shengkui.leng/flink
+#export FLINK_HOME=$HOME/flink
 #export PATH=$PATH:$FLINK_HOME/bin
 
 #Spark
-export SPARK_HOME=/home/shengkui.leng/spark
+export SPARK_HOME=$HOME/spark
 export PATH=$PATH:$SPARK_HOME/bin
+
+#nodejs
+export NODEJSPATH=$HOME/node
+export PATH=$PATH:$NODEJSPATH/bin
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
