@@ -11,5 +11,11 @@ echo; echo "=============Stop Spark============="
 ${SPARK_HOME}/sbin/stop-all.sh
 sleep 1
 
+echo;echo "=============Kill sql-rest.py============="
+sql_rest=$(ps aux | grep -v grep | grep "sql-rest.py" | awk '{print $2}')
+if [[ ! -z "$sql_rest" ]]; then
+    kill $sql_rest
+fi
+
 echo; echo "=============Stop Zookeeper============="
 cd ${ZOOKEEPER_HOME} && bin/zkServer.sh stop
