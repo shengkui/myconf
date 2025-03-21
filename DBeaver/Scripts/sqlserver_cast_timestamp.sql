@@ -1,0 +1,3 @@
+select * from  PRODUCTION_PLAN WHERE CAST("START_DATE" AS timestamp) >= '2024-05-01 00:00:00.0';
+
+select * from  PRODUCTION_PLAN WHERE CONVERT(datetime, "START_DATE") >= '2024-05-01 00:00:00.0';
