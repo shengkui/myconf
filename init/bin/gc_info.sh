@@ -14,6 +14,10 @@ while read -r line; do
     PROCESS_NAMES+=("$col2")
 done <<< "$cmd_output"
 
+if [[ -z ${PROCESS_NAMES[@]} ]] ;then
+    echo "No processes found"
+    exit 0
+fi
 count=${#PROCESS_NAMES[@]}
 
 n=0
