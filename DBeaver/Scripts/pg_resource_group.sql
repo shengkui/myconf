@@ -23,6 +23,7 @@ SELECT DISTINCT o.org_name, g.group_name, g.driver_memory_g, g.executor_cpu, g.e
     FROM dis.resource_group g
 	JOIN dis.org o ON o.app_name = g.group_id
 
+--Get detail info of resource usage for all orgs(with computing total cpu cores and memory of executors).
 WITH org_resource as(
     SELECT DISTINCT o.org_name, g.group_name, g.driver_memory_g, g.executor_cpu, g.executor_num, g.executor_memory_g 
     FROM dis.resource_group g
@@ -34,8 +35,10 @@ SELECT org_name, driver_memory_g as driver_memory,
     order by executor_memory desc;
 
 -- Get all resource groups have been assigned to at lease one org.
-SELECT DISTINCT g.* FROM dis.resource_group g
+SELECT DISTINCT g.*, o.org_id FROM dis.resource_group g
     JOIN dis.org o ON o.app_name = g.group_id;
 
 SELECT DISTINCT "group_id" FROM dis.resource_group r
     INNER JOIN dis.org o ON o.app_name = r.group_id;
+
+SELECT * FROM dis.resource_group ORDER BY group_name ;
