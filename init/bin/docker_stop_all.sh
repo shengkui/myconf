@@ -1,5 +1,7 @@
 #!/bin/bash
 
-#stop all running container
-docker stop $(docker ps -q)
-
+lst=$(docker ps -q)
+if [ ! -z "$lst" ];then
+    #stop all running container
+    docker stop $lst
+fi
