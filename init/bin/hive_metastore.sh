@@ -7,4 +7,5 @@
 #export HIVE_HOME=/home/shengkui.leng/hive
 
 cd $HIVE_HOME
+rm nohup.out
 nohup bin/hive --service metastore &
