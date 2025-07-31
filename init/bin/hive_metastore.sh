@@ -1,3 +1,7 @@
+#!/bin/bash
+# Start hive metastore service
+#
+
 #export JAVA_HOME=/usr/lib/jvm/java/
 
 #export HADOOP_HOME=/home/shengkui.leng/hadoop
