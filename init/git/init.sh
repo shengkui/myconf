@@ -45,9 +45,10 @@ fi
 
 #config for tig
 TIGRC=${HOME}/.tigrc
-echo "set ignore-space = at-eol" > "${TIGRC}"
-echo "set main-view-date-local = true" >> "${TIGRC}"
-echo "set blame-view-date-local = true" >> "${TIGRC}"
+if [ ! -f "${TIGRC}" ];then
+    echo "Installing .tigrc ..."
+    ln -sf "${INIT_DIR}/_tigrc" "${TIGRC}" || { echo "install .tigrc error"; exit 1; }
+fi
 
 #git-subrepo
 if [ ! -d "${HOME}"/.subrepo ];then
