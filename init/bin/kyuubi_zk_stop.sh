@@ -1,7 +1,8 @@
 #!/bin/bash
 
-KYUUBI_HOME=${HOME}/dis-develop/dis-kyuubi
-ZOOKEEPER_HOME=${HOME}/zookeeper
+WORK_DIR=/mnt/storage
+KYUUBI_HOME=${WORK_DIR}/dis-develop/dis-kyuubi/dist
+ZOOKEEPER_HOME=${WORK_DIR}/dis-develop/zookeeper
 
 echo; echo "=============Stop Kyuubi============="
 cd ${KYUUBI_HOME} && bin/kyuubi stop
@@ -19,3 +20,9 @@ fi
 
 echo; echo "=============Stop Zookeeper============="
 cd ${ZOOKEEPER_HOME} && bin/zkServer.sh stop
+
+echo; echo "=============Kill Hive metastore service============="
+hive_pid=$(ps -ef | grep "hive-metastore" | grep -v grep | awk '{print $2}')
+if [ ! -z "$hive_pid" ];then
+    kill $hive_pid
+fi
