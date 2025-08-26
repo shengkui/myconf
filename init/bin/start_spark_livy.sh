@@ -20,6 +20,8 @@ term_exit()
 }
 trap term_exit TERM INT
 
+echo; echo "=============Start Hive metastore service============="
+cd $HIVE_HOME && rm -f nohup.out && nohup bin/hive --service metastore &
 echo; echo "=============Start Spark============="
 ${SPARK_HOME}/sbin/start-all.sh
 
