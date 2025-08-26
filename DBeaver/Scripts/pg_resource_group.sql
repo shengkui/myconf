@@ -13,8 +13,8 @@ WITH used_res_grp AS (
     FROM dis.resource_group g
     JOIN dis.org o ON o.app_name = g.group_id)
 SELECT sum(driver_memory_g) as driver_memory_sum,
-    sum(executor_cpu*executor_num) as executor_memory_sum,
-	sum(executor_memory_g*executor_num) as executor_cores_sum
+	sum(executor_memory_g*executor_num) as executor_memory_sum,    
+	sum(executor_cpu*executor_num) as executor_cores_sum
 	FROM used_res_grp;
 
 
@@ -42,3 +42,31 @@ SELECT DISTINCT "group_id" FROM dis.resource_group r
     INNER JOIN dis.org o ON o.app_name = r.group_id;
 
 SELECT * FROM dis.resource_group ORDER BY group_name ;
+
+--------------------------------------------------------------
+-- For Read/Write isolution
+--------------------------------------------------------------
+--Get detail info of resource usage for all orgs(with computing total cpu cores and memory of executors).
+WITH org_resource as(
+    SELECT DISTINCT o.org_name, g.group_name, g.driver_memory_g, g.executor_cpu,
+        g.executor_num, g.executor_memory_g, g.write_driver_memory_g, g.write_executor_cpu,
+        g.write_executor_num, g.write_executor_memory_g FROM dis.resource_group g
+		JOIN dis.org o ON o.app_name = g.group_id)
+    SELECT org_name, driver_memory_g as driver_memory, 
+	  executor_memory_g*executor_num as executor_memory,
+	  executor_cpu*executor_num as executor_cores,
+	  write_driver_memory_g as write_driver_memory,
+	  write_executor_memory_g*write_executor_num as write_executor_memory,
+	  write_executor_cpu*write_executor_num as write_executor_cores
+      FROM org_resource order by executor_memory desc;
+
+--Get summary of resource usage info.
+WITH used_res_grp AS (
+    SELECT DISTINCT g.group_name, g.driver_memory_g, g.executor_cpu, g.executor_num, g.executor_memory_g,
+    g.write_driver_memory_g, g.write_executor_cpu, g.write_executor_num, g.write_executor_memory_g
+    FROM dis.resource_group g
+    JOIN dis.org o ON o.app_name = g.group_id)
+SELECT sum(driver_memory_g) + sum(write_driver_memory_g) as driver_memory_sum,
+    sum(executor_memory_g*executor_num)+sum(write_executor_memory_g*write_executor_num) as executor_memory_sum,
+    sum(executor_cpu*executor_num)+sum(write_executor_cpu*write_executor_num) as executor_cores_sum
+	FROM used_res_grp;
