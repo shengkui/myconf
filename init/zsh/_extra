@@ -1,35 +1,47 @@
+export HISTCONTROL=ignoreboth:erasedups
+
+alias lt='ls -lt --time-style=long-iso'
+alias ltr='ls -ltr --time-style=long-iso'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+#alias sudo='sudo '
+alias mem='ps -eo pid,rss,cmd --sort %mem'
+#alias bat='bat --theme ansi'
+alias docker-compose="docker compose"
+
 #JAVA
 export JAVA_HOME=/usr/lib/jvm/default/
-export MAVEN_OPTS="-XX:ReservedCodeCacheSize=512m"
 
 #maven
 export MAVEN_HOME=/usr/share/maven
+export MAVEN_OPTS="-XX:ReservedCodeCacheSize=512m"
 
 #Go
 export GOPATH=$HOME/go
 export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=gitlab.wise-paas.com
-export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 
 #hadoop
-#export HADOOP_HOME=$HOME/hadoop
+export HADOOP_HOME=$HOME/hadoop
 #export HADOOP_CLASSPATH=`$HADOOP_HOME/bin/hadoop classpath`
 
 #Hive
-#export HIVE_HOME=$HOME/hive
-
-#Flink
-#export FLINK_HOME=$HOME/flink
-#export PATH=$PATH:$FLINK_HOME/bin
+export HIVE_HOME=$HOME/hive
 
 #Spark
 export SPARK_HOME=$HOME/spark
 export PATH=$PATH:$SPARK_HOME/bin
 
+#Zookeeper
+export ZOOKEEPER_HOME=$HOME/zookeeper
+
 #nodejs
-export NODEJSPATH=$HOME/node
-export PATH=$PATH:$NODEJSPATH/bin
+#export NODEJSPATH=$HOME/node
+#export PATH=$PATH:$NODEJSPATH/bin
 
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+export PATH=$PATH:$HOME/bin
