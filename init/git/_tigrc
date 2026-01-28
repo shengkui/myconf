@@ -3,5 +3,6 @@ set main-view-date-local = true
 set main-view-date-use-author = true
 set blame-view-date-local = true
 
-set main-view-author-width = 15
-set blame-view-author-width = 15
+set main-view-author-maxwidth = 15
+set blame-view-author-maxwidth = 15
+
