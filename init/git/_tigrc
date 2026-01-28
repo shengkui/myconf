@@ -2,3 +2,6 @@ set ignore-space = at-eol
 set main-view-date-local = true
 set main-view-date-use-author = true
 set blame-view-date-local = true
+
+set main-view-author-width = 15
+set blame-view-author-width = 15
