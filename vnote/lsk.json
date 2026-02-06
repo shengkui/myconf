@@ -1,0 +1,35 @@
+{
+    "version": "0.1.4",
+    "label": "更新笔记",
+    "icon": "git.svg",
+    "tasks": [
+        {
+            "label": {
+                "en_US": "Update Notes",
+                "zh_CN": "更新笔记",
+                "ja_JP": "全てコミット"
+            },
+            "icon": "commit.svg",
+            "windows": {
+                "command": "git add -A -- . ; if ($?) { git commit --message=\"${input:msg}\" }; git push; git push github; git push gitlink"
+            },
+            "command": "git add -A -- . && git commit --message=\"${input:msg}\" && git push; git push github; git push gitlink",
+            "inputs": [
+                {
+                    "id": "msg",
+                    "type": "promptString",
+                    "description": {
+                        "en_US": "Please input the commit message",
+                        "zh_CN": "请输入提交信息",
+                        "ja_JP": "コミットメッセージを提供してください"
+                    },
+                    "default": {
+                        "en_US": "Update note at ${magic:datetime}",
+                        "zh_CN": "Update note",
+                        "ja_JP": "アップデート ${magic:datetime}"
+                    }
+                }
+            ]
+        }
+    ]
+}
