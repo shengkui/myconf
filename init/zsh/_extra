@@ -20,7 +20,7 @@ export MAVEN_OPTS="-XX:ReservedCodeCacheSize=512m"
 #Go
 export GOPATH=$HOME/go
 export GOPROXY=https://goproxy.cn,direct
-export GOPRIVATE=gitlab.wise-paas.com
+export GOPRIVATE=dev.azure.com,gitlab.wise-paas.com
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/bin
 
 #Hadoop
