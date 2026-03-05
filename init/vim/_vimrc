@@ -72,7 +72,11 @@ runtime ftplugin/man.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Color
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax enable
+if &diff
+    syntax off
+else
+    syntax on
+endif
 
 if $TERM == "linux"
     set t_Co=256
