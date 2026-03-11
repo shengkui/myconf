@@ -14,6 +14,14 @@ TDIR="$1"
 OLD_STR="$2"
 NEW_STR="$3"
 
-echo "replace \"${OLD_STR}\" with \"${NEW_STR}\" in files \"${TDIR}\""
+# Dynamically select delimiter based on OLD_STR and NEW_STR content
+for delim in "/" "|" "#" "%" "@"; do
+    if [[ "${OLD_STR//"$delim"/}" == "$OLD_STR" ]] && \
+       [[ "${NEW_STR//"$delim"/}" == "$NEW_STR" ]]; then
+        break
+    fi
+done
+
+echo "replace \"${OLD_STR}\" with \"${NEW_STR}\" in files \"${TDIR}\" (using delimiter: $delim)"
 #Replace a string in files under specified directory
-find "${TDIR}" -type f -exec sed -i "s/${OLD_STR}/${NEW_STR}/g" {} \;
+find "${TDIR}" -type f -exec sed -i "s${delim}${OLD_STR}${delim}${NEW_STR}${delim}g" {} \;
