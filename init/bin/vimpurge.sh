@@ -8,7 +8,7 @@
 set -u
 
 if [ $# -ne 1 ] ;then
-    undodir="/home/shengkui.leng/.vim/undo"
+    undodir="$HOME/.vim/undo"
 else
     undodir="$1"
 fi
