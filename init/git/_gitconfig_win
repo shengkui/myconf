@@ -1,0 +1,38 @@
+[user]
+        name = shengkui.leng
+        email = shengkui.leng@advantech.com.cn
+[push]
+        default = simple
+[log]
+        date = format-local:%Y-%m-%d %H:%M:%S
+[core]
+        autocrlf = false
+        safecrlf = true
+        editor = vim
+[alias]
+        st = status
+        ci = commit
+        co = checkout
+        br = branch
+        last = log -1 HEAD
+        ls = log --oneline --abbrev-commit --graph --decorate
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        ll = log --pretty=format:\"%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]\" --decorate --numstat
+        df = diff --ignore-space-at-eol
+[blame]
+        date = format-local:%Y-%m-%d %H:%M:%S
+[pull]
+        rebase = false
+[diff "astextplain"]
+	textconv = astextplain
+[safe]
+	directory = F:/repo/mycode
+	directory = F:/repo/vnote_notebooks/leng
+[credential "https://codeup.aliyun.com"]
+	provider = generic
+[http]
+	sslverify = true
+[credential "https://gitlink.org.cn"]
+	provider = generic
+[credential]
+	helper = D:/Program/Git/mingw64/bin/git-credential-manager.exe
