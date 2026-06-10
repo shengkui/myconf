@@ -9,6 +9,7 @@ alias rm='rm -i'
 alias mem='ps -eo pid,rss,cmd --sort %mem'
 #alias bat='bat --theme ansi'
 alias docker-compose="docker compose"
+alias grep='grep --exclude-dir={.git,node_modules,.venv}'
 
 #JAVA
 export JAVA_HOME=/usr/lib/jvm/default/
@@ -20,7 +21,7 @@ export MAVEN_OPTS="-XX:ReservedCodeCacheSize=512m"
 #Go
 export GOPATH=$HOME/go
 export GOPROXY=https://goproxy.cn,direct
-export GOPRIVATE=dev.azure.com,gitlab.wise-paas.com
+export GOPRIVATE=dev.azure.com
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/bin
 
 #Hadoop
@@ -46,9 +47,13 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 #For poetry
-export POETRY_CACHE_DIR=/mnt/storage/pypoetry_cache
-export POETRY_HOME=/mnt/storage/pypoetry
-export PATH="$POETRY_HOME/bin:$PATH"
+#export POETRY_CACHE_DIR=/mnt/storage/pypoetry_cache
+#export POETRY_HOME=/mnt/storage/pypoetry
+#export PATH="$POETRY_HOME/bin:$PATH"
+
+#uv
+#export UV_CACHE_DIR=/mnt/storage/uv_cache
+export UV_HTTP_TIMEOUT=600
 
 #For Huggingface
 export HF_HOME=/mnt/storage/ai/huggingface

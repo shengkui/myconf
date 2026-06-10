@@ -6,18 +6,10 @@ SELECT driver.driver_id, driver.file_name FROM dis.driver driver
   INNER JOIN dis.user_info ui ON driver.org_id = ui.current_org_id
   WHERE ui.user_name = 'shengkui.leng@advantech.com.cn';
 
-SELECT driver.driver_id, driver.file_name FROM dis.driver driver
-  INNER JOIN dis.user_info ui ON driver.org_id = ui.current_org_id
-  WHERE ui.user_name = 'user1';
-
 --使用 ORG app_name 名，查询某个 ORG 的 driver
 SELECT driver.driver_id, driver.file_name FROM dis.driver driver
   INNER JOIN dis.org org ON org.org_id = driver.org_id
-  WHERE org.app_name = 'main';
-
-SELECT driver.driver_id, driver.file_name FROM dis.driver driver
-  INNER JOIN dis.org org ON org.org_id = driver.org_id
-  WHERE org.app_name = 'group1';
+  WHERE org.app_name = 'defaultgroup';
 
 --使用用户名，查询和该用户所在 org 属于同一个 resource group 的所有 org 的 driver
 SELECT driver.driver_id, driver.file_name
@@ -25,7 +17,7 @@ SELECT driver.driver_id, driver.file_name
   JOIN dis.org o1 ON ui.current_org_id = o1.org_id
   JOIN dis.org o2 ON o1.app_name = o2.app_name
   JOIN dis.driver ON o2.org_id = driver.org_id
-  WHERE ui.user_name = 'user1';
+  WHERE ui.user_name = 'shengkui.leng@advantech.com.cn';
 
 --查找 driver 表中 org_id 为空的记录，使用它的 created_by 字段查找 user_info 表，找到匹配记录的 current_org_id
 SELECT d.driver_id, d.created_by, u.current_org_id, d.org_id 
