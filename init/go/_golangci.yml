@@ -1,47 +1,14 @@
-linters-settings:
-  govet:
-    check-shadowing: true
-  misspell:
-    locale: US
-  lll:
-    line-length: 120
-  funlen:
-    lines: 100
-    statements: 50
-  unused:
-    check-exported: false
-  gocritic:
-    disabled-tags:
-      - style
-
+version: "2"
 linters:
-  disable-all: true
-  enable:
-    - deadcode
-    - depguard
+  # Default set of linters.
+  # The value can be:
+  # - `standard`: the "Default" linters https://golangci-lint.run/docs/linters/#all-linters
+  # - `all`: enables all linters by default.
+  # - `none`: disables all linters by default.
+  # - `fast`: enables only linters considered as "fast" (`golangci-lint help linters --json | jq '[ .[] | select(.fast==true) ] | map(.name)'`).
+  Default: standard
+  # Disable specific linters.
+  disable:
     - errcheck
-    - funlen
-    - goconst
-    - gocritic
-    - goimports
-    - revive
-    - gosimple
-    - govet
-    - ineffassign
-    - lll
-    - misspell
-    - staticcheck
-    - structcheck
-    - stylecheck
-    - typecheck
-    - unparam
     - unused
-    - varcheck
-    - bodyclose
-    - exportloopref
-
-service:
-  golangci-lint-version: 1.43.0
-
-run:
-  issues-exit-code: 1
+    - ineffassign
