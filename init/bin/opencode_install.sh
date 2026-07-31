@@ -26,7 +26,7 @@ fi
 # download file.
 echo "Download opencode v${version_number} ..."
 cd /usr/local/bin/
-curl -fsSL "https://v4.gh-proxy.org/https://github.com/anomalyco/opencode/releases/download/v${version_number}/${package_name}" -O
+curl -fsSL "https://gh-proxy.org/https://github.com/anomalyco/opencode/releases/download/v${version_number}/${package_name}" -O
 if [ $? -ne 0 ];then
     echo "Failed to download file."
     exit 3
