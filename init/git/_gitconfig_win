@@ -35,4 +35,4 @@
 [credential "https://gitlink.org.cn"]
 	provider = generic
 [credential]
-	helper = D:/Program/Git/mingw64/bin/git-credential-manager.exe
+	helper = D:/Program/Git/ucrt64/bin/git-credential-manager.exe
