@@ -8,27 +8,21 @@
             "path": "D:\\Program\\Git\\bin\\bash.exe"
         }
     },
-    "terminal.integrated.defaultProfile.windows": "GitBash",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
     "terminal.integrated.copyOnSelection": true,
     "files.hotExit": "off",
     "window.restoreWindows": "none",
     "workbench.enableExperiments": false,
     "git.autofetch": true,
     "search.showLineNumbers": true,
-    "search.smartCase": true,
     "editor.renderControlCharacters": true,
     "editor.renderWhitespace": "none",
     "update.showReleaseNotes": false,
-    "remote.SSH.remotePlatform": {
-        "Avalon": "linux",
-        "Nox": "linux"
-    },
     "workbench.editor.highlightModifiedTabs": true,
     "extensions.closeExtensionDetailsOnViewChange": true,
     "merge-conflict.autoNavigateNextConflict.enabled": true,
     "files.autoGuessEncoding": true,
     "editor.wordWrap": "on",
-    "editor.fontSize": 15,
     "editor.wordWrapColumn": 120,
     "editor.useTabStops": false,
     "editor.suggestSelection": "first",
@@ -40,32 +34,23 @@
     },
     "terminal.integrated.cursorStyle": "underline",
     "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": "onlyEnabledExtensions",
+    "extensions.autoUpdate": "on",
     "update.mode": "manual",
     "editor.formatOnPaste": true,
     "diffEditor.codeLens": true,
     "editor.minimap.enabled": false,
     "explorer.excludeGitIgnore": true,
-    "audioCues.lineHasBreakpoint": "off",
-    "audioCues.lineHasError": "off",
-    "audioCues.lineHasFoldedArea": "off",
-    "audioCues.lineHasInlineSuggestion": "off",
-    "audioCues.noInlayHints": "off",
-    "audioCues.onDebugBreak": "off",
     "telemetry.telemetryLevel": "off",
     "security.workspace.trust.enabled": false,
     "redhat.telemetry.enabled": false,
-    "workbench.editor.untitled.hint": "hidden",
-    "editor.detectIndentation": false,
-    "python.defaultInterpreterPath": "D:\\Program\\Python\\python.exe",
+    "python.defaultInterpreterPath": "D:\\Program\\Python313\\python.exe",
     "go.buildOnSave": "off",
-    "go.vetOnSave": "off",
-    "go.lintOnSave": "off",
+    "go.lintOnSave": "on",
     "[go]": {
         "editor.snippetSuggestions": "none",
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": false
+            "source.organizeImports": "explicit"
         },
     },
     "editor.rulers": [
@@ -78,6 +63,62 @@
     "[sql]": {
         "editor.defaultFormatter": "mtxr.sqltools"
     },
-    "csv-edit.readOption_hasHeader": "true",
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "Dark+",
+    "go.toolsManagement.autoUpdate": true,
+    "terminal.integrated.scrollback": 100000,
+    "editor.formatOnSave": true,
+    "workbench.editor.empty.hint": "hidden",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "go.survey.prompt": false,
+    "accessibility.signals.lineHasError": {
+        "sound": "off"
+    },
+    "accessibility.signals.lineHasFoldedArea": {
+        "sound": "off"
+    },
+    "accessibility.signals.lineHasBreakpoint": {
+        "sound": "off"
+    },
+    "accessibility.signals.lineHasInlineSuggestion": {
+        "sound": "off"
+    },
+    "accessibility.signals.onDebugBreak": {
+        "sound": "off"
+    },
+    "accessibility.signals.noInlayHints": {
+        "sound": "off"
+    },
+    "files.eol": "\n",
+    "markdown-mermaid.languages": [
+        "mermaid"
+    ],
+    "editor.fontSize": 15,
+    "notebook.lineNumbers": "on",
+    "editor.formatOnSaveMode": "modifications",
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "go": true
+    },
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.experimental.useTrueInlineView": true,
+    "go.diagnostic.vulncheck": "Imports",
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "codingcopilot.commitMessageLanguage": "en",
+    "codingcopilot.enableImageGen": false,
+    "codingcopilot.enableCompletionLanguage": {
+        "scminput": false
+    },
+    "python.analysis.exclude": [
+        "vendor"
+    ]
 }
