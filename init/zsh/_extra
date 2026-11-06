@@ -1,7 +1,8 @@
 export HISTCONTROL=ignoreboth:erasedups
 
-alias lt='ls -lt --time-style=long-iso'
-alias ltr='ls -ltr --time-style=long-iso'
+export TIME_STYLE=long-iso
+alias lt='ls -lt'
+alias ltr='ls -ltr'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
@@ -46,7 +47,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-#For poetry
+#poetry
 #export POETRY_CACHE_DIR=/mnt/storage/pypoetry_cache
 #export POETRY_HOME=/mnt/storage/pypoetry
 #export PATH="$POETRY_HOME/bin:$PATH"
@@ -55,6 +56,6 @@ fi
 #export UV_CACHE_DIR=/mnt/storage/uv_cache
 export UV_HTTP_TIMEOUT=600
 
-#For Huggingface
+#Huggingface
 export HF_HOME=/mnt/storage/ai/huggingface
 export HF_ENDPOINT=https://hf-mirror.com
